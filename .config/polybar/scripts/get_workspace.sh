@@ -7,7 +7,7 @@ case "$workspace" in
         logo=
         ;;
     scratch)
-        logo=
+        logo=
         ;;
     web)
         logo=
