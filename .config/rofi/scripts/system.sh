@@ -9,11 +9,13 @@ LOGOUT=
 
 case "${@}" in
     ${SHUTDOWN})
+        ssh ecco sudo systemctl poweroff
         systemctl poweroff >/dev/null
         exit 0
         ;;
     ${REBOOT})
-        systemctl reboot >/dev/null
+        ssh ecco sudo systemctl reboot
+        systemctl poweroff >/dev/null
         exit 0
         ;;
     ${SLEEP})

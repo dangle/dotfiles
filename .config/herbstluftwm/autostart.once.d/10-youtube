@@ -1,5 +1,0 @@
-(
-    hc rule once instance="youtube.com" class="Chromium" maxage=10 tag=dev index=110
-    exec gtk-launch YouTube
-) &
-

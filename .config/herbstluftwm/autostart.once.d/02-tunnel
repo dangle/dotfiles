@@ -1,6 +1,0 @@
-#!/bin/bash
-
-#until ssh -nNT blue
-#do
-#    sleep 1
-#done & disown

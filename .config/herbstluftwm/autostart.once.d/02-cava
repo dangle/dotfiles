@@ -1,4 +1,0 @@
-(
-    sleep 10
-    tilda
-) & disown

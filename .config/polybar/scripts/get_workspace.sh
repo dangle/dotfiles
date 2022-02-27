@@ -6,6 +6,9 @@ case "$workspace" in
     dev | work)
         logo=
         ;;
+    scratch)
+        logo=
+        ;;
     web)
         logo=
         ;;

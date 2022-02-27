@@ -1,4 +1,0 @@
-(
-    hc rule once instance="wavebox" class="Wavebox" maxage=10 tag=chat index=e
-    exec gtk-launch wavebox
-) &
