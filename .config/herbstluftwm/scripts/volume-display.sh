@@ -30,7 +30,7 @@ function popup() {
         -p 1 \
         -h 400 \
         -w 50 \
-        -x $(($RIGHT - 60)) \
+        -x $(($RIGHT - 66)) \
         -y $(($TOP + 20)) \
         -bg '#000' \
         -fg '#000'
@@ -38,7 +38,7 @@ function popup() {
 
 function progress() {
     gdbar \
-        -fg '#b65497' \
+        -fg '#F55' \
         -bg '#000' \
         -sw 30 \
         -w 80 \
