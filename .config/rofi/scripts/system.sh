@@ -19,7 +19,7 @@ case "${@}" in
         exit 0
         ;;
     ${SLEEP})
-        systemctl suspend
+        systemctl hybrid-sleep
         exit 0
         ;;
     ${HIBERNATE})
@@ -41,5 +41,4 @@ echo ${SHUTDOWN}
 echo ${REBOOT}
 echo ${LOCK}
 echo ${SLEEP}
-echo ${HIBERNATE}
 echo ${LOGOUT}

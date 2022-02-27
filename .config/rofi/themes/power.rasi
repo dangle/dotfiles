@@ -25,7 +25,7 @@ inputbar {
 
 listview {
   cycle: false;
-  margin: 0 calc(50% - 696px); 
+  margin: 0 calc(50% - 676px); 
   padding: 50px;
   border-radius: 25px;
   scrollbar: false;
