@@ -112,7 +112,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 #---- Golang Configuration ---------------------------------------------------
-export GOPATH="$HOME/.go"
+export GOPATH="$HOME/go"
 #=============================================================================
 
 
