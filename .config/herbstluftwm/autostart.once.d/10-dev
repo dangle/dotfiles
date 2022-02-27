@@ -1,0 +1,12 @@
+hc load dev "
+(split horizontal:0.26:0
+    (split vertical:0.4:1
+        (clients vertical:0)
+        (clients vertical:0)
+    )
+    (split horizontal:0.6499:1
+        (clients vertical:0)
+        (clients vertical:0)
+    )
+)
+"

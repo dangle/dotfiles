@@ -1,0 +1,3 @@
+hc keybind $Mod-space spawn rofi -show drun
+hc keybind 102 spawn rofi -show drun
+hc keybind $Mod-w spawn rofi -show window

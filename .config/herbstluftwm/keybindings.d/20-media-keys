@@ -1,0 +1,11 @@
+hc keybind XF86AudioLowerVolume spawn ~/.config/herbstluftwm/scripts/volume-down.sh
+hc keybind XF86AudioRaiseVolume spawn ~/.config/herbstluftwm/scripts/volume-up.sh
+hc keybind XF86AudioMute spawn pactl set-sink-mute @DEFAULT_SINK@ toggle
+hc keybind XF86Calculator spawn gnome-calculator
+
+hc keybind XF86AudioPrev spawn playerctl prev
+hc keybind XF86AudioNext spawn playerctl next
+hc keybind XF86AudioRewind spawn playerctl position 1- 
+hc keybind XF86AudioForward spawn playerctl position 1+
+hc keybind XF86AudioPlay spawn playerctl play-pause
+hc keybind XF86AudioPause spawn playerctl play-pause

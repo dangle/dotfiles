@@ -1,0 +1,3 @@
+xsetroot -solid '#222222'
+feh --bg-tile ~/Pictures/chisen-lossless.png
+wal -nst -i ~/Pictures/chisen-lossless.png --backend wal --saturate .4

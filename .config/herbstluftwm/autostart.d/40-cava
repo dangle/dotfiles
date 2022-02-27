@@ -1,0 +1,31 @@
+#!/bin/bash
+
+sleep 3  # Wait for picom
+
+killall -q tilda
+while pgrep -u ${UID} -x tilda >/dev/null
+do
+    sleep 1
+    killall -9 -q tilda
+done
+
+herbstclient spawn tilda
+
+function watchsink {
+   local lastsink=$(pactl get-default-sink)
+
+   while true
+   do
+       local sink=$(pactl get-default-sink)
+
+       if [ "${lastsink}" != "${sink}" ]
+       then
+           lastsink=${sink}
+           killall cava
+       fi
+
+       sleep 0.5
+   done
+}
+
+watchsink & disown

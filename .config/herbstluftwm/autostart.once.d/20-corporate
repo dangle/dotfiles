@@ -1,0 +1,8 @@
+hc rule --label=chrome_extra instance="google-chrome" class="Google-chrome" monitor=0 tag=corporate index=e
+
+(
+    hc rule once instance="google-chrome" class="Google-chrome" monitor=0 tag=corporate index=1
+    hc spawn gtk-launch "Google Chrome [Work]"
+) &
+
+hc unrule chrome_extra

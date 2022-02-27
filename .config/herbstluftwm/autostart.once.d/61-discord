@@ -1,0 +1,4 @@
+(
+    hc rule instance="discord" class="discord" maxage=30 tag=chat index=01
+    exec gtk-launch discord
+) &

@@ -1,0 +1,4 @@
+(
+    hc rule instance="wire" class="Wire" maxage=30 tag=chat index=00
+    exec gtk-launch wire-desktop
+) &

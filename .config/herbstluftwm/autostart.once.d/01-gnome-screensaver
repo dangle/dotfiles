@@ -1,0 +1,31 @@
+function disable_blanking() {
+    xset dpms force off
+    xset s off
+    xset s noblank
+    xset -dpms
+    xset dpms 0 0 0
+}
+
+function mute_on_lock() {
+    dbus-monitor --session "type='signal',interface='org.gnome.ScreenSaver'" |
+    while read x; do
+        case "$x" in 
+            *"boolean true"*)
+                playerctl pause
+                pactl set-sink-mute @DEFAULT_SINK@ 1
+                xset -display :1 dpms force off
+                ;;
+            *"boolean false"*)
+                pactl set-sink-mute @DEFAULT_SINK@ 0
+                disable_blanking
+                ;;
+        esac
+    done
+}
+
+gnome-screensaver &
+disable_blanking
+mute_on_lock &
+hc keybind $Mod-l spawn gnome-screensaver-command -l
+
+

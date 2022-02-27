@@ -1,0 +1,6 @@
+hc load web "
+(split horizontal:0.5:0
+    (clients vertical:0)
+    (clients vertical:0)
+)
+"

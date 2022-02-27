@@ -1,0 +1,81 @@
+/*configuration {
+    drun-display-format: "{icon}{name}";
+    display-drun: "";
+    display-window: "";
+    window-thumbnail: true;
+    show-icons: true;
+    hide-scrollbar: true;
+    disable-history: true;
+}*/
+
+* {
+  background-color: #0000;
+  text-color: #999;
+  spacing: 0;
+}
+
+window {
+  transparency: "real";
+  padding: calc(50% - 446px) 0;
+  width: 100%;
+  height: 100%;
+  location: center;
+}
+
+inputbar {
+  border-color: #b65497CC;
+  background-color: #0009;
+  margin: 20px calc(50% - 800px); 
+  border-radius: 25px;
+  border: 0  0 3px 0 solid;
+}
+
+entry {
+  padding: 10px;
+  placeholder: "Search";
+}
+
+textbox {
+    background-color: #000;
+}
+
+prompt {
+  padding: 10px 0 0 20px;
+}
+
+listview {
+  cycle: false;
+  columns: 3;
+  margin: 0 calc(50% - 800px); 
+  padding: 50px;
+  border-radius: 25px;
+  scrollbar: false;
+  width: 100%;
+  border: 3px 0 solid;
+  border-color: #9580FF99;
+  background-color: #0009;
+}
+
+element {
+  border: 0;
+  padding: 10px;
+  margin: 30px;
+  border-radius: 25px;
+  orientation: vertical;
+}
+
+element-icon, element-text {
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 128px;
+}
+
+element selected {
+  border-color: #8AFF80CC;
+  border: 0 2px 0 2px solid;
+  color: #FFF;
+  background-color: #3335;
+}

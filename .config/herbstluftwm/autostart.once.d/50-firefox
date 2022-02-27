@@ -1,0 +1,21 @@
+hc rule --label=firefox_web class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=e
+hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=10
+
+(
+    hc rule once class="firefox" monitor=1 tag=reference index=1
+    hc spawn firefox
+)
+
+sleep 2
+
+if [[ $(wmctrl -lx | grep "Navigator.firefox" | wc -l) == "1" ]]; then
+    (
+        hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=10
+        hc spawn firefox
+    )
+fi
+
+(
+    sleep 10
+    hc unrule firefox_web
+) &

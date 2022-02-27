@@ -1,0 +1,8 @@
+RULES=( tag=dev index=00 )
+spawn_with_rules alacritty
+
+RULES=( tag=dev index=01 )
+spawn_with_rules alacritty
+
+RULES=( tag=dev index=111 )
+spawn_with_rules alacritty

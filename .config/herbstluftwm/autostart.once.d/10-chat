@@ -1,0 +1,5 @@
+hc load chat "
+(split horizontal:0.66:1
+    (split horizontal:0.50:1)
+)
+"

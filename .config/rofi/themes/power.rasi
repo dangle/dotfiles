@@ -1,0 +1,62 @@
+configuration {
+    show-icons: true;
+    hide-scrollbar: true;
+    disable-history: true;
+}
+
+* {
+  background-color: #0000;
+  text-color: #999;
+  spacing: 0;
+}
+
+window {
+  transparency: "real";
+  font: "Font Awesome 5 Free 64";
+  padding: calc(50% - 172px) 0;
+  width: 100%;
+  height: 100%;
+  location: center;
+}
+
+inputbar {
+  enabled: false;
+}
+
+listview {
+  cycle: false;
+  margin: 0 calc(50% - 696px); 
+  padding: 50px;
+  border-radius: 25px;
+  scrollbar: false;
+  width: 100%;
+  border: 3px 0 solid;
+  border-color: #9580FF99;
+  background-color: #0009;
+  layout: horizontal;
+}
+
+element {
+  border: 0;
+  padding: 30px 10px;
+  margin: 30px;
+  border-radius: 25px;
+  orientation: vertical;
+  width: 250px;
+}
+
+element-icon, element-text {
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  enabled: false;
+}
+
+element selected {
+  border-color: #8AFF80CC;
+  border: 0 2px 0 2px solid;
+  color: #FFF;
+  background-color: #3335;
+}

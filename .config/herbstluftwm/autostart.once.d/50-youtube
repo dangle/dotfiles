@@ -1,0 +1,5 @@
+(
+    herbstclient rule once instance="youtube.com" class="Chromium" maxage=10 tag=reference index=0
+    exec gtk-launch YouTube
+) &
+

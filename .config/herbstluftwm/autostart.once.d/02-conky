@@ -1,0 +1,8 @@
+killall -q conky
+
+gtk-launch Conky
+
+while ! xdo lower -N Conky >/dev/null
+do
+    sleep 1
+done

@@ -1,0 +1,5 @@
+(
+    hc rule once instance="code" class="Code" maxage=10 tag=work index=10
+    exec gtk-launch visual-studio-code
+) &
+

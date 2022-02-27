@@ -1,0 +1,19 @@
+configuration {
+ modi: "window,drun,run";
+ combi-modi: "window,drun,ssh";
+
+    drun-display-format: "{icon}{name}";
+    display-drun: "";
+    display-window: "";
+    window-thumbnail: true;
+    show-icons: true;
+    hide-scrollbar: true;
+    disable-history: true;
+}
+
+@theme "apps"
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}

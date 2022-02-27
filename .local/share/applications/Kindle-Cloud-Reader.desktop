@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Kindle Cloud Reader
+Exec=/usr/bin/chromium --app=https://read.amazon.com
+Icon=Kindle-Cloud-Reader

@@ -1,0 +1,14 @@
+(
+    sleep 10
+    while [ ! -e /run/user/$(id)/pulse/native ]
+    do
+        sleep 10
+    done
+    virsh start win10
+    while [[ $(virsh domstate win10) != 'running' ]]
+    do
+        sleep 10
+    done
+    hc rule once instance="looking-glass-client" class="looking-glass-client" maxage=10 tag=windows index=e
+    exec /usr/local/bin/looking-glass
+) &

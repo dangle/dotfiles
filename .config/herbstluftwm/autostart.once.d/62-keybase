@@ -1,0 +1,4 @@
+(
+    hc rule instance="keybase" class="Keybase" maxage=30 tag=chat index=11
+    exec gtk-launch keybase
+) &

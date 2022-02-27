@@ -1,0 +1,2 @@
+setxkbmap -option compose:caps
+setxkbmap -option compose:ralt

@@ -1,0 +1,2 @@
+herbstclient keybind Print spawn gnome-screenshot
+herbstclient keybind Control-Shift-4 spawn gnome-screenshot -a
