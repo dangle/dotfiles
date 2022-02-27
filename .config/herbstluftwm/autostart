@@ -44,9 +44,9 @@ hc keybind $Mod-Control-Alt-Right   resize right +$resizestep
 # tags
 mon1_names=( chat windows corporate )
 mon2_names=( dev web scratch )
-mon3_names=( reference )
-tag_names=( chat dev reference web scratch windows corporate )
-tag_keys=( {1..7} )
+mon3_names=( reference vm )
+tag_names=( chat dev reference web scratch windows corporate vm )
+tag_keys=( {1..8} )
 
 hc rename default "${tag_names[0]}" || true
 for i in "${!tag_names[@]}" ; do

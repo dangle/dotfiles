@@ -22,6 +22,9 @@ case "$workspace" in
     windows)
         logo=
         ;;
+    vm)
+        logo=
+        ;;
     reference)
         logo=
         ;;
