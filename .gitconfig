@@ -1,0 +1,73 @@
+[user]
+	name = Melissa Nuño
+	email = dangle@users.noreply.github.com
+
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    f = flow feature
+    fco = flow feature checkout
+    fs = flow feature start
+    fp = flow feature publish
+    unstage = reset HEAD --
+    lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    undo-commit = reset --soft HEAD^
+    full-diff = diff 4b825dc642cb6eb9a060e54bf8d69288fbee4904 HEAD
+    change-date = "!f() { \
+                       LANG= GIT_AUTHOR_DATE=\"$1\" GIT_COMMITTER_DATE=\"$1\" git commit --amend --date \"$1\"; \
+                    }; f"
+
+[push]
+    default = simple
+
+[merge]
+    summary = true
+    tool = "p4merge" 
+[mergetool "p4merge"]
+    cmd = "$HOME"/bin/p4merge \
+           "$PWD/$BASE" \
+           "$PWD/$LOCAL" \
+           "$PWD/$REMOTE" \
+           "$PWD/$MERGED" 
+    keepBackup = false
+    trustExitCode = false
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+	ui = true
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+	commit = yellow bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[core]
+	autocrlf = input
+    safecrlf = true
+    pager = diff-so-fancy | less --tabs=4 -RFX
+	eol = lf
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
