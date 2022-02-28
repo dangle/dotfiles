@@ -79,12 +79,13 @@ set noshowmode
 " Show line numbers
 set number
 
+colorscheme monokai
+
 " Use a transparent background
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 
 let g:lightline = { 'colorscheme': 'jellybeans' }
-
 
 "==============================================================================
 " File formats
