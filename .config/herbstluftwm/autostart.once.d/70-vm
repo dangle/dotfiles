@@ -1,14 +1,21 @@
+#!/bin/bash
+
+function _launch-vms() {
+sleep 10
 (
     herbstclient rule instance="virt-manager" class="Virt-manager" maxage=30 tag=vm index=10
-    virt-manager -c qemu+ssh://dangle@192.168.28.2/system --show-domain-console tumtum
-) &
-
+    herbstclient spawn virt-manager -c qemu+ssh://dangle@192.168.28.2/system --show-domain-console tumtum
+)
 (
     herbstclient rule instance="virt-manager" class="Virt-manager" maxage=30 tag=vm index=10
-    virt-manager -c qemu+ssh://dangle@192.168.28.2/system --show-domain-console borogove
-) &
-
+    herbstclient spawn virt-manager -c qemu+ssh://dangle@192.168.28.2/system --show-domain-console borogove
+)
 (
     herbstclient rule instance="nxplayer.bin" class="Nxplayer.bin" maxage=30 tag=windows index=0 fullscreen=1
-    /usr/NX/bin/nxplayer --session /home/dangle/Documents/NoMachine/Jubjub.nxs
-) &
+    herbstclient spawn /usr/NX/bin/nxplayer --session /home/dangle/Documents/NoMachine/Jubjub.nxs
+)
+}
+
+_launch-vms &
+
+unset -f _launch-vms
