@@ -25,6 +25,9 @@ case "$workspace" in
     vm)
         logo=
         ;;
+    gaming)
+        logo=
+        ;;
     reference)
         logo=
         ;;
