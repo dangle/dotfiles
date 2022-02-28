@@ -1,1 +1,1 @@
-/usr/lib/notification-daemon-1.0/notification-daemon -r
+/usr/lib/notification-daemon-1.0/notification-daemon -r & disown
