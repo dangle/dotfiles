@@ -10,20 +10,20 @@ LOGOUT=
 case "${@}" in
     ${SHUTDOWN})
         ssh ecco sudo systemctl poweroff
-        systemctl poweroff >/dev/null
+        sudo systemctl poweroff >/dev/null
         exit 0
         ;;
     ${REBOOT})
         ssh ecco sudo systemctl reboot
-        systemctl poweroff >/dev/null
+        sudo systemctl poweroff >/dev/null
         exit 0
         ;;
     ${SLEEP})
-        systemctl hybrid-sleep
+        sudo systemctl hybrid-sleep
         exit 0
         ;;
     ${HIBERNATE})
-        systemctl hibernate
+        sudo systemctl hibernate
         exit 0
         ;;
     ${LOCK})
