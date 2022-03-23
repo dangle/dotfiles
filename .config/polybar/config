@@ -112,9 +112,9 @@ background = ${colors.background}
 
 [bar/status]
 inherit = base/bar
-modules-left = wifi wired
+modules-left = wifi wired donotdisturb
 modules-center = host
-modules-right = system
+modules-right = system gmail
 
 #bottom = true
 width = 20%
@@ -201,6 +201,15 @@ interval = 0.5
 click-left = ~/.config/polybar/scripts/toggle_bluetooth.sh
 
 
+[module/donotdisturb]
+type = custom/script
+format-foreground = ${colors.pink}
+format-padding = 3
+exec = ~/.config/polybar/scripts/get_do_not_disturb.sh
+interval = 0.5
+click-left = ~/.config/polybar/scripts/toggle_dnd.sh
+
+
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
@@ -258,3 +267,8 @@ content-foreground = ${colors.pink}
 content-padding = 3
 content = "%{T5}%{T-}"
 
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/gmail/launch.py --prefix '%{T8}%{T-}' --nosound
+tail = true
+click-left = xdg-open https://mail.google.com
