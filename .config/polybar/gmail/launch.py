@@ -29,10 +29,7 @@ def print_count(count, is_odd=False):
     output = ''
     if count > 0:
         output = unread_prefix + tilde + str(count)
-        output = (unread_prefix).strip()
-    else:
-        output = (args.prefix + ' ' + tilde).strip()
-        output = '\n'
+        output = unread_prefix
     print(output, flush=True)
 
 
