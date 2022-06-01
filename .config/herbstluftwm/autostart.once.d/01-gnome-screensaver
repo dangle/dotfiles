@@ -6,18 +6,33 @@ function disable_blanking() {
     xset dpms 0 0 0
 }
 
+function sleep_display() {
+    while true
+    do
+        xset -display :1 dpms force off
+        sleep 30
+    done
+}
+
 function mute_on_lock() {
+    local sleeper=0
+
     dbus-monitor --session "type='signal',interface='org.gnome.ScreenSaver'" |
     while read x; do
         case "$x" in 
             *"boolean true"*)
                 playerctl pause
                 pactl set-sink-mute @DEFAULT_SINK@ 1
-                xset -display :1 dpms force off
+                sleep_display &
+                sleeper=$!
                 ;;
             *"boolean false"*)
                 pactl set-sink-mute @DEFAULT_SINK@ 0
                 disable_blanking
+                if [[ ${sleeper} -gt 0 ]]
+                then
+                    kill ${sleeper}
+                fi
                 ;;
         esac
     done
