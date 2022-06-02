@@ -79,7 +79,7 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # ---- SSH Agents -------------------------------------------------------------
 if [[ $(uname) == "Linux" && -n "$DESKTOP_SESSION" ]]
 then
-    eval $(gnome-keyring-daemon --start)
+    eval $(gnome-keyring-daemon --start 2>/dev/null)
     export SSH_AUTH_SOCK
 fi
 #==============================================================================
