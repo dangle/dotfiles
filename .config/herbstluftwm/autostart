@@ -153,7 +153,9 @@ hc set auto_detect_panels off
 # unlock, just to be sure
 hc unlock
 
-hc detect_monitors
+hc set_monitors 3840x1600+0+640 \
+3840x1600+0+2240 \
+2160x3840+3840+0
 
 hc lock
 MONITOR_PADDING=40
