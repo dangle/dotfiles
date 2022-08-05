@@ -72,6 +72,8 @@ bindkey '^[[F'  end-of-line        # End
 # Configure keys for the history-substring-search plugin
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
+export PATH="$PATH:$HOME/bin"
 #==============================================================================
 
 
