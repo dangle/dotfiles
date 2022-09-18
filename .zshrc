@@ -136,6 +136,12 @@ alias vim=nvim
 
 
 
+#---- Kubernetes Configuration ------------------------------------------------
+source <(kubectl completion zsh)
+#==============================================================================
+
+
+
 #---- Machine Specific Configuration ------------------------------------------
 if [ -f ~/.zshrc.local ]
 then
