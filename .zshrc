@@ -145,4 +145,4 @@ fi
 
 
 alias ls="ls --color"
-alias upgrayedd="script -qc 'yay -Syyuu --batchinstall --noconfirm' /dev/null | lolcat"
+alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --noconfirm' /dev/null | lolcat"
