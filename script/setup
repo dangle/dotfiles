@@ -4,6 +4,6 @@ set -xe
 
 chsh -s /usr/bin/zsh
 
-for f in *; do
+for f in * .*; do
   ln -sf "$(realpath "${f}")" ~/
 done
