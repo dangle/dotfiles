@@ -4,6 +4,9 @@ set -xe
 
 chsh -s /usr/bin/zsh
 
-for f in * .*; do
-  ln -sf "$(realpath "${f}")" ~/
-done
+if [ -f /usr/bin/apt-get ]; then
+  sudo apt-get update
+  sudo apt-get install -y yadm
+fi
+
+yadm clone https://github.com/dangle/dotfiles
