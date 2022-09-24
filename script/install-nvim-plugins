@@ -1,0 +1,3 @@
+:PlugInstall
+:q
+:q
