@@ -1,4 +1,3 @@
-:PlugInstall
-:!sleep 30
+:PlugInstall<CR>
 :q
 :q
