@@ -2,11 +2,31 @@
 
 set -xe
 
+# Set ZSH as default shell
 chsh -s /usr/bin/zsh
 
+# Install common utils on Debian-based distros
 if [ -f /usr/bin/apt-get ]; then
   sudo apt-get update
-  sudo apt-get install -y yadm
+  sudo apt-get install -y \
+    yadm \
+    neovim
 fi
 
+# Clone dotfiles
 yadm clone https://github.com/dangle/dotfiles
+
+# Install vim-plug and plugins
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim --headless -s <(<<EOF
+:PlugInstall
+:q
+:q
+EOF
+) >/dev/null 2>&1
+
+# Install diff-so-pretty
+mkdir -p ~/bin || true
+wget -P ~/bin https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/diff-so-fancy
+chmod +x ~/bin/diff-so-fancy
