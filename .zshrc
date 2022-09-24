@@ -44,7 +44,7 @@ antigen bundle zsh-users/zsh-history-substring-search
 
 antigen theme spaceship-prompt/spaceship-prompt
 
-antigen apply
+antigen apply > /dev/null
 #==============================================================================
 
 
