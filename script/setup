@@ -23,5 +23,5 @@ nvim --headless -s ~/script/install-nvim-plugins
 
 # Install diff-so-pretty
 mkdir -p ~/bin || true
-wget -P ~/bin https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/diff-so-fancy
+wget -P ~/bin https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
 chmod +x ~/bin/diff-so-fancy
