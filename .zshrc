@@ -11,7 +11,6 @@ export SPACESHIP_PROMPT_ORDER=(
   docker
   aws
   venv
-  pyenv
   kubectl
   terraform
   exec_time
