@@ -8,7 +8,6 @@ export SPACESHIP_PROMPT_ORDER=(
   node
   golang
   rust
-  docker
   aws
   venv
   kubectl
@@ -20,6 +19,7 @@ export SPACESHIP_PROMPT_ORDER=(
   char
 )
 export SPACESHIP_EXIT_CODE_SHOW
+export SPACESHIP_PROMPT_ASYNC=false
 export DISABLE_AUTO_TITLE="true"
 #==============================================================================
 
