@@ -1,3 +1,4 @@
 :PlugInstall
+:!sleep 30
 :q
 :q
