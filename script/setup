@@ -16,7 +16,7 @@ if [ -f /usr/bin/apt-get ]; then
 fi
 
 # Clone dotfiles
-yadm clone https://github.com/dangle/dotfiles
+yadm clone -f https://github.com/dangle/dotfiles
 
 # Install vim-plug and plugins
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
