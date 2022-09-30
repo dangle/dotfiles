@@ -146,7 +146,10 @@ if [ -f ~/.zshrc.local ]
 then
     source ~/.zshrc.local
 fi
-source ~/.*fleetrc
+
+setopt +o nomatch
+source ~/.*fleetrc 2>/dev/null
+setopt -o nomatch
 #==============================================================================
 
 
