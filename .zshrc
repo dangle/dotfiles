@@ -8,10 +8,8 @@ export SPACESHIP_PROMPT_ORDER=(
   node
   golang
   rust
-  docker
   aws
   venv
-  pyenv
   kubectl
   terraform
   exec_time
@@ -21,6 +19,7 @@ export SPACESHIP_PROMPT_ORDER=(
   char
 )
 export SPACESHIP_EXIT_CODE_SHOW
+export SPACESHIP_PROMPT_ASYNC=false
 export DISABLE_AUTO_TITLE="true"
 #==============================================================================
 
@@ -43,9 +42,9 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 
-antigen theme denysdovhan/spaceship-prompt
+antigen theme spaceship-prompt/spaceship-prompt
 
-antigen apply
+antigen apply > /dev/null
 #==============================================================================
 
 
