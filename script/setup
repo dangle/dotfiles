@@ -12,7 +12,8 @@ if [ -f /usr/bin/apt-get ]; then
     yadm \
     neovim \
     tmux \
-    bat
+    bat \
+    kitty-terminfo
 fi
 
 # Clone dotfiles

@@ -136,12 +136,15 @@ alias vim=nvim
 
 
 #---- Kubernetes Configuration ------------------------------------------------
-source <(kubectl completion zsh)
-alias k=kubectl
-alias kctx='kubectl config use-context'
-alias kg='kubectl get'
-alias kl='kubectl logs'
-alias klf='kubectl logs -f'
+if command -v kubectl &>/dev/null
+then
+    source <(kubectl completion zsh)
+    alias k=kubectl
+    alias kctx='kubectl config use-context'
+    alias kg='kubectl get'
+    alias kl='kubectl logs'
+    alias klf='kubectl logs -f'
+fi
 #==============================================================================
 
 
