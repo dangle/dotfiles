@@ -12,7 +12,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Control-Shift-q quit
 hc keybind $Mod-Control-Shift-r reload
 hc keybind $Mod-Shift-c close
-hc keybind $Mod-Return spawn alacritty
+hc keybind $Mod-Return spawn kitty
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -140,6 +140,8 @@ hc rule focus=on # normally focus new clients
 hc rule index=e
 # give focus to most common terminals
 hc rule class~'.*[Tt]ilda.*' manage=off
+hc rule class~'.*[Ss]team.*' floating=on
+hc rule class~'.*\.exe' floating=on
 hc rule class~'.*[Gg]nome-calculator' floating=on
 hc rule class~'.*[Gg]nome-screenshot' floating=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' floating=on
