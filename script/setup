@@ -6,7 +6,7 @@ set -xe
 chsh -s /usr/bin/zsh
 
 # Install common utils on Debian-based distros
-if [ -f /usr/bin/apt-get ]; then
+if command -v /usr/bin/apt-get &>/dev/null; then
   sudo apt-get update
   sudo apt-get install -y \
     yadm \
