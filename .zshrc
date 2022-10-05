@@ -149,6 +149,35 @@ fi
 
 
 
+#---- Codespaces Configuration ------------------------------------------------
+if command -v gh &>/dev/null
+then
+    function cs() {
+        local ws="${1}"
+        local index="${2:-0}"
+        local cs=$(PAGER= gh cs list -L 1 --json name -q ".[${index}].name")
+        local disp=$(PAGER= gh cs list -L 1 --json displayName -q ".[${index}].displayName")
+        local title=""
+
+        if [[ ! -z "${ws}" ]]; then
+            if [[ ${index} > 0 && ! -z "${disp}" ]]; then
+                title="${ws} [${disp}]"
+            else
+                title="${ws}"
+            fi
+        elif [[ ! -z "${disp}" ]]; then
+            title="${disp}"
+        fi
+
+        command -v kitty &>/dev/null && kitty @ set-tab-title "${title}"
+        gh cs ssh -c "${cs}" -- -t "cd /workspaces/${ws} 2>/dev/null || cd /workspaces 2>/dev/null ; zsh"
+        command -v kitty &>/dev/null && kitty @ set-tab-title ""
+    }
+fi
+#==============================================================================
+
+
+
 #---- Machine Specific Configuration ------------------------------------------
 if [ -f ~/.zshrc.local ]
 then
