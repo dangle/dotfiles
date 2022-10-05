@@ -1,4 +1,4 @@
-#---- Spaceship Prompt Configuration ------------------------------------------
+#---- Spaceship Prompt Configuration -------------------------------------------
 export SPACESHIP_PROMPT_ORDER=(
     user
     dir
@@ -21,9 +21,9 @@ export SPACESHIP_PROMPT_ORDER=(
 export SPACESHIP_EXIT_CODE_SHOW
 export SPACESHIP_PROMPT_ASYNC=false
 export DISABLE_AUTO_TITLE="true"
-#==============================================================================
+#===============================================================================
 
-#---- ZSH Plugins -------------------------------------------------------------
+#---- ZSH Plugins --------------------------------------------------------------
 source ~/.antigen.zsh
 
 antigen use oh-my-zsh
@@ -42,10 +42,10 @@ antigen bundle zsh-users/zsh-history-substring-search
 
 antigen theme spaceship-prompt/spaceship-prompt
 
-antigen apply >/dev/null 2>&1
-#==============================================================================
+antigen apply &>/dev/null
+#===============================================================================
 
-#---- ZSH Configuration -------------------------------------------------------
+#---- ZSH Configuration --------------------------------------------------------
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 unsetopt correct_all
@@ -69,16 +69,16 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 export PATH="$PATH:$HOME/bin"
-#==============================================================================
+#===============================================================================
 
-# ---- SSH Agents -------------------------------------------------------------
+# ---- SSH Agents --------------------------------------------------------------
 if [[ $(uname) == "Linux" && -n "$DESKTOP_SESSION" ]]; then
     eval $(gnome-keyring-daemon --start 2>/dev/null)
     export SSH_AUTH_SOCK
 fi
-#==============================================================================
+#===============================================================================
 
-#---- Python Configuration ----------------------------------------------------
+#---- Python Configuration -----------------------------------------------------
 export PYTHONDONTWRITEBYTECODE=1
 
 if command -v pyenv &>/dev/null; then
@@ -89,33 +89,37 @@ if command -v pyenv &>/dev/null; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
-#==============================================================================
+#===============================================================================
 
-#---- NPM Configuration -------------------------------------------------------
+#---- NPM Configuration --------------------------------------------------------
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-#==============================================================================
+#===============================================================================
 
-#---- Golang Configuration ----------------------------------------------------
+#---- Golang Configuration -----------------------------------------------------
 export GOPATH="$HOME/go"
 export PATH="$HOME/go/bin:$PATH"
-#==============================================================================
+#===============================================================================
 
-#---- Rust Configuration ------------------------------------------------------
+#---- Rust Configuration -------------------------------------------------------
 export PATH="$HOME/.cargo/bin:$PATH"
-#==============================================================================
+#===============================================================================
 
-#---- Editor Configuration ----------------------------------------------------
+#---- Editor Configuration -----------------------------------------------------
 export EDITOR=nvim
 export QUOTING_STYLE=literal
 
-alias vi=nvim
-alias vim=nvim
-#==============================================================================
+if command -v nvim &>/dev/null; then
+    alias vi=nvim
+    alias vim=nvim
+elif command -v vim &>/dev/null; then
+    alias vi=vim
+fi
+#===============================================================================
 
-#---- Kubernetes Configuration ------------------------------------------------
+#---- Kubernetes Configuration -------------------------------------------------
 if command -v kubectl &>/dev/null; then
     source <(kubectl completion zsh)
     alias k=kubectl
@@ -124,9 +128,9 @@ if command -v kubectl &>/dev/null; then
     alias kl='kubectl logs'
     alias klf='kubectl logs -f'
 fi
-#==============================================================================
+#===============================================================================
 
-#---- Codespaces Configuration ------------------------------------------------
+#---- Codespaces Configuration -------------------------------------------------
 if command -v gh &>/dev/null; then
     function cs() {
         local ws="${1}"
@@ -146,13 +150,15 @@ if command -v gh &>/dev/null; then
         fi
 
         command -v kitty &>/dev/null && kitty @ set-tab-title "${title}"
-        gh cs ssh -c "${cs}" -- -t "cd /workspaces/${ws} 2>/dev/null || cd /workspaces 2>/dev/null ; zsh"
+        gh cs ssh -c "${cs}" -- \
+            -t \
+            "cd /workspaces/${ws} 2>/dev/null || cd /workspaces ; zsh"
         command -v kitty &>/dev/null && kitty @ set-tab-title ""
     }
 fi
-#==============================================================================
+#===============================================================================
 
-#---- Machine Specific Configuration ------------------------------------------
+#---- Machine Specific Configuration -------------------------------------------
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
@@ -160,10 +166,10 @@ fi
 setopt +o nomatch
 source ~/.*fleetrc 2>/dev/null
 setopt -o nomatch
-#==============================================================================
+#===============================================================================
 
-#---- Aliases -----------------------------------------------------------------
+#---- Aliases ------------------------------------------------------------------
 alias ls="ls --color"
 alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --noconfirm' /dev/null | lolcat"
 alias hc=herbstclient
-#==============================================================================
+#===============================================================================
