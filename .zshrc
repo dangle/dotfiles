@@ -122,6 +122,7 @@ fi
 #---- Kubernetes Configuration -------------------------------------------------
 if command -v kubectl &>/dev/null; then
     source <(kubectl completion zsh)
+    command -v kubecolor >/dev/null 2>&1 && alias kubectl=kubecolor
     alias k=kubectl
     alias kctx='kubectl config use-context'
     alias kg='kubectl get'
