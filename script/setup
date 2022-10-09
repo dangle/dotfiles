@@ -16,6 +16,10 @@ if command -v /usr/bin/apt-get &>/dev/null; then
     kitty-terminfo
 fi
 
+if command -v go &>/dev/null; then
+  go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
+fi
+
 # Clone dotfiles
 yadm clone -f https://github.com/dangle/dotfiles
 
