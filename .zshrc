@@ -149,11 +149,11 @@ if command -v gh &>/dev/null; then
             title="${disp}"
         fi
 
-        command -v kitty &>/dev/null && kitty @ set-tab-title "${title}"
+        command -v kitty &>/dev/null && [[ "${TERM}" == "xterm-kitty" ]] && kitty @ set-tab-title "${title}"
         gh cs ssh -c "${cs}" -- \
             -t \
             "cd /workspaces/${ws} 2>/dev/null || cd /workspaces ; zsh"
-        command -v kitty &>/dev/null && kitty @ set-tab-title ""
+        command -v kitty &>/dev/null && [[ "${TERM}" == "xterm-kitty" ]] && kitty @ set-tab-title ""
     }
 fi
 #===============================================================================
