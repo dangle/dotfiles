@@ -11,6 +11,10 @@ sleep 10
     herbstclient spawn virt-manager -c qemu+ssh://dangle@ecco/system --show-domain-console borogove
 )
 (
+    herbstclient rule instance="virt-manager" class="Virt-manager" maxage=30 tag=reference index=10
+    herbstclient spawn virt-manager -c qemu+ssh://dangle@ecco/system --show-domain-console work-win11
+)
+(
     herbstclient rule instance="nxplayer.bin" class="Nxplayer.bin" maxage=30 tag=windows index=0 fullscreen=1
     herbstclient spawn /usr/NX/bin/nxplayer --session /home/dangle/Documents/NoMachine/Jubjub.nxs
 )
