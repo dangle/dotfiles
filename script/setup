@@ -17,7 +17,7 @@ if command -v /usr/bin/apt-get &>/dev/null; then
 fi
 
 if command -v go &>/dev/null; then
-  go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
+  go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 fi
 
 # Clone dotfiles
