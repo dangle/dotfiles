@@ -2,13 +2,11 @@
 
 set -xe
 
-# Set ZSH as default shell
-chsh -s /usr/bin/zsh
-
 # Install common utils on Debian-based distros
 if command -v /usr/bin/apt-get &>/dev/null; then
   sudo apt-get update
   sudo apt-get install -y \
+    zsh \
     yadm \
     neovim \
     tmux \
@@ -19,6 +17,9 @@ fi
 if command -v go &>/dev/null; then
   go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 fi
+
+# Set ZSH as default shell
+chsh -s /usr/bin/zsh
 
 # Clone dotfiles
 yadm clone -f https://github.com/dangle/dotfiles

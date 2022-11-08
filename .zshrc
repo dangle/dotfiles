@@ -21,6 +21,7 @@ export SPACESHIP_PROMPT_ORDER=(
 export SPACESHIP_EXIT_CODE_SHOW
 export SPACESHIP_PROMPT_ASYNC=false
 export DISABLE_AUTO_TITLE="true"
+export POSIXLY_CORRECT=1
 #===============================================================================
 
 #---- ZSH Plugins --------------------------------------------------------------
@@ -126,6 +127,7 @@ if command -v kubectl &>/dev/null; then
       alias kubectl=kubecolor && \
       compdef kubecolor=kubectl
     alias k=kubectl
+    compdef k=kubectl
     alias kctx='kubectl config use-context'
     alias kg='kubectl get'
     alias kl='kubectl logs'
