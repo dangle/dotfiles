@@ -9,6 +9,7 @@ export SPACESHIP_PROMPT_ORDER=(
     golang
     rust
     aws
+    python
     venv
     kubectl
     terraform

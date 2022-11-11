@@ -14,6 +14,19 @@ if command -v /usr/bin/apt-get &>/dev/null; then
     kitty-terminfo
 fi
 
+# Install common utils on Arch-based distros
+if command -v /usr/bin/pacman &>/dev/null; then
+    sudo pacman -Sy --noconfirm \
+        python-pynvim \
+        zsh \
+        yadm \
+        neovim \
+        tmux \
+        bat \
+        kitty-terminfo
+fi
+
+# Install kubecolor if go exists
 if command -v go &>/dev/null; then
   go install github.com/dty1er/kubecolor/cmd/kubecolor@latest
 fi
