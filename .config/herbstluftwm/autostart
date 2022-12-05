@@ -12,7 +12,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Control-Shift-q quit
 hc keybind $Mod-Control-Shift-r reload
 hc keybind $Mod-Shift-c close
-hc keybind $Mod-Return spawn kitty
+hc keybind $Mod-Return spawn alacritty
 
 # basic movement in tiling and floating mode
 # focusing clients

@@ -38,9 +38,9 @@ function mute_on_lock() {
     done
 }
 
-gnome-screensaver &
-disable_blanking
-mute_on_lock &
+gnome-screensaver & disown
+disable_blanking disown
+mute_on_lock & disown
 hc keybind $Mod-l spawn gnome-screensaver-command -l
 
 
