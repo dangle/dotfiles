@@ -2,3 +2,4 @@
     sleep 2
     picom -b
 ) & disown
+sleep 2
