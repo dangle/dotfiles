@@ -155,9 +155,9 @@ hc set auto_detect_panels off
 # unlock, just to be sure
 hc unlock
 
-hc set_monitors 3840x1600+0+640 \
-3840x1600+0+2240 \
-2160x3840+3840+0
+hc set_monitors 3840x1600+0+0 \
+3840x1600+0+1600 \
+2160x3840+3840+900
 
 hc lock
 MONITOR_PADDING=40
@@ -189,17 +189,17 @@ spawn_with_rules() {(
 }
 
 for script in ~/.config/herbstluftwm/keybindings.d/* ; do
-	source "$script" &
-done
-
-for script in ~/.config/herbstluftwm/autostart.d/* ; do
-	source "$script" &
+	source "$script"
 done
 
 if hc silent new_attr bool my_not_first_autostart ; then
     for script in ~/.config/herbstluftwm/autostart.once.d/* ; do
-        source "$script" &
+        source "$script"
     done
 fi
+
+for script in ~/.config/herbstluftwm/autostart.d/* ; do
+	source "$script"
+done
 
 hc focus_monitor 1
