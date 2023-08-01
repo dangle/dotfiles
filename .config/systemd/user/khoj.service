@@ -1,0 +1,8 @@
+[Unit]
+Description=Auto start script at Gnome startup
+
+[Service]
+ExecStart=/home/dangle/.pyenv/shims/khoj
+
+[Install]
+WantedBy=default.target
