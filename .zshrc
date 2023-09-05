@@ -69,7 +69,7 @@ bindkey '^[[F' end-of-line       # End
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
-export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 #===============================================================================
 
 # ---- SSH Agents --------------------------------------------------------------
@@ -101,7 +101,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #---- Golang Configuration -----------------------------------------------------
 export GOPATH="$HOME/go"
-export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 #===============================================================================
 
 #---- Rust Configuration -------------------------------------------------------
