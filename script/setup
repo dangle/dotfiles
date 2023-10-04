@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-set -xe
+set -x
 
 # Install common utils on Debian-based distros
 if command -v /usr/bin/apt-get &>/dev/null; then
+  sudo add-apt-repository ppa:aos1/diff-so-fancy
   sudo apt-get update
   sudo apt-get install -y \
     zsh \
@@ -11,7 +12,8 @@ if command -v /usr/bin/apt-get &>/dev/null; then
     neovim \
     tmux \
     bat \
-    kitty-terminfo
+    kitty-terminfo \
+    diff-so-fancy
 fi
 
 # Install common utils on Arch-based distros
@@ -41,8 +43,3 @@ yadm clone -f https://github.com/dangle/dotfiles
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 nvim +PlugInstall +UpdateRemotePlugins +qall
-
-# Install diff-so-pretty
-mkdir -p ~/bin || true
-wget -P ~/bin https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
-chmod +x ~/bin/diff-so-fancy
