@@ -6,18 +6,12 @@ set -x
 if command -v /usr/bin/apt-get &>/dev/null; then
   sudo apt-get update
   sudo apt-get install -y \
-    software-properties-common \
-    python3-launchpadlib
-  sudo add-apt-repository -y ppa:aos1/diff-so-fancy
-  sudo apt-get update
-  sudo apt-get install -y \
     zsh \
     yadm \
     neovim \
     tmux \
     bat \
-    kitty-terminfo \
-    diff-so-fancy
+    kitty-terminfo
 fi
 
 # Install common utils on Arch-based distros
@@ -47,3 +41,7 @@ yadm clone -f https://github.com/dangle/dotfiles
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 nvim +PlugInstall +UpdateRemotePlugins +qall
+
+# Install diff-so-fancy
+git clone https://github.com/so-fancy/diff-so-fancy.git ~/bin/diff-so-fancy
+ln -s ~/bin/diff-so-fancy/diff-so-fancy ~/bin/
