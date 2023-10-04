@@ -43,5 +43,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +UpdateRemotePlugins +qall
 
 # Install diff-so-fancy
-git clone https://github.com/so-fancy/diff-so-fancy.git ~/bin/diff-so-fancy
-ln -s ~/bin/diff-so-fancy/diff-so-fancy ~/bin/
+git clone https://github.com/so-fancy/diff-so-fancy.git ~/.diff-so-fancy
+ln -s ~/.diff-so-fancy/diff-so-fancy ~/bin/
