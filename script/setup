@@ -44,4 +44,5 @@ nvim +PlugInstall +UpdateRemotePlugins +qall
 
 # Install diff-so-fancy
 git clone https://github.com/so-fancy/diff-so-fancy.git ~/.diff-so-fancy
+mkdir -p ~/bin/
 ln -s ~/.diff-so-fancy/diff-so-fancy ~/bin/
