@@ -36,6 +36,7 @@ chsh -s /usr/bin/zsh
 
 # Clone dotfiles
 yadm clone -f https://github.com/dangle/dotfiles
+yadm reset --hard HEAD
 
 # Install vim-plug and plugins
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
