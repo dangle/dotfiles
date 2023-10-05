@@ -34,6 +34,8 @@ fi
 # Set ZSH as default shell
 chsh -s /usr/bin/zsh
 
+env
+
 # Clone dotfiles
 yadm clone -f https://github.com/dangle/dotfiles
 yadm reset --hard HEAD
