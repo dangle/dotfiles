@@ -73,8 +73,12 @@
 	defaultBranch = main
 [fetch]
 	prune = true
-
-[url "ssh://git@github.com"]
-    insteadOf = https://github.com
 [safe]
 	directory = *
+
+{% if env.CODESPACES == true %}
+{% else %}
+[url "ssh://git@github.com"]
+    insteadOf = https://github.com
+{% endif %}
+

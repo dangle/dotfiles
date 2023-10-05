@@ -188,6 +188,8 @@ spawn_with_rules() {(
     ) &
 }
 
+hc setenv GTK_THEME Adwaita:dark
+
 for script in ~/.config/herbstluftwm/keybindings.d/* ; do
 	source "$script"
 done
