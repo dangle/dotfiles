@@ -76,6 +76,8 @@
 [safe]
 	directory = *
 
+{{ env.PWD }}
+
 {% if env.PWD == "/workspaces/.codespaces/.persistedshare/dotfiles" %}
 {% else %}
 [url "ssh://git@github.com"]
