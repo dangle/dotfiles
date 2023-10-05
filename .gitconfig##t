@@ -76,7 +76,7 @@
 [safe]
 	directory = *
 
-{% if env.PWD == /workspaces/.codespaces/.persistedshare/dotfiles %}
+{% if env.PWD == "/workspaces/.codespaces/.persistedshare/dotfiles" %}
 {% else %}
 [url "ssh://git@github.com"]
     insteadOf = https://github.com
