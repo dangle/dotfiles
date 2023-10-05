@@ -79,6 +79,6 @@
 {% if env.PWD == "/workspaces/.codespaces/.persistedshare/dotfiles" %}
 {% else %}
 [url "ssh://git@github.com"]
-    insteadOf = env.PWD
+    insteadOf =  {{ env.PWD }}
 {% endif %}
 
