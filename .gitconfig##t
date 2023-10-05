@@ -76,7 +76,7 @@
 [safe]
 	directory = *
 
-{% if yadm.OS == "debian" %}
+{% if yadm.distro == "debian" %}
 {% else %}
 [url "ssh://git@github.com"]
     insteadOf =  https://github.com
