@@ -1,6 +1,10 @@
 #!/bin/bash
 
-sleep 3  # Wait for picom
+until pids=$(pidof picom)
+do
+    sleep 1
+done
+
 
 killall -q tilda
 while pgrep -u ${UID} -x tilda >/dev/null
