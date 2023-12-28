@@ -1,0 +1,75 @@
+[[colors.indexed_colors]]
+color = "0xfc6d24"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xbe643c"
+index = 17
+
+[[colors.indexed_colors]]
+color = "0x303030"
+index = 18
+
+[[colors.indexed_colors]]
+color = "0x505050"
+index = 19
+
+[[colors.indexed_colors]]
+color = "0xd0d0d0"
+index = 20
+
+[[colors.indexed_colors]]
+color = "0xf5f5f5"
+index = 21
+
+[colors.bright]
+black = "0xb0b0b0"
+blue = "0x6fb3d2"
+cyan = "0x76c7b7"
+green = "0xa1c659"
+magenta = "0xd381c3"
+red = "0xfb0120"
+white = "0xffffff"
+yellow = "0xfda331"
+
+[colors.cursor]
+cursor = "0xe0e0e0"
+text = "0x000000"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x6fb3d2"
+cyan = "0x76c7b7"
+green = "0xa1c659"
+magenta = "0xd381c3"
+red = "0xfb0120"
+white = "0xe0e0e0"
+yellow = "0xfda331"
+
+[colors.primary]
+background = "0x000000"
+foreground = "0xe0e0e0"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "Fira Code"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Control|Shift"
+
+[window]
+decorations = "full"
+opacity = 0.7
+startup_mode = "Windowed"
+
+[window.padding]
+x = 14
+y = 14
