@@ -1,0 +1,1 @@
+hc keybind Control-$Mod-Alt-Return spawn ~/.config/herbstluftwm/scripts/toggle-monitors.sh
