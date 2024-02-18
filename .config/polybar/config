@@ -114,7 +114,7 @@ background = ${colors.background}
 inherit = base/bar
 modules-left = wifi wired donotdisturb
 modules-center = host
-modules-right = system gmail
+modules-right = system gmail protonmail
 
 #bottom = true
 width = 20%
@@ -272,3 +272,10 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py --prefix '%{T8}%{T-}' --nosound
 tail = true
 click-left = xdg-open https://mail.google.com
+
+[module/protonmail]
+type = custom/script
+exec = bar-protonmail -f polybar -b '%{T8}%{T-}'
+interval = 10
+click-left = xdg-open https://mail.proton.me/u/0/inbox
+
