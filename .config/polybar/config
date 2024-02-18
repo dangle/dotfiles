@@ -275,7 +275,7 @@ click-left = xdg-open https://mail.google.com
 
 [module/protonmail]
 type = custom/script
-exec = bar-protonmail -f polybar -b '%{T8}%{T-}'
+exec = bar-protonmail -f polybar -b '%{T8}%{T-}' -dn
 interval = 10
 click-left = xdg-open https://mail.proton.me/u/0/inbox
 
