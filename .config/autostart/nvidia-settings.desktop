@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=nvidia-settings
+Exec=/usr/bin/nvidia-settings -l
+Icon=system-run
+Comment=Load nvidia-settings config at login
