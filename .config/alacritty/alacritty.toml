@@ -73,3 +73,6 @@ startup_mode = "Windowed"
 [window.padding]
 x = 14
 y = 14
+
+[shell]
+program = "tmux"
