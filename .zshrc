@@ -48,6 +48,7 @@ antigen apply &>/dev/null
 
 #---- ZSH Configuration --------------------------------------------------------
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+export SHELL=/usr/bin/zsh
 
 unsetopt correct_all
 setopt extended_glob
