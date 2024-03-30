@@ -67,7 +67,7 @@ mods = "Control|Shift"
 
 [window]
 decorations = "full"
-#opacity = 0.7
+opacity = 0.7
 startup_mode = "Windowed"
 
 [window.padding]
