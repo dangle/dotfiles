@@ -1,0 +1,4 @@
+(
+    hc rule instance="slack" class="Slack" maxage=30 tag=business index=01
+    exec gtk-launch slack
+) & disown

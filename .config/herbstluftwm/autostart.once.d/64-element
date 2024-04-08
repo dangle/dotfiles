@@ -1,4 +1,4 @@
 (
-    hc rule instance="element" class="Element" maxage=30 tag=chat index=11
+    hc rule instance="element" class="Element" maxage=30 tag=business index=10
     exec gtk-launch io.element.Element
 ) &
