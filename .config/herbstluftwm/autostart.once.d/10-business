@@ -1,4 +1,4 @@
-hc load chat "
+hc load business "
 (split horizontal:0.5:1
 )
 "
