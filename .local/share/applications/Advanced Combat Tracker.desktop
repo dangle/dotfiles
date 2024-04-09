@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Advanced Combat Tracker
+Exec=/home/dangle/bin/act
+Type=Application
+StartupNotify=true
+Path=/home/dangle/.xlcore/wineprefix/dosdevices/c:/Program Files (x86)/Advanced Combat Tracker
+Icon=6B9D_Advanced Combat Tracker.0
+StartupWMClass=advanced combat tracker.exe

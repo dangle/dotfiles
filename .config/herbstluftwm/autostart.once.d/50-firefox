@@ -13,7 +13,7 @@ hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web ind
 
     if [[ $(wmctrl -lx | grep "Navigator.firefox" | wc -l) == "1" ]]; then
         (
-            hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=10
+            hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=11
             hc spawn firefox
         )
     fi
