@@ -6,7 +6,7 @@ case "$workspace" in
     dev | work)
         logo=
         ;;
-    scratch)
+    scratch | notes)
         logo=
         ;;
     web)
@@ -16,7 +16,7 @@ case "$workspace" in
         extra=" web"
         logo=
         ;;
-    chat)
+    chat | business)
         logo=
         ;;
     windows)
