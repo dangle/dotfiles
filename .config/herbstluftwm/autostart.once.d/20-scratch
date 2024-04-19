@@ -1,9 +1,0 @@
-herbstclient load scratch "
-(split horizontal:0.82:0
-    (split horizontal:0.22:0
-        (clients vertical:0)
-        (clients vertical:0)
-    )
-    (clients vertical:0)
-)
-"
