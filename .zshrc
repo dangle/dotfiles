@@ -178,4 +178,8 @@ setopt -o nomatch
 alias ls="ls --color"
 alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --noconfirm' /dev/null | lolcat"
 alias hc=herbstclient
+
+if [ -f /usr/bin/batcat ]; then
+    alias bat=batcat
+fi
 #===============================================================================
