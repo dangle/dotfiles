@@ -178,6 +178,7 @@ setopt -o nomatch
 alias ls="ls --color"
 alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
 alias hc=herbstclient
+alias ssh="ssh -A"
 
 if [ -f /usr/bin/batcat ]; then
     alias bat=batcat
