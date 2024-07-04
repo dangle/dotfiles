@@ -37,7 +37,7 @@ mkdir -p ~/bin/
 ln -s ~/.diff-so-fancy/diff-so-fancy ~/bin/
 
 # Set ZSH as default shell
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh "${USER}"
 
 env
 

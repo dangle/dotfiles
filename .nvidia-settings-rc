@@ -2,7 +2,7 @@
 # /home/dangle/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Fri Jun 21 23:52:02 2024
+# Generated on Wed Jul  3 17:26:07 2024
 #
 
 # ConfigProperties:
@@ -12,9 +12,9 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = Memory_Used_(GPU_0),Yes,3000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
 
 # Attributes:
 
@@ -29,50 +29,62 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 0/OpenGLImageSettings=1
 0/FSAAAppEnhanced=0
 0/ShowGraphicsVisualIndicator=0
-[DPY:DP-0.3]/Dithering=0
-[DPY:DP-0.3]/DitheringMode=0
-[DPY:DP-0.3]/DitheringDepth=0
-[DPY:DP-0.3]/ColorSpace=0
-[DPY:DP-0.3]/ColorRange=0
-[DPY:DP-0.3]/SynchronousPaletteUpdates=0
-[DPY:DP-2.3]/RedBrightness=0.000000
-[DPY:DP-2.3]/GreenBrightness=0.000000
-[DPY:DP-2.3]/BlueBrightness=0.000000
-[DPY:DP-2.3]/RedContrast=0.000000
-[DPY:DP-2.3]/GreenContrast=0.000000
-[DPY:DP-2.3]/BlueContrast=0.000000
-[DPY:DP-2.3]/RedGamma=1.000000
-[DPY:DP-2.3]/GreenGamma=1.000000
-[DPY:DP-2.3]/BlueGamma=1.000000
 [DPY:DP-2.3]/Dithering=0
 [DPY:DP-2.3]/DitheringMode=0
 [DPY:DP-2.3]/DitheringDepth=0
-[DPY:DP-2.3]/DigitalVibrance=400
 [DPY:DP-2.3]/ColorSpace=0
 [DPY:DP-2.3]/ColorRange=0
 [DPY:DP-2.3]/SynchronousPaletteUpdates=0
+[DPY:DP-2.2]/Dithering=0
+[DPY:DP-2.2]/DitheringMode=0
+[DPY:DP-2.2]/DitheringDepth=0
+[DPY:DP-2.2]/ColorSpace=0
+[DPY:DP-2.2]/ColorRange=0
+[DPY:DP-2.2]/SynchronousPaletteUpdates=0
 [DPY:DP-2.2.8]/Dithering=0
 [DPY:DP-2.2.8]/DitheringMode=0
 [DPY:DP-2.2.8]/DitheringDepth=0
 [DPY:DP-2.2.8]/ColorSpace=0
 [DPY:DP-2.2.8]/ColorRange=0
 [DPY:DP-2.2.8]/SynchronousPaletteUpdates=0
-[DPY:DP-2.2]/RedBrightness=0.000000
-[DPY:DP-2.2]/GreenBrightness=0.000000
-[DPY:DP-2.2]/BlueBrightness=0.000000
-[DPY:DP-2.2]/RedContrast=0.000000
-[DPY:DP-2.2]/GreenContrast=0.000000
-[DPY:DP-2.2]/BlueContrast=0.000000
-[DPY:DP-2.2]/RedGamma=1.000000
-[DPY:DP-2.2]/GreenGamma=1.000000
-[DPY:DP-2.2]/BlueGamma=1.000000
-[DPY:DP-2.2]/Dithering=0
-[DPY:DP-2.2]/DitheringMode=3
-[DPY:DP-2.2]/DitheringDepth=0
-[DPY:DP-2.2]/DigitalVibrance=400
-[DPY:DP-2.2]/ColorSpace=0
-[DPY:DP-2.2]/ColorRange=0
-[DPY:DP-2.2]/SynchronousPaletteUpdates=0
+[DPY:DP-0.3]/RedBrightness=0.000000
+[DPY:DP-0.3]/GreenBrightness=0.000000
+[DPY:DP-0.3]/BlueBrightness=0.000000
+[DPY:DP-0.3]/RedContrast=0.000000
+[DPY:DP-0.3]/GreenContrast=0.000000
+[DPY:DP-0.3]/BlueContrast=0.000000
+[DPY:DP-0.3]/RedGamma=1.000000
+[DPY:DP-0.3]/GreenGamma=1.000000
+[DPY:DP-0.3]/BlueGamma=1.000000
+[DPY:DP-0.3]/Dithering=0
+[DPY:DP-0.3]/DitheringMode=0
+[DPY:DP-0.3]/DitheringDepth=0
+[DPY:DP-0.3]/DigitalVibrance=400
+[DPY:DP-0.3]/ColorSpace=0
+[DPY:DP-0.3]/ColorRange=0
+[DPY:DP-0.3]/SynchronousPaletteUpdates=0
+[DPY:DP-0.2]/RedBrightness=0.000000
+[DPY:DP-0.2]/GreenBrightness=0.000000
+[DPY:DP-0.2]/BlueBrightness=0.000000
+[DPY:DP-0.2]/RedContrast=0.000000
+[DPY:DP-0.2]/GreenContrast=0.000000
+[DPY:DP-0.2]/BlueContrast=0.000000
+[DPY:DP-0.2]/RedGamma=1.000000
+[DPY:DP-0.2]/GreenGamma=1.000000
+[DPY:DP-0.2]/BlueGamma=1.000000
+[DPY:DP-0.2]/Dithering=0
+[DPY:DP-0.2]/DitheringMode=3
+[DPY:DP-0.2]/DitheringDepth=0
+[DPY:DP-0.2]/DigitalVibrance=400
+[DPY:DP-0.2]/ColorSpace=0
+[DPY:DP-0.2]/ColorRange=0
+[DPY:DP-0.2]/SynchronousPaletteUpdates=0
+[DPY:DP-0.2.8]/Dithering=0
+[DPY:DP-0.2.8]/DitheringMode=0
+[DPY:DP-0.2.8]/DitheringDepth=0
+[DPY:DP-0.2.8]/ColorSpace=0
+[DPY:DP-0.2.8]/ColorRange=0
+[DPY:DP-0.2.8]/SynchronousPaletteUpdates=0
 [DPY:DP-0]/Dithering=0
 [DPY:DP-0]/DitheringMode=0
 [DPY:DP-0]/DitheringDepth=0
