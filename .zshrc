@@ -60,16 +60,21 @@ if [[ "${OSTYPE}" == "linux"* ]]; then
     bindkey '\e[2~' overwrite-mode   # Insert
     bindkey '\e[3~' delete-char      # Delete
     bindkey '\eOF' end-of-line       # End
+fi
+
 # Configure OSX special keys
-elif [[ "${OSTYPE}" == "darwin"* ]]; then
+if [[ "${OSTYPE}" == "darwin"* ]]; then
     bindkey '^[[H' beginning-of-line # Home
-    bindkey "^[[2~" overwrite-mode   # Insert
-    bindkey "^[[3~" delete-char      # Delete
+    bindkey '^[[2~' overwrite-mode   # Insert
+    bindkey '^[[3~' delete-char      # Delete
     bindkey '^[[F' end-of-line       # End
-elif [[ "${USER}" == "vscode" ]]; then
+fi
+
+# Configure devcontainer special keys
+if [[ "${USER}" == "vscode" ]]; then
     bindkey '^[[1~' beginning-of-line # Home
-    bindkey "^[[2~" overwrite-mode   # Insert
-    bindkey "^[[3~" delete-char      # Delete
+    bindkey '^[[2~' overwrite-mode   # Insert
+    bindkey '^[[3~' delete-char      # Delete
     bindkey '^[[4~' end-of-line       # End
 fi
 
