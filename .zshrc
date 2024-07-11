@@ -71,7 +71,7 @@ if [[ "${OSTYPE}" == "darwin"* ]]; then
 fi
 
 # Configure devcontainer special keys
-if [[ "${USER}" == "vscode" ]]; then
+if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
     bindkey '^[[1~' beginning-of-line # Home
     bindkey '^[[2~' overwrite-mode   # Insert
     bindkey '^[[3~' delete-char      # Delete
