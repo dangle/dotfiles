@@ -42,12 +42,13 @@ sudo chsh -s /usr/bin/zsh "${USER}"
 env
 
 # Clone dotfiles
+yadm clone -f https://github.com/dangle/dotfiles
+yadm reset --hard HEAD
+
 if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
     yadm config local.class Container
 fi
 
-yadm clone -f https://github.com/dangle/dotfiles
-yadm reset --hard HEAD
 yadm alt
 
 # Install vim-plug and plugins
