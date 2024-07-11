@@ -149,6 +149,10 @@ fi
 #===============================================================================
 
 #---- Codespaces Configuration -------------------------------------------------
+if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
+    export CONTAINER=1
+fi
+
 if command -v gh &>/dev/null; then
     function cs() {
         local ws="${1}"
