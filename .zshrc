@@ -55,16 +55,23 @@ setopt extended_glob
 setopt HIST_IGNORE_ALL_DUPS
 
 # Configure special keys for some terminals
-bindkey '\eOH' beginning-of-line # Home
-bindkey '\e[2~' overwrite-mode   # Insert
-bindkey '\e[3~' delete-char      # Delete
-bindkey '\eOF' end-of-line       # End
-
+if [[ "${OSTYPE}" == "linux"* ]]; then
+    bindkey '\eOH' beginning-of-line # Home
+    bindkey '\e[2~' overwrite-mode   # Insert
+    bindkey '\e[3~' delete-char      # Delete
+    bindkey '\eOF' end-of-line       # End
 # Configure OSX special keys
-bindkey '^[[H' beginning-of-line # Home
-bindkey "^[[2~" overwrite-mode   # Insert
-bindkey "^[[3~" delete-char      # Delete
-bindkey '^[[F' end-of-line       # End
+elif [[ "${OSTYPE}" == "darwin"* ]]; then
+    bindkey '^[[H' beginning-of-line # Home
+    bindkey "^[[2~" overwrite-mode   # Insert
+    bindkey "^[[3~" delete-char      # Delete
+    bindkey '^[[F' end-of-line       # End
+elif [[ "${USER}" == "vscode" ]]; then
+    bindkey '^[[1~' beginning-of-line # Home
+    bindkey "^[[2~" overwrite-mode   # Insert
+    bindkey "^[[3~" delete-char      # Delete
+    bindkey '^[[4~' end-of-line       # End
+fi
 
 # Configure keys for the history-substring-search plugin
 bindkey "$terminfo[kcuu1]" history-substring-search-up
