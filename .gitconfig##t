@@ -24,6 +24,7 @@
 
 [push]
     default = simple
+    followTags = true
 
 [merge]
     summary = true
