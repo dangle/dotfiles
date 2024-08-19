@@ -120,8 +120,8 @@ hc attr theme.border_width 1
 
 hc attr theme.floating.border_width 1
 hc attr theme.floating.outer_width 0
-hc attr theme.floating.active.color '#FF5555'
-hc attr theme.floating.normal.color '#4776a6'
+hc attr theme.floating.active.color '#f16c7e'
+hc attr theme.floating.normal.color '#999999'
 hc attr theme.floating.padding_right 20
 
 hc attr theme.active.inner_color '#3E4A00'
