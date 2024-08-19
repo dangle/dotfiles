@@ -1,1 +1,1 @@
-herbstclient keybind $Mod-Shift-s spawn gnome-screenshot -a >/dev/null
+herbstclient keybind $Mod-Shift-s spawn gnome-screenshot -i >/dev/null
