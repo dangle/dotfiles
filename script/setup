@@ -11,6 +11,10 @@ if command -v /usr/bin/apt-get &>/dev/null; then
     neovim \
     tmux \
     bat \
+    ripgrep \
+    eza \
+    zoxide \
+    entr \
     kitty-terminfo
 fi
 
@@ -23,6 +27,10 @@ if command -v /usr/bin/pacman &>/dev/null; then
         neovim \
         tmux \
         bat \
+        ripgrep \
+        eza \
+        zoxide \
+        entr \
         kitty-terminfo
 fi
 

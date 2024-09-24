@@ -122,7 +122,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 #===============================================================================
 
 #---- Editor Configuration -----------------------------------------------------
-export EDITOR=nvim
+export VISUAL=nvim
+export EDITOR="${VISUAL}"
 export QUOTING_STYLE=literal
 
 if command -v nvim &>/dev/null; then
@@ -185,17 +186,17 @@ export JQ_COLORS='0;31:0;39:0;39:0;39:0;32:1;39:1;39'
 #===============================================================================
 
 #---- Machine Specific Configuration -------------------------------------------
-if [ -f ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi
-
 setopt +o nomatch
 source ~/.*fleetrc 2>/dev/null
 setopt -o nomatch
 #===============================================================================
 
 #---- Aliases ------------------------------------------------------------------
-alias ls="ls --color"
+eval "$(zoxide init zsh)"
+alias cd=z
+
+alias ls=eza
+alias ll="ls -alh"
 alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
 alias hc=herbstclient
 alias ssh="ssh -A"
