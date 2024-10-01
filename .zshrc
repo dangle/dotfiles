@@ -47,6 +47,12 @@ antigen theme spaceship-prompt/spaceship-prompt
 antigen apply &>/dev/null
 #===============================================================================
 
+#---- Codespaces Configuration -------------------------------------------------
+if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
+    export CONTAINER=1
+fi
+#===============================================================================
+
 #---- ZSH Configuration --------------------------------------------------------
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 export SHELL=/usr/bin/zsh
@@ -71,8 +77,8 @@ if [[ "${OSTYPE}" == "darwin"* ]]; then
     bindkey '^[[F' end-of-line       # End
 fi
 
-# Configure devcontainer special keys
-if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
+# Configure container special keys
+if [[ -v CONTAINER ]]; then
     bindkey '^[[1~' beginning-of-line # Home
     bindkey '^[[2~' overwrite-mode   # Insert
     bindkey '^[[3~' delete-char      # Delete
@@ -86,6 +92,38 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 #===============================================================================
 
+#---- Aliases ------------------------------------------------------------------
+eval "$(zoxide init zsh)"
+alias cd=z
+
+alias ls=eza
+alias ll="ls -alh"
+alias ssh="ssh -A"
+
+alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
+
+if [ -f /usr/bin/batcat ]; then
+    alias bat=batcat
+fi
+
+if [ -f /usr/bin/herbstclient ]; then
+    alias hc=herbstclient
+fi
+#===============================================================================
+
+#---- Editor Configuration -----------------------------------------------------
+export VISUAL=nvim
+export EDITOR="${VISUAL}"
+export QUOTING_STYLE=literal
+
+if command -v nvim &>/dev/null; then
+    alias vi=nvim
+    alias vim=nvim
+elif command -v vim &>/dev/null; then
+    alias vi=vim
+fi
+#===============================================================================
+
 # ---- SSH Agents --------------------------------------------------------------
 if [[ $(uname) == "Linux" && -n "$DESKTOP_SESSION" ]]; then
     eval $(gnome-keyring-daemon --start 2>/dev/null)
@@ -93,9 +131,16 @@ if [[ $(uname) == "Linux" && -n "$DESKTOP_SESSION" ]]; then
 fi
 #===============================================================================
 
+#---- JQ configuration ---------------------------------------------------------
+export JQ_COLORS='0;31:0;39:0;39:0;39:0;32:1;39:1;39'
+#===============================================================================
+
 #---- Python Configuration -----------------------------------------------------
+
+# Do not create *.pyc files
 export PYTHONDONTWRITEBYTECODE=1
 
+# Use pyenv if available
 if command -v pyenv &>/dev/null; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -122,87 +167,21 @@ export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 #===============================================================================
 
-#---- Editor Configuration -----------------------------------------------------
-export VISUAL=nvim
-export EDITOR="${VISUAL}"
-export QUOTING_STYLE=literal
-
-if command -v nvim &>/dev/null; then
-    alias vi=nvim
-    alias vim=nvim
-elif command -v vim &>/dev/null; then
-    alias vi=vim
-fi
-#===============================================================================
-
 #---- Kubernetes Configuration -------------------------------------------------
 if command -v kubectl &>/dev/null; then
+    # Kubernetes Completion
     source <(kubectl completion zsh)
+
+    # Use kubecolor of kubectl when available
     command -v kubecolor >/dev/null 2>&1 && \
       alias kubectl=kubecolor && \
       compdef kubecolor=kubectl
+
+    # Short aliases
     alias k=kubectl
     compdef k=kubectl
     alias kctx='kubectl config use-context'
     alias kg='kubectl get'
     alias kl='kubectl logs'
-    alias klf='kubectl logs -f'
-fi
-#===============================================================================
-
-#---- Codespaces Configuration -------------------------------------------------
-if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
-    export CONTAINER=1
-fi
-
-if command -v gh &>/dev/null; then
-    function cs() {
-        local ws="${1}"
-        local index="${2:-0}"
-        local cs=$(PAGER= gh cs list -L 1 --json name -q ".[${index}].name")
-        local disp=$(PAGER= gh cs list -L 1 --json displayName -q ".[${index}].displayName")
-        local title=""
-
-        if [[ ! -z "${ws}" ]]; then
-            if [[ ${index} > 0 && ! -z "${disp}" ]]; then
-                title="${ws} [${disp}]"
-            else
-                title="${ws}"
-            fi
-        elif [[ ! -z "${disp}" ]]; then
-            title="${disp}"
-        fi
-
-        command -v kitty &>/dev/null && [[ "${TERM}" == "xterm-kitty" ]] && kitty @ set-tab-title "${title}"
-        gh cs ssh -c "${cs}" -- \
-            -t \
-            "cd /workspaces/${ws} 2>/dev/null || cd /workspaces ; zsh"
-        command -v kitty &>/dev/null && [[ "${TERM}" == "xterm-kitty" ]] && kitty @ set-tab-title ""
-    }
-fi
-#===============================================================================
-
-#---- JQ configuration ---------------------------------------------------------
-export JQ_COLORS='0;31:0;39:0;39:0;39:0;32:1;39:1;39'
-#===============================================================================
-
-#---- Machine Specific Configuration -------------------------------------------
-setopt +o nomatch
-source ~/.*fleetrc 2>/dev/null
-setopt -o nomatch
-#===============================================================================
-
-#---- Aliases ------------------------------------------------------------------
-#eval "$(zoxide init zsh)"
-#alias cd=z
-
-alias ls=eza
-alias ll="ls -alh"
-alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
-alias hc=herbstclient
-alias ssh="ssh -A"
-
-if [ -f /usr/bin/batcat ]; then
-    alias bat=batcat
 fi
 #===============================================================================
