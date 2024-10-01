@@ -15,6 +15,7 @@ if command -v /usr/bin/apt-get &>/dev/null; then
     eza \
     zoxide \
     entr \
+    fd-find \
     kitty-terminfo
 fi
 
@@ -31,6 +32,7 @@ if command -v /usr/bin/pacman &>/dev/null; then
         eza \
         zoxide \
         entr \
+        fd \
         kitty-terminfo
 fi
 

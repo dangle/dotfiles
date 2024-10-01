@@ -40,6 +40,7 @@ antigen bundle systemd
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle unixorn/fzf-zsh-plugin@main
 
 antigen theme spaceship-prompt/spaceship-prompt
 
@@ -192,8 +193,8 @@ setopt -o nomatch
 #===============================================================================
 
 #---- Aliases ------------------------------------------------------------------
-eval "$(zoxide init zsh)"
-alias cd=z
+#eval "$(zoxide init zsh)"
+#alias cd=z
 
 alias ls=eza
 alias ll="ls -alh"
