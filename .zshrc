@@ -29,6 +29,8 @@ source ~/.antigen.zsh
 
 antigen use oh-my-zsh
 
+antigen theme spaceship-prompt/spaceship-prompt
+
 antigen bundle git
 antigen bundle git-extras
 antigen bundle python
@@ -38,11 +40,10 @@ antigen bundle docker
 antigen bundle sudo
 antigen bundle systemd
 antigen bundle command-not-found
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle unixorn/fzf-zsh-plugin@main
-
-antigen theme spaceship-prompt/spaceship-prompt
 
 antigen apply &>/dev/null
 #===============================================================================
