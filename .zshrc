@@ -90,7 +90,11 @@ fi
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
+# Add user and local binaries to PATH
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
+
+# Setup fzf keybindings
+source <(fzf --zsh)
 #===============================================================================
 
 #---- Aliases ------------------------------------------------------------------
