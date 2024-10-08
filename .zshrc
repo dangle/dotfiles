@@ -54,49 +54,6 @@ if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
 fi
 #===============================================================================
 
-#---- ZSH Configuration --------------------------------------------------------
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-export SHELL=/usr/bin/zsh
-
-unsetopt correct_all
-setopt extended_glob
-setopt HIST_IGNORE_ALL_DUPS
-
-# Configure special keys for some terminals
-if [[ "${OSTYPE}" == "linux"* ]]; then
-    bindkey '\eOH' beginning-of-line # Home
-    bindkey '\e[2~' overwrite-mode   # Insert
-    bindkey '\e[3~' delete-char      # Delete
-    bindkey '\eOF' end-of-line       # End
-fi
-
-# Configure OSX special keys
-if [[ "${OSTYPE}" == "darwin"* ]]; then
-    bindkey '^[[H' beginning-of-line # Home
-    bindkey '^[[2~' overwrite-mode   # Insert
-    bindkey '^[[3~' delete-char      # Delete
-    bindkey '^[[F' end-of-line       # End
-fi
-
-# Configure container special keys
-if [[ -v CONTAINER ]]; then
-    bindkey '^[[1~' beginning-of-line # Home
-    bindkey '^[[2~' overwrite-mode   # Insert
-    bindkey '^[[3~' delete-char      # Delete
-    bindkey '^[[4~' end-of-line       # End
-fi
-
-# Configure keys for the history-substring-search plugin
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# Add user and local binaries to PATH
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
-
-# Setup fzf keybindings
-source <(fzf --zsh)
-#===============================================================================
-
 #---- Aliases ------------------------------------------------------------------
 eval "$(zoxide init zsh)"
 alias cd=z
@@ -189,4 +146,47 @@ if command -v kubectl &>/dev/null; then
     alias kg='kubectl get'
     alias kl='kubectl logs'
 fi
+#===============================================================================
+
+#---- ZSH Configuration --------------------------------------------------------
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+export SHELL=/usr/bin/zsh
+
+unsetopt correct_all
+setopt extended_glob
+setopt HIST_IGNORE_ALL_DUPS
+
+# Configure special keys for some terminals
+if [[ "${OSTYPE}" == "linux"* ]]; then
+    bindkey '\eOH' beginning-of-line # Home
+    bindkey '\e[2~' overwrite-mode   # Insert
+    bindkey '\e[3~' delete-char      # Delete
+    bindkey '\eOF' end-of-line       # End
+fi
+
+# Configure OSX special keys
+if [[ "${OSTYPE}" == "darwin"* ]]; then
+    bindkey '^[[H' beginning-of-line # Home
+    bindkey '^[[2~' overwrite-mode   # Insert
+    bindkey '^[[3~' delete-char      # Delete
+    bindkey '^[[F' end-of-line       # End
+fi
+
+# Configure container special keys
+if [[ -v CONTAINER ]]; then
+    bindkey '^[[1~' beginning-of-line # Home
+    bindkey '^[[2~' overwrite-mode   # Insert
+    bindkey '^[[3~' delete-char      # Delete
+    bindkey '^[[4~' end-of-line       # End
+fi
+
+# Configure keys for the history-substring-search plugin
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# Add user and local binaries to PATH
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+
+# Setup fzf keybindings
+source <(fzf --zsh)
 #===============================================================================
