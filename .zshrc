@@ -152,6 +152,8 @@ fi
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 export SHELL=/usr/bin/zsh
 
+. ~/.wezterm.sh
+
 unsetopt correct_all
 setopt extended_glob
 setopt HIST_IGNORE_ALL_DUPS
