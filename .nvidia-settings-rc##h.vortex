@@ -2,7 +2,7 @@
 # /home/dangle/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Sat Oct  5 18:14:11 2024
+# Generated on Mon Oct  7 11:02:30 2024
 #
 
 # ConfigProperties:
@@ -12,9 +12,9 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -67,7 +67,7 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 [DPY:DP-0.2]/GreenGamma=1.000000
 [DPY:DP-0.2]/BlueGamma=1.000000
 [DPY:DP-0.2]/Dithering=0
-[DPY:DP-0.2]/DitheringMode=0
+[DPY:DP-0.2]/DitheringMode=3
 [DPY:DP-0.2]/DitheringDepth=0
 [DPY:DP-0.2]/DigitalVibrance=400
 [DPY:DP-0.2]/ColorSpace=0
