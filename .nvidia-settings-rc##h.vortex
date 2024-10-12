@@ -2,7 +2,7 @@
 # /home/dangle/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Mon Oct  7 11:02:30 2024
+# Generated on Fri Oct 11 12:02:31 2024
 #
 
 # ConfigProperties:
@@ -68,7 +68,7 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 [DPY:DP-0.2]/BlueGamma=1.000000
 [DPY:DP-0.2]/Dithering=0
 [DPY:DP-0.2]/DitheringMode=3
-[DPY:DP-0.2]/DitheringDepth=0
+[DPY:DP-0.2]/DitheringDepth=1
 [DPY:DP-0.2]/DigitalVibrance=400
 [DPY:DP-0.2]/ColorSpace=0
 [DPY:DP-0.2]/ColorRange=0
