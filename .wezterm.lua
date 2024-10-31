@@ -6,6 +6,7 @@ config.window_background_opacity = 0.7
 config.font = wezterm.font 'Fira Code'
 config.font_size = 14
 
+config.window_decorations = "NONE"
 config.hide_tab_bar_if_only_one_tab = true
 
 config.scrollback_lines = 10000
