@@ -1,0 +1,4 @@
+(
+    hc rule instance="obsidian" class="obsidian" maxage=30 tag=notes index=01
+    exec gtk-launch obsidian
+) & disown
