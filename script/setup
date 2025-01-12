@@ -4,12 +4,12 @@ set -x
 
 function brew_install() {
     for arg in "${@}"; do
-        brew list "${arg}" || brew install "${arg}"
+        brew list "${arg}" > /dev/null || brew install "${arg}"
     done
 }
 
 # Install Homebrew
-if [ ! -d /home/linuxserver ]; then
+if [ ! -d /home/linuxbrew ]; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
