@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 function brew_install() {
     for arg in "${@}"; do
         brew list "${arg}" > /dev/null || brew install "${arg}"
@@ -11,15 +9,14 @@ function brew_install() {
 # Install Homebrew
 if [ ! -d /home/linuxbrew ]; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install glibc
+    brew install gcc
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install common utils
 brew_install \
-    glibc \
-    gcc \
-    zsh \
     yadm \
     neovim \
     tmux \
@@ -35,11 +32,16 @@ brew_install \
     kubecolor \
     python
 
-# Install python-pynvim to Homebrew
-/home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
-
 # Set ZSH as default shell
-sudo chsh -s /home/linuxbrew/.linuxbrew/bin/zsh "${USER}"
+sudo chsh -s /usr/bin/zsh "${USER}" || grep 'exec /home/linuxbrew/.linuxbrew/bin/zsh' ~/.bash_profile || {
+    brew_install zsh
+    echo 'exec /home/linuxbrew/.linuxbrew/bin/zsh' >> ~/.bash_profile
+}
+
+# Install python-pynvim
+if ! { /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\n' > /dev/null }; then
+    /home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
+fi
 
 if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
     yadm config local.class Container
