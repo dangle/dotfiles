@@ -23,7 +23,11 @@ brew install \
     fzf \
     eza \
     diff-so-fancy \
-    kubecolor
+    kubecolor \
+    python
+
+# Install python-pynvim to Homebrew
+/home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
 
 # Set ZSH as default shell
 sudo chsh -s /home/linuxbrew/.linuxbrew/bin/zsh "${USER}"

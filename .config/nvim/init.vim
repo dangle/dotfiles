@@ -1,3 +1,6 @@
+" Use Homebrew version of python3
+let g:python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
+
 "==============================================================================
 " Plugins (vim-plug) 
 "==============================================================================
