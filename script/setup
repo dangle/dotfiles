@@ -2,10 +2,14 @@
 
 set -x
 
-# Install common utils on Debian-based distros
-if command -v /usr/bin/apt-get &>/dev/null; then
-  sudo apt-get update
-  sudo apt-get install -y \
+# Install Homebrew
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# Install common utils
+brew install \
+    glibc \
+    gcc \
     zsh \
     yadm \
     neovim \
@@ -14,50 +18,15 @@ if command -v /usr/bin/apt-get &>/dev/null; then
     ripgrep \
     zoxide \
     entr \
-    fd-find \
+    fd \
     gpg \
-    kitty-terminfo
-
-    curl -sSL https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_$(dpkg --print-architecture).tar.gz | tar xz -C ~/bin
-
-    sudo mkdir -p /etc/apt/keyrings
-    wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg --yes
-    echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-    sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-    sudo apt update
-    sudo apt install -y eza
-fi
-
-# Install common utils on Arch-based distros
-if command -v /usr/bin/pacman &>/dev/null; then
-    sudo pacman -Sy --noconfirm \
-        python-pynvim \
-        zsh \
-        yadm \
-        neovim \
-        tmux \
-        bat \
-        ripgrep \
-        eza \
-        zoxide \
-        entr \
-        fd \
-        fzf \
-        kitty-terminfo
-fi
-
-# Install kubecolor if go exists
-if command -v go &>/dev/null; then
-  go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
-fi
-
-# Install diff-so-fancy
-git clone https://github.com/so-fancy/diff-so-fancy.git ~/.diff-so-fancy
-mkdir -p ~/bin/
-ln -s ~/.diff-so-fancy/diff-so-fancy ~/bin/
+    fzf \
+    eza \
+    diff-so-fancy \
+    kubecolor
 
 # Set ZSH as default shell
-sudo chsh -s /usr/bin/zsh "${USER}"
+sudo chsh -s /home/linuxbrew/.linuxbrew/bin/zsh "${USER}"
 
 env
 
