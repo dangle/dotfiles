@@ -196,3 +196,7 @@ export PATH="$HOME/bin:/usr/local/bin:$PATH"
 # Setup fzf keybindings
 source <(fzf --zsh)
 #===============================================================================
+
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
