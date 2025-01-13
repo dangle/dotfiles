@@ -34,7 +34,7 @@ brew_install \
     python
 
 # Set ZSH as default shell
-sudo chsh -s /usr/bin/zsh "${USER}" || grep 'exec /home/linuxbrew/.linuxbrew/bin/zsh' ~/.bash_profile || {
+sudo chsh -s /usr/bin/zsh "${USER}" || {
     brew_install zsh
 #    echo 'exec /home/linuxbrew/.linuxbrew/bin/zsh' >> ~/.bash_profile
 }
