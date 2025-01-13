@@ -9,8 +9,9 @@ function brew_install() {
 # Install Homebrew
 if [ ! -d /home/linuxbrew ]; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install glibc
-    brew install gcc
+    /home/linuxbrew/.linuxbrew/bin/brew update --force --quiet
+    /home/linuxbrew/.linuxbrew/bin/brew install glibc
+    /home/linuxbrew/.linuxbrew/bin/brew install gcc
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -35,11 +36,11 @@ brew_install \
 # Set ZSH as default shell
 sudo chsh -s /usr/bin/zsh "${USER}" || grep 'exec /home/linuxbrew/.linuxbrew/bin/zsh' ~/.bash_profile || {
     brew_install zsh
-    echo 'exec /home/linuxbrew/.linuxbrew/bin/zsh' >> ~/.bash_profile
+#    echo 'exec /home/linuxbrew/.linuxbrew/bin/zsh' >> ~/.bash_profile
 }
 
 # Install python-pynvim
-if ! { /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\n' > /dev/null }; then
+if ! /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\b' > /dev/null; then
     /home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
 fi
 
@@ -48,8 +49,8 @@ if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
     echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWRnIUgFh4FTnSCXySveVrOUCodTyigQNtlyupkIogX9XQADCIMUaFu3DjrTwFTlRiWIsJUWrpUajuZB7g8xs2tWsYZ2JomNENT1AJMu47g4zw0bUeqk35GJPNdLDM/QONTQMRMOF9VaHEN4S/WZjdtbscyOkMHvczVwyAHn62Db7KKLPK8Utci4qgSBPyzHmT7TSjzS81GRIegFum3/HRtyxQwyffK7D7HLctOTfcfThnfzi0i7aQDkrOSV2u7bpJLWfGqEVLOSv2lTpecwIr8uUWHx1+6akcJ0lIaJMOUWJbw0hU0rtUALHFlR0446NH2zE17kFDL+jdb/IEmypLv6Tdnjb/qJq0q3WURjOA8Oxco/aFtAyoCqt5XUgrcfHZeJzso7LY2yjXoNxlY8UtLdZ0dsCPslJi2fveCmxvUdih7CLdzWRbWRA3ZpxqlaGqAPxAP+E8W6BbZge5iXrpbNKR0lSPNswYAlIY1U1aOiGlYU6o4UdCD4Wi0IxaR+ZORk3LZFBna2/GGAJNQKK9cO5SYe7ii77DTaWJtN3S72E2n4GVVnZGoTw6VmhG0Lz4fmy+n7SpZqzGp1yPJc8GDQTaHTFbW3SkrO2s7dbK+8V72PLRTR17+ON/mWwS/EEHZazprLheFdIP3EABIouRR0d09KZvXmdbtpam1xc6OQ== melissa.nuno@gmail.com" > ~/.ssh/authorized_keys
 fi
 
+# Clone dotfiles
 if [ ! -d ~/.local/share/yadm/repo.git ]; then
-    # Clone dotfiles
     yadm clone -f https://github.com/dangle/dotfiles
     yadm reset --hard HEAD
     yadm alt
