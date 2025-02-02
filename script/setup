@@ -1,23 +1,53 @@
 #!/usr/bin/env bash
 
+function install_homebrew() {
+    if [ ! -d /home/linuxbrew ]; then
+        NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        /home/linuxbrew/.linuxbrew/bin/brew update --force --quiet
+        /home/linuxbrew/.linuxbrew/bin/brew install glibc
+        /home/linuxbrew/.linuxbrew/bin/brew install gcc
+    fi
+
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+}
+
+function update_pkg_db() {
+    if command -v apt-get 2>&1 >/dev/null; then
+        sudo apt-get update
+        sudo apt install -y gpg
+        sudo mkdir -p /etc/apt/keyrings
+        wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg --yes
+        echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+        sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+        sudo apt update
+    elif command -v pacman 2>&1 >/dev/null; then
+        sudo pacman -Sy
+    else
+        install_homebrew
+        brew update
+    fi
+}
+
 function brew_install() {
     for arg in "${@}"; do
-        brew list "${arg}" > /dev/null || brew install "${arg}"
+        brew list "${arg}" 2>&1 >/dev/null || brew install "${arg}"
     done
 }
 
-# Install Homebrew
-if [ ! -d /home/linuxbrew ]; then
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    /home/linuxbrew/.linuxbrew/bin/brew update --force --quiet
-    /home/linuxbrew/.linuxbrew/bin/brew install glibc
-    /home/linuxbrew/.linuxbrew/bin/brew install gcc
-fi
+function install_pkg() {
+    if command -v apt-get 2>&1 >/dev/null; then
+        sudo DEBIAN_FRONTEND=noninteractive apt-get install -y "${@}"
+    elif command -v pacman 2>&1 >/dev/null; then
+        sudo pacman -S "${@}" --noconfirm
+    else
+        brew_install "${@}"
+    fi
+}
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+update_pkg_db
 
 # Install common utils
-brew_install \
+install_pkg \
     yadm \
     neovim \
     tmux \
@@ -26,22 +56,25 @@ brew_install \
     zoxide \
     entr \
     fd \
-    gpg \
     fzf \
     eza \
     diff-so-fancy \
-    kubecolor \
     python
 
-# Set ZSH as default shell
-sudo chsh -s /usr/bin/zsh "${USER}" || {
-    brew_install zsh
-#    echo 'exec /home/linuxbrew/.linuxbrew/bin/zsh' >> ~/.bash_profile
-}
-
-# Install python-pynvim
-if ! /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\b' > /dev/null; then
+if command -v apt-get 2>&1 >/dev/null; then
+    curl -sSL https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_$(dpkg --print-architecture).tar.gz | tar xz -C ~/bin
+elif command -v pacman 2>&1 >/dev/null; then
+    sudo pacman -Sy python-pynvim --noconfirm
+elif ! /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\b' > /dev/null; then
     /home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
+fi
+
+# Set ZSH as default shell
+sudo chsh -s /bin/zsh "${USER}" || true
+
+# Install kubecolor if go exists
+if command -v go &>/dev/null; then
+  go install github.com/hidetatz/kubecolor/cmd/kubecolor@latest
 fi
 
 if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
