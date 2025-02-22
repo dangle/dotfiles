@@ -1,6 +1,13 @@
 [user]
 	name = Melissa Nuño
+{% if env.WSL_DISTRO_NAME != "Ubuntu" %}
 	email = dangle@users.noreply.github.com
+{% else %}
+	email = melissanuno@microsoft.com
+
+[credential]
+    helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{% endif %}
 
 [alias]
     co = checkout
@@ -77,12 +84,3 @@
 	defaultBranch = main
 [fetch]
 	prune = true
-[safe]
-	directory = *
-
-{% if yadm.distro == "Debian" %}
-{% else %}
-[url "ssh://git@github.com"]
-    insteadOf =  https://github.com
-{% endif %}
-
