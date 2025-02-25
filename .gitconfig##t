@@ -84,3 +84,5 @@
 	defaultBranch = main
 [fetch]
 	prune = true
+[safe]
+    directory = *
