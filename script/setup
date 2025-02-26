@@ -61,7 +61,7 @@ install_pkg \
 if command -v apt-get 2>&1 >/dev/null; then
     curl -sSL https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_$(dpkg --print-architecture).tar.gz | tar xz -C ~/bin
     mkdir -p ~/bin
-    (cd ~/bin && curl -O https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy)
+    (cd ~/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
     install_pkg fd-find python3
 elif command -v pacman 2>&1 >/dev/null; then
     install_pkg fd python diff-so-fancy
