@@ -19,6 +19,9 @@ function update_pkg_db() {
         wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg --yes
         echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
         sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+        curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg --yes
+        echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | sudo tee /etc/apt/sources.list.d/httpie.list > /dev/null
+        sudo chmod 644 /etc/apt/keyrings/httpie.gpg /etc/apt/sources.list.d/httpie.list
         sudo apt-get update
     elif command -v pacman 2>&1 >/dev/null; then
         sudo pacman -Sy
@@ -55,13 +58,14 @@ install_pkg \
     ripgrep \
     zoxide \
     entr \
-    fzf \
     eza \
-    git-absorb
+    git-absorb \
+    chafa \
+    exiftool \
+    httpie
 
 if command -v apt-get 2>&1 >/dev/null; then
-    curl -sSL https://github.com/junegunn/fzf/releases/download/v0.57.0/fzf-0.57.0-linux_$(dpkg --print-architecture).tar.gz | tar xz -C ~/bin
-    mkdir -p ~/bin
+    mkdir -p ~/.local/bin
     (cd ~/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
     install_pkg fd-find python3
 elif command -v pacman 2>&1 >/dev/null; then
@@ -73,6 +77,18 @@ fi
 
 # Set ZSH as default shell
 sudo chsh -s /bin/zsh "${USER}" || true
+
+# Install lesspipe.sh
+{
+    WORK_DIR=$(mktemp -d)
+    git clone https://github.com/wofr06/lesspipe.git "${WORK_DIR}"
+    cd "${WORK_DIR}"
+    ./configure --prefix "${HOME}./local/"
+    make && make install
+    [[ -d ~/.fpath ]] || mkdir ~/.fpath
+    cp _less ~/.fpath
+    rm -fr "${WORK_DIR}"
+} || true
 
 # Install kubecolor if go exists
 if command -v go &>/dev/null; then

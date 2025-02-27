@@ -11,7 +11,6 @@ export SPACESHIP_PROMPT_ORDER=(
     aws
     python
     venv
-    kubectl
     terraform
     exec_time
     line_sep
@@ -20,32 +19,20 @@ export SPACESHIP_PROMPT_ORDER=(
     char
 )
 export SPACESHIP_EXIT_CODE_SHOW
-export SPACESHIP_PROMPT_ASYNC=false
+export SPACESHIP_PROMPT_ASYNC=true
 export DISABLE_AUTO_TITLE="true"
 #===============================================================================
 
 #---- ZSH Plugins --------------------------------------------------------------
-source ~/.antigen.zsh
+[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
-antigen use oh-my-zsh
+. ${ZDOTDIR:-~}/.antidote/antidote.zsh
+. ~/.zstyle
 
-antigen theme spaceship-prompt/spaceship-prompt
+export ZOXIDE_CMD_OVERRIDE=cd
 
-antigen bundle git
-antigen bundle git-extras
-antigen bundle python
-antigen bundle pip
-antigen bundle aws
-antigen bundle docker
-antigen bundle sudo
-antigen bundle systemd
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle unixorn/fzf-zsh-plugin@main
-
-antigen apply &>/dev/null
+antidote load
 #===============================================================================
 
 #---- Codespaces Configuration -------------------------------------------------
@@ -54,25 +41,67 @@ if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
 fi
 #===============================================================================
 
-#---- Homebrew -----------------------------------------------------------------
+#---- Homebrew Configuration ---------------------------------------------------
 if [ -d /home/linuxbrew ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 #===============================================================================
 
-#---- Aliases ------------------------------------------------------------------
-eval "$(zoxide init zsh)"
-alias cd=z
+#---- ZSH Configuration --------------------------------------------------------
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
-alias ls=eza
-alias ll="ls -alh"
-alias ssh="ssh -A"
+# Hack: force SHELL value because VSCode launches zsh through bash
+export SHELL=/usr/bin/zsh
 
-alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
+# Add user and local binaries to PATH
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
-if [ -f /usr/bin/batcat ]; then
-    alias bat=batcat
+# Use less preprocessors
+export FPATH="${FPATH}:~/.fpath"
+export LESSOPEN='| lessfilter-fzf %s'
+
+# Add support for WezTerm
+. ~/.wezterm.sh
+
+# Setup fzf keybindings and completions
+source <(fzf --zsh)
+
+# Set zsh options
+unsetopt correct_all
+setopt extended_glob
+setopt HIST_IGNORE_ALL_DUPS
+
+# Configure special keys for some terminals
+if [[ "${OSTYPE}" == "linux"* ]]; then
+    bindkey '\eOH' beginning-of-line # Home
+    bindkey '\e[2~' overwrite-mode   # Insert
+    bindkey '\e[3~' delete-char      # Delete
+    bindkey '\eOF' end-of-line       # End
 fi
+
+# Configure OSX special keys
+if [[ "${OSTYPE}" == "darwin"* ]]; then
+    bindkey '^[[H' beginning-of-line # Home
+    bindkey '^[[2~' overwrite-mode   # Insert
+    bindkey '^[[3~' delete-char      # Delete
+    bindkey '^[[F' end-of-line       # End
+fi
+
+# Configure container special keys
+if [[ -v CONTAINER ]]; then
+    bindkey '^[[1~' beginning-of-line # Home
+    bindkey '^[[2~' overwrite-mode    # Insert
+    bindkey '^[[3~' delete-char       # Delete
+    bindkey '^[[4~' end-of-line       # End
+fi
+
+# Configure keys for the history-substring-search plugin
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+#===============================================================================
+
+#---- Aliases ------------------------------------------------------------------
+alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
 
 if [ -f /usr/bin/herbstclient ]; then
     alias hc=herbstclient
@@ -137,9 +166,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 #---- Kubernetes Configuration -------------------------------------------------
 if command -v kubectl &>/dev/null; then
-    # Kubernetes Completion
-    source <(kubectl completion zsh)
-
     # Use kubecolor of kubectl when available
     command -v kubecolor >/dev/null 2>&1 && \
       alias kubectl=kubecolor && \
@@ -151,54 +177,13 @@ if command -v kubectl &>/dev/null; then
     alias kctx='kubectl config use-context'
     alias kg='kubectl get'
     alias kl='kubectl logs'
+
+    command -v fzf >/dev/null 2>&1 && { 
+	    source <(kubectl completion zsh | sed 's#${requestComp} 2>/dev/null#${requestComp} 2>/dev/null | head -n -1 | fzf  --multi=0 #g')
+    }
 fi
-#===============================================================================
-
-#---- ZSH Configuration --------------------------------------------------------
-export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-export SHELL=/usr/bin/zsh
-
-. ~/.wezterm.sh
-
-unsetopt correct_all
-setopt extended_glob
-setopt HIST_IGNORE_ALL_DUPS
-
-# Configure special keys for some terminals
-if [[ "${OSTYPE}" == "linux"* ]]; then
-    bindkey '\eOH' beginning-of-line # Home
-    bindkey '\e[2~' overwrite-mode   # Insert
-    bindkey '\e[3~' delete-char      # Delete
-    bindkey '\eOF' end-of-line       # End
-fi
-
-# Configure OSX special keys
-if [[ "${OSTYPE}" == "darwin"* ]]; then
-    bindkey '^[[H' beginning-of-line # Home
-    bindkey '^[[2~' overwrite-mode   # Insert
-    bindkey '^[[3~' delete-char      # Delete
-    bindkey '^[[F' end-of-line       # End
-fi
-
-# Configure container special keys
-if [[ -v CONTAINER ]]; then
-    bindkey '^[[1~' beginning-of-line # Home
-    bindkey '^[[2~' overwrite-mode   # Insert
-    bindkey '^[[3~' delete-char      # Delete
-    bindkey '^[[4~' end-of-line       # End
-fi
-
-# Configure keys for the history-substring-search plugin
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# Add user and local binaries to PATH
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
-
-# Setup fzf keybindings
-source <(fzf --zsh)
 #===============================================================================
 
 if [ -f ~/.zshrc.local ]; then
-    source ~/.zshrc.local
+    . ~/.zshrc.local
 fi
