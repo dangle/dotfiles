@@ -65,6 +65,9 @@
 [commit]
     verbose = true
 
+[absorb]
+    autoStageIfNothingStaged = true
+
 [grep]
     patternType = perl
 
