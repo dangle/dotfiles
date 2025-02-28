@@ -54,7 +54,7 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 export SHELL=/usr/bin/zsh
 
 # Add user and local binaries to PATH
-export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # Use less preprocessors
 export FPATH="${FPATH}:~/.fpath"
