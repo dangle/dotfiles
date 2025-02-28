@@ -82,11 +82,12 @@ sudo chsh -s /bin/zsh "${USER}" || true
 {
     WORK_DIR=$(mktemp -d)
     git clone https://github.com/wofr06/lesspipe.git "${WORK_DIR}"
-    cd "${WORK_DIR}"
+    pushd "${WORK_DIR}"
     ./configure --prefix "${HOME}/.local/"
     make && make install
     [[ -d ~/.fpath ]] || mkdir ~/.fpath
     cp _less ~/.fpath
+    popd
     rm -fr "${WORK_DIR}"
 } || true
 
