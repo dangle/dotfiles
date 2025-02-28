@@ -66,7 +66,7 @@ install_pkg \
 
 if command -v apt-get 2>&1 >/dev/null; then
     mkdir -p ~/.local/bin
-    (cd ~/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
+    (cd ~/.local/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
     install_pkg fd-find python3
 elif command -v pacman 2>&1 >/dev/null; then
     install_pkg fd python diff-so-fancy
