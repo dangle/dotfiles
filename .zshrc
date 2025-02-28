@@ -30,8 +30,6 @@ export DISABLE_AUTO_TITLE="true"
 . ${ZDOTDIR:-~}/.antidote/antidote.zsh
 . ~/.zstyle
 
-export ZOXIDE_CMD_OVERRIDE=cd
-
 antidote load
 #===============================================================================
 
@@ -101,6 +99,8 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 #===============================================================================
 
 #---- Aliases ------------------------------------------------------------------
+alias cd=z
+
 alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
 
 if [ -f /usr/bin/herbstclient ]; then
