@@ -15,10 +15,6 @@ function update_pkg_db() {
     if command -v apt-get 2>&1 >/dev/null; then
         sudo apt-get update
         sudo apt-get install -y gpg
-        sudo mkdir -p /etc/apt/keyrings
-        wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg --yes
-        echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-        sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
         curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg --yes
         echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | sudo tee /etc/apt/sources.list.d/httpie.list > /dev/null
         sudo chmod 644 /etc/share/keyrings/httpie.gpg /etc/apt/sources.list.d/httpie.list
@@ -58,7 +54,6 @@ install_pkg \
     ripgrep \
     zoxide \
     entr \
-    eza \
     git-absorb \
     chafa \
     exiftool \
@@ -67,9 +62,13 @@ install_pkg \
 if command -v apt-get 2>&1 >/dev/null; then
     mkdir -p ~/.local/bin
     (cd ~/.local/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
+    wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+    sudo chmod +x eza
+    sudo chown root:root eza
+    sudo mv eza /usr/local/bin/eza
     install_pkg fd-find python3
 elif command -v pacman 2>&1 >/dev/null; then
-    install_pkg fd python diff-so-fancy
+    install_pkg fd python diff-so-fancy eza
     sudo pacman -Sy python-pynvim --noconfirm
 elif ! /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\b' > /dev/null; then
     /home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
