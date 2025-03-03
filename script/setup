@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ZDOTDIR=$(realpath "$(dirname -- "${BASH_SOURCE[0]}")")
+
 function install_homebrew() {
     if [ ! -d /home/linuxbrew ]; then
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -21,7 +23,7 @@ function update_pkg_db() {
         sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
         curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg --yes
         echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | sudo tee /etc/apt/sources.list.d/httpie.list > /dev/null
-        sudo chmod 644 /etc/apt/keyrings/httpie.gpg /etc/apt/sources.list.d/httpie.list
+        sudo chmod 644 /etc/share/keyrings/httpie.gpg /etc/apt/sources.list.d/httpie.list
         sudo apt-get update
     elif command -v pacman 2>&1 >/dev/null; then
         sudo pacman -Sy
@@ -112,3 +114,14 @@ fi
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 nvim +PlugInstall +UpdateRemotePlugins +qall
+
+zsh <<EOF
+[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+
+. ${ZDOTDIR:-~}/.antidote/antidote.zsh
+. ~/.zstyle
+
+antidote load
+EOF
+
