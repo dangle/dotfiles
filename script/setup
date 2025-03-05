@@ -58,7 +58,6 @@ install_pkg \
     tmux \
     bat \
     ripgrep \
-    zoxide \
     entr \
     eza \
     git-absorb \
@@ -69,9 +68,11 @@ install_pkg \
 if command -v apt-get 2>&1 >/dev/null; then
     mkdir -p ~/.local/bin
     (cd ~/.local/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+    (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --key-bindings --completion --no-update-rc)
     install_pkg fd-find python3
 elif command -v pacman 2>&1 >/dev/null; then
-    install_pkg fd python diff-so-fancy
+    install_pkg fd python diff-so-fancy zoxide
     sudo pacman -Sy python-pynvim --noconfirm
 elif ! /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\b' > /dev/null; then
     /home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
