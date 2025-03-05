@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-ZDOTDIR=$(realpath "$(dirname -- "${BASH_SOURCE[0]}")")
-
 function install_homebrew() {
     if [ ! -d /home/linuxbrew ]; then
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -117,12 +115,9 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +UpdateRemotePlugins +qall
 
 zsh <<EOF
-[[ -e ${ZDOTDIR:-~}/.antidote ]] ||
-  git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-
-. ${ZDOTDIR:-~}/.antidote/antidote.zsh
+git clone https://github.com/mattmc3/antidote.git ~/.antidote
+. ~/.antidote/antidote.zsh
 . ~/.zstyle
-
 antidote load
 EOF
 
