@@ -59,7 +59,7 @@ export FPATH="${FPATH}:~/.fpath"
 export LESSOPEN='| lessfilter-fzf %s'
 
 # Add support for WezTerm
-. ~/.wezterm.sh
+#. ~/.wezterm.sh
 
 # Setup fzf keybindings and completions
 source <(fzf --zsh)
