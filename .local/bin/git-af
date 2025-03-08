@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+git -c sequence.editor=: rebase --interactive --autosquash -- $(git log --pretty=%P -n 1 $(git cherry main -v | head -n 1 | awk '{print $2}'))
