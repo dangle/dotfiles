@@ -30,7 +30,7 @@ export DISABLE_AUTO_TITLE="true"
 . ${ZDOTDIR:-~}/.antidote/antidote.zsh
 . ~/.zstyle
 
-antidote load
+antidote load &>/dev/null
 #===============================================================================
 
 #---- Codespaces Configuration -------------------------------------------------
