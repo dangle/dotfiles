@@ -1,4 +1,4 @@
-spaceship-prompt/spaceship-prompt
+axieax/zsh-starship
 
 getantidote/use-omz
 ohmyzsh/ohmyzsh path:lib

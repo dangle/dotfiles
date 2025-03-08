@@ -76,6 +76,9 @@ elif ! /home/linuxbrew/.linuxbrew/bin/pip3 list | grep '\bpynvim\b' > /dev/null;
     /home/linuxbrew/.linuxbrew/bin/pip3 install 'pynvim @ git+https://github.com/neovim/pynvim' --break-system-packages
 fi
 
+# Install the Starship Prompt
+curl -sS https://starship.rs/install.sh | sh -s -- -y
+
 # Set ZSH as default shell
 sudo chsh -s /bin/zsh "${USER}" || true
 
