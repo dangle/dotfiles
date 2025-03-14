@@ -1,31 +1,8 @@
-#---- Spaceship Prompt Configuration -------------------------------------------
-export SPACESHIP_PROMPT_ORDER=(
-    user
-    dir
-    host
-    git
-    package
-    node
-    golang
-    rust
-    aws
-    python
-    venv
-    terraform
-    exec_time
-    line_sep
-    jobs
-    exit_code
-    char
-)
-export SPACESHIP_EXIT_CODE_SHOW
-export SPACESHIP_PROMPT_ASYNC=true
-export DISABLE_AUTO_TITLE="true"
-#===============================================================================
-
 #---- ZSH Plugins --------------------------------------------------------------
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
   git clone https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+
+export STARSHIP_LOG=error
 
 . ${ZDOTDIR:-~}/.antidote/antidote.zsh
 . ~/.zstyle
@@ -59,7 +36,7 @@ export FPATH="${FPATH}:~/.fpath"
 export LESSOPEN='| lessfilter-fzf %s'
 
 # Add support for WezTerm
-#. ~/.wezterm.sh
+. ~/.wezterm.sh
 
 # Setup fzf keybindings and completions
 source <(fzf --zsh)
