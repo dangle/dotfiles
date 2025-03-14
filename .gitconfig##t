@@ -16,14 +16,10 @@
     br = branch
     fix = commit --fixup=HEAD
     fixup = !sh -c 'git commit --fixup=$1' -
-    squash = !sh -c 'git commit --squash=$1' -
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p
     unstage = reset HEAD --
     lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     undo-commit = reset --soft HEAD^
-    full-diff = diff 4b825dc642cb6eb9a060e54bf8d69288fbee4904 HEAD
 
 [core]
 	autocrlf = false
