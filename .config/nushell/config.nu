@@ -66,7 +66,6 @@ alias ls-builtin = ls
 def ls [
     --all (-a),         # Show hidden files
     --long (-l),        # Get all available columns for each entry (slower; columns are platform-dependent)
-    --short-names (-s), # Only print the file names, and not the path
     --full-paths (-f),  # display paths as absolute paths
     --directory (-D),   # List the specified directory itself instead of its contents
     --mime-type (-m),   # Show mime-type in type column instead of 'file' (based on filenames only; files' contents are not examined)
@@ -74,6 +73,7 @@ def ls [
     ...pattern: glob,   # The glob pattern to use.
 ]: [ nothing -> table ] {
     let pattern = if ($pattern | is-empty) { [ '.' ] } else { $pattern }
+    let short_names = if ($full_paths) { false } else { true }
 
     if ($long) {
         (ls-builtin
@@ -98,7 +98,7 @@ def ls [
             --mime-type=$mime_type
             --threads=$threads
             ...$pattern
-        ) | select mode size user group modified name
+        ) | select mode type size user group modified name
     }
 }
 
