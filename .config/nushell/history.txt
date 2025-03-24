@@ -1,0 +1,127 @@
+ls
+ls -al
+ls -a
+ls -al
+cd /
+mkdir ($nu.data-dir | path join "vendor/autoload")<\n>starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+echo $nu.data-dir | path join "vendor/autoload"
+cd ~/.local/share/nushell/vendor/autoload/
+ls
+zoxide init nushell | save -f zoxide.nu
+config nu
+ls -al
+ls -a
+ls -al
+ll
+eza -l
+eza -al
+ls -l
+eza -l
+ls -l | sort-by inode
+ls
+ls -l | select mode user size modified name
+cd alfred
+z alfred
+ls
+echo $nu.data-dir | path join "vendor/autoload"
+open ~/.local/share/nushell/vendor/autoload/zoxide.nu
+cat ~/.local/share/nushell/vendor/autoload/zoxide.nu
+bat ~/.local/share/nushell/vendor/autoload/zoxide.nu
+open pdm.toml
+cat pdm.toml
+ls
+open pyproject.toml
+bat pyproject.toml
+alias cd=z
+alias cd = z
+cd ~/Desktop/
+cd ~
+alfred
+open ~/.local/share/nushell/vendor/autoload/zoxide.nu
+def --env cd [] { z }
+cd alfred
+def --env cd [...args] { z $args }
+cd alfred
+def --env cd [...args] { z $args... }
+def --env cd [...args] { z ...$args }
+cd alfred
+config nu
+cd alfred
+config nu
+cd alfred
+zoxide --help
+cat ~/.local/share/nushell/vendor/autoload/zoxide.nu
+config nu
+vim ~/.local/share/nushell/vendor/autoload/zoxide.nu
+cd alfred
+config nu
+cd alfred
+vim ~/.local/share/nushell/vendor/autoload/zoxide.nu
+cd alfred
+z alfred
+zoxide --help
+zoxide -V
+vim ~/.local/share/nushell/vendor/autoload/zoxide.nu
+zoxide init nushell --cmd cd | save -f zoxide.nu
+vim zoxide.nu
+rm zoxide.nu
+zoxide init nushell --cmd cd | save -f ~/.local/nushell/vendor/autoload/zoxide.nu
+zoxide init nushell --cmd cd | save -f ~/.local/share/nushell/vendor/autoload/zoxide.nu
+cd alfred
+vim zoxide.nu
+vim ~/.local/share/nushell/vendor/autoload/zoxide.nu
+config nu
+cat ~/.local/share/nushell/vendor/autoload/zoxide.nu
+cd alfred
+ls
+open src/alfred/cli.py
+open src/alfred/cli.py | highlight
+cat src/alfred/cli.py
+config nu
+open src/alfred/cli.py
+config nu
+open src/alfred/cli.py
+cd alfred
+open src/alfred/cli.py
+config nu
+ls
+config nu
+ls
+cd alfred
+open src/alfred/cli.py
+config nu
+open --raw src/alfred/cli.py
+open ~/.local/share/nushell/vendor/autoload/zoxide.nu
+open src/alfred/cli.py | bat
+open src/alfred/cli.py | bat --color=always
+open src/alfred/cli.py | bat --color always
+open src/alfred/cli.py | bat --color --language=python
+open src/alfred/cli.py | bat --color always --language=python
+bat src/alfred/cli.py
+config nu
+cd alfred
+open src/alfred/cli.py
+config nu
+cd alfred
+open src/alfred/cli.py
+echo $(echo Hello)
+config nu
+cd alfred
+open src/alfred/cli.py
+cd
+vim x.json
+open x.json
+open --raw x.json
+mimetype 
+rm x.json
+ls
+open --raw ~/Projects/github.com/dangle/alfred/src/alfred/cli.py
+config nu
+open --raw ~/Projects/github.com/dangle/alfred/src/alfred/cli.py
+config nu
+bat --help
+open --raw ~/Projects/github.com/dangle/alfred/src/alfred/cli.py | bat --color=always
+open --raw ~/Projects/github.com/dangle/alfred/src/alfred/cli.py | bat --color=always --language=python
+open --raw ~/Projects/github.com/dangle/alfred/src/alfred/cli.py | bat --color=always --language=auto
+open --raw ~/Projects/github.com/dangle/alfred/src/alfred/cli.py | bat --color=always
+ls

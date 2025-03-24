@@ -63,11 +63,12 @@ install_pkg \
     exiftool \
     httpie
 
+(git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --key-bindings --completion --no-update-rc)
+
 if command -v apt-get 2>&1 >/dev/null; then
     mkdir -p ~/.local/bin
     (cd ~/.local/bin && curl -sSLO https://github.com/so-fancy/diff-so-fancy/releases/download/v1.4.4/diff-so-fancy && chmod +x diff-so-fancy)
     curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
-    (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --key-bindings --completion --no-update-rc)
     install_pkg fd-find python3
 elif command -v pacman 2>&1 >/dev/null; then
     install_pkg fd python diff-so-fancy zoxide
@@ -102,7 +103,6 @@ fi
 
 if [[ "$(cat /proc/self/cgroup)" == "0::/" ]]; then
     yadm config local.class Container
-    echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWRnIUgFh4FTnSCXySveVrOUCodTyigQNtlyupkIogX9XQADCIMUaFu3DjrTwFTlRiWIsJUWrpUajuZB7g8xs2tWsYZ2JomNENT1AJMu47g4zw0bUeqk35GJPNdLDM/QONTQMRMOF9VaHEN4S/WZjdtbscyOkMHvczVwyAHn62Db7KKLPK8Utci4qgSBPyzHmT7TSjzS81GRIegFum3/HRtyxQwyffK7D7HLctOTfcfThnfzi0i7aQDkrOSV2u7bpJLWfGqEVLOSv2lTpecwIr8uUWHx1+6akcJ0lIaJMOUWJbw0hU0rtUALHFlR0446NH2zE17kFDL+jdb/IEmypLv6Tdnjb/qJq0q3WURjOA8Oxco/aFtAyoCqt5XUgrcfHZeJzso7LY2yjXoNxlY8UtLdZ0dsCPslJi2fveCmxvUdih7CLdzWRbWRA3ZpxqlaGqAPxAP+E8W6BbZge5iXrpbNKR0lSPNswYAlIY1U1aOiGlYU6o4UdCD4Wi0IxaR+ZORk3LZFBna2/GGAJNQKK9cO5SYe7ii77DTaWJtN3S72E2n4GVVnZGoTw6VmhG0Lz4fmy+n7SpZqzGp1yPJc8GDQTaHTFbW3SkrO2s7dbK+8V72PLRTR17+ON/mWwS/EEHZazprLheFdIP3EABIouRR0d09KZvXmdbtpam1xc6OQ== melissa.nuno@gmail.com" > ~/.ssh/authorized_keys
 fi
 
 # Clone dotfiles
