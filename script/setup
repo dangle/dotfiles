@@ -22,6 +22,8 @@ function update_pkg_db() {
         curl -SsL https://packages.httpie.io/deb/KEY.gpg | sudo gpg --dearmor -o /usr/share/keyrings/httpie.gpg --yes
         echo "deb [arch=amd64 signed-by=/usr/share/keyrings/httpie.gpg] https://packages.httpie.io/deb ./" | sudo tee /etc/apt/sources.list.d/httpie.list > /dev/null
         sudo chmod 644 /usr/share/keyrings/httpie.gpg /etc/apt/sources.list.d/httpie.list
+	curl -fsSL https://apt.fury.io/nushell/gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/fury-nushell.gpg
+	echo "deb https://apt.fury.io/nushell/ /" | sudo tee /etc/apt/sources.list.d/fury.list
         sudo apt-get update
     elif command -v pacman 2>&1 >/dev/null; then
         sudo pacman -Sy
@@ -61,7 +63,8 @@ install_pkg \
     git-absorb \
     chafa \
     exiftool \
-    httpie
+    httpie \
+    nushell
 
 (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --key-bindings --completion --no-update-rc)
 
