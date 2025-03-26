@@ -158,6 +158,8 @@ if command -v kubectl &>/dev/null; then
     command -v fzf >/dev/null 2>&1 && { 
 	    source <(kubectl completion zsh | sed 's#${requestComp} 2>/dev/null#${requestComp} 2>/dev/null | head -n -1 | fzf  --multi=0 #g')
     }
+
+    export PATH="$HOME/.krew/bin"
 fi
 #===============================================================================
 
