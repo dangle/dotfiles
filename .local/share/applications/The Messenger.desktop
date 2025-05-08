@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=The Messenger
+Comment=Play this game on Steam
+Exec=prime-run steam steam://rungameid/764790
+Icon=steam_icon_764790
+Terminal=false
+Type=Application
+Categories=Game;

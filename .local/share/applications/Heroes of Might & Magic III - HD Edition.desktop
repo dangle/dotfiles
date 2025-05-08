@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Heroes of Might & Magic III - HD Edition
+Comment=Play this game on Steam
+Exec=prime-run steam steam://rungameid/297000
+Icon=steam_icon_297000
+Terminal=false
+Type=Application
+Categories=Game;
