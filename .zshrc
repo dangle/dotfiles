@@ -139,6 +139,7 @@ export PATH="$HOME/go/bin:/usr/local/go/bin:$PATH"
 
 #---- Rust Configuration -------------------------------------------------------
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUSTC_WRAPPER=sccache
 #===============================================================================
 
 #---- Kubernetes Configuration -------------------------------------------------
