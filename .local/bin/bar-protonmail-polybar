@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+OUT=$(~/.pyenv/versions/bar-protonmail/bin/bar-protonmail -f polybar -b '%{T8}%{T-}' -dn)
+
+if [[ "${OUT}" != *"Path not found"* ]]; then
+    echo "${OUT}"
+fi
