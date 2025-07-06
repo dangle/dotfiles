@@ -1,4 +1,5 @@
 #---- ZSH Plugins --------------------------------------------------------------
+# Add user and local binaries to PATH
 export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 [[ -e ${ZDOTDIR:-~}/.antidote ]] ||
@@ -29,9 +30,6 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Hack: force SHELL value because VSCode launches zsh through bash
 export SHELL=/usr/bin/zsh
-
-# Add user and local binaries to PATH
-export PATH="$HOME/.fzf/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # Use less preprocessors
 export FPATH="${FPATH}:~/.fpath"
