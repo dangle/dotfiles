@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 function success() {
-    local output="====> SUCCESS <===="
-    printf "\n\033[1;32m%$((($(tput cols)-${#output})/2))s%s\033[0m\n" "" "${output}"
+    local message="> SUCCESS <"
+    local padding="$(printf '=%.0s' $(seq $(( ( $(tput cols) - ${#message} ) / 2 ))))"
+    local output="$(printf '%s> %s <%s' "${padding}" "SUCCESS" "${padding}")"
+    printf "\n\033[1;32m%s\033[0m\n" "${output}"
 }
 
 function install_homebrew() {
