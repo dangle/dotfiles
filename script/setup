@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+function success() {
+    local output="SUCCESS"
+    printf "\n\033[1;32m%$((($(tput cols)-${#output})/2))s%s\033[0m\n" "" "${output}"
+}
+
 function install_homebrew() {
     if [ ! -d /home/linuxbrew ]; then
         NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -138,4 +143,4 @@ git clone https://github.com/mattmc3/antidote.git ~/.antidote 2>/dev/null || (cd
 antidote load
 EOF
 
-echo -e '\n\033[1;32mSUCCESS\033[0m'
+success
