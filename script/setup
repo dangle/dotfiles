@@ -54,7 +54,7 @@ sed 's/\// /g') | cut -f1) ]; then
     echo "Script out of date; updating and restarting script"
     yadm fetch --all
     yadm reset --hard origin/HEAD
-    $(realpath $(dirname -- "${0}"))
+    $(realpath ${BASH_SOURCE[0]})
     exit
 fi
 
