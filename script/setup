@@ -138,3 +138,4 @@ git clone https://github.com/mattmc3/antidote.git ~/.antidote 2>/dev/null || (cd
 antidote load
 EOF
 
+echo -e '\n\033[1;32mSUCCESS\033[0m'
