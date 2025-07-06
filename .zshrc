@@ -78,11 +78,35 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 #---- Aliases ------------------------------------------------------------------
 alias cd=z
 
-alias upgrayedd="sudo systemctl start reflector ; script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat"
-
 if [ -f /usr/bin/herbstclient ]; then
     alias hc=herbstclient
 fi
+
+function upgrayedd() {
+    if command -v apt-get &>/dev/null; then
+        sudo apt-get update && \
+            sudo DEBIAN_FRONTEND=noninteractive apt-get full-upgrade -y && \
+            sudo apt-get autoremove -y
+    elif command -v pacman &>/dev/null; then
+        sudo systemctl start reflector
+
+        if command -v yay &>/dev/null; then
+            script -qc 'yay -Syu --batchinstall --devel --overwrite \* --noconfirm' /dev/null | lolcat
+        else
+            script -qc 'sudo pacman -Syu --overwrite \* --noconfirm' /dev/null | lolcat
+        fi
+    fi
+
+    if command -v yadm &>/dev/null; then
+        yadm fetch --all
+        yadm reset --hard origin/HEAD
+        ~/script/setup
+    fi
+
+    if command -v docker &>/dev/null; then
+        docker system prune -f
+    fi
+}
 #===============================================================================
 
 #---- Editor Configuration -----------------------------------------------------
