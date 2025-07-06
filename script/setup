@@ -121,7 +121,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +UpdateRemotePlugins +qall
 
 zsh <<EOF
-git clone https://github.com/mattmc3/antidote.git ~/.antidote
+git clone https://github.com/mattmc3/antidote.git ~/.antidote || true
 . ~/.antidote/antidote.zsh
 . ~/.zstyle
 antidote load
