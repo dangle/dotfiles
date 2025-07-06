@@ -98,7 +98,7 @@ fi
 
 # Install the Starship Prompt
 mkdir -p "${HOME}/.local/bin" && \
-    curl -sS https://starship.rs/install.sh | sh -s - --bin-dir "${HOME}/.local/bin"
+    curl -sS https://starship.rs/install.sh | sh -s - --bin-dir "${HOME}/.local/bin" -y
 
 # Set ZSH as default shell
 if [[ "$(getent passwd "${USER}" | cut -d : -f 7)" != *"zsh"* ]]; then
