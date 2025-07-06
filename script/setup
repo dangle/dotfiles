@@ -49,6 +49,15 @@ function install_pkg() {
     fi
 }
 
+if command -v yadm >/dev/null 2>&1 && [ $(yadm rev-parse HEAD) != $(yadm ls-remote $(yadm rev-parse --abbrev-ref @{u} | \
+sed 's/\// /g') | cut -f1) ]; then
+    echo "Script out of date; updating and restarting script"
+    yadm fetch --all
+    yadm reset --hard origin/HEAD
+    $(basename ${0})
+    exit
+fi
+
 update_pkg_db
 
 # Install common utils
@@ -121,7 +130,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +UpdateRemotePlugins +qall
 
 zsh <<EOF
-git clone https://github.com/mattmc3/antidote.git ~/.antidote || true
+git clone https://github.com/mattmc3/antidote.git ~/.antidote 2>/dev/null || (cd ~/.antidote && git pull)
 . ~/.antidote/antidote.zsh
 . ~/.zstyle
 antidote load
