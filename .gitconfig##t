@@ -1,10 +1,7 @@
 [user]
 	name = Melissa Nuño
-{% if env.WSL_DISTRO_NAME != "Ubuntu" %}
 	email = dangle@users.noreply.github.com
-{% else %}
-	email = melissanuno@microsoft.com
-
+{% if env.WSL_DISTRO_NAME == "Ubuntu" %}
 [credential]
     helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 {% endif %}
