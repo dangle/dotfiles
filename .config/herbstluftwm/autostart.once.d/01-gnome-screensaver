@@ -9,7 +9,7 @@ function disable_blanking() {
 function sleep_display() {
     while true
     do
-        xset -display :1 dpms force off
+        xset -display :0 dpms force off
         sleep 30
     done
 }

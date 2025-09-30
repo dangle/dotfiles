@@ -114,7 +114,8 @@ background = ${colors.background}
 inherit = base/bar
 modules-left = wifi wired donotdisturb
 modules-center = host
-modules-right = system gmail protonmail
+#modules-right = system gmail protonmail
+modules-right = system gmail
 
 #bottom = true
 width = 20%

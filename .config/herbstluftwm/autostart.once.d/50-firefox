@@ -1,25 +1,25 @@
-hc rule --label=firefox_web class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=e
-hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=10
+hc rule --label=librewolf_web class="librewolf" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=e
+hc rule once class="librewolf" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=10
 
 (
     sleep 2
 
     (
-        hc rule once class="firefox" monitor=1 tag=reference index=1
-        hc spawn firefox
+        hc rule once class="librewolf" monitor=1 tag=reference index=1
+        hc spawn librewolf
     )
 
     sleep 2
 
-    if [[ $(wmctrl -lx | grep "Navigator.firefox" | wc -l) == "1" ]]; then
+    if [[ $(wmctrl -lx | grep "Navigator.librewolf" | wc -l) == "1" ]]; then
         (
-            hc rule once class="firefox" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=11
-            hc spawn firefox
+            hc rule once class="librewolf" windowtype="_NET_WM_WINDOW_TYPE_NORMAL" tag=web index=11
+            hc spawn librewolf
         )
     fi
 
     (
         sleep 10
-        hc unrule firefox_web
+        hc unrule librewolf_web
     ) &
 ) &
