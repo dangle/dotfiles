@@ -182,6 +182,9 @@ binds {
     Mod+Q repeat=false {
         close-window
     }
+    Mod+Shift+C repeat=false {
+        close-window
+    }
 
     // Focus Windows
     Mod+Left {
