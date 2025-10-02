@@ -30,6 +30,12 @@ output "Dell Inc. DELL U3219Q 1HKL413" {
     hot-corners {
         off
     }
+
+    layout {
+        default-column-width {
+            proportion 1.0
+        }
+    }
 }
 
 input {
@@ -90,6 +96,9 @@ layout {
     }
 }
 
+workspace "reference" {
+}
+
 // Load Bar
 spawn-at-startup "waybar"
 
@@ -121,6 +130,16 @@ window-rule {
     open-floating true
 }
 
+// YouTube
+window-rule {
+    match app-id=r#"youtube.com"#
+    open-on-output "Dell Inc. DELL U3219Q 1HKL413"
+
+    default-window-height {
+        proportion 0.34
+    }
+}
+
 // Hide Secrets From Screen Capture
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
@@ -129,6 +148,7 @@ window-rule {
     block-out-from "screen-capture"
 }
 
+// Rounded Window Borders
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
