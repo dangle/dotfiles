@@ -61,10 +61,13 @@ layout {
     struts {
         left 0
         right 0
-        top 0
+        top -30
         bottom 0
     }
 }
+
+// Load Bar
+spawn-at-startup "waybar"
 
 // Set Background Image
 spawn-at-startup "swww-daemon"
