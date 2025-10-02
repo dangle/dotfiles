@@ -357,17 +357,17 @@ binds {
     }
 
     Mod+Minus {
-        set-column-width "-10%"
+        set-column-width "-1%"
     }
     Mod+Equal {
-        set-column-width "+10%"
+        set-column-width "+1%"
     }
 
     Mod+Shift+Minus {
-        set-window-height "-10%"
+        set-window-height "-1%"
     }
     Mod+Shift+Equal {
-        set-window-height "+10%"
+        set-window-height "+1%"
     }
 
     // Center Windows
