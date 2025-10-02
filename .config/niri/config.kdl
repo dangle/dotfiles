@@ -154,7 +154,7 @@ binds {
     }
 
     // Focus Windows
-    Mod+Left  {
+    Mod+Left {
         focus-column-left
     }
     Mod+Down {
@@ -259,10 +259,16 @@ binds {
         focus-workspace-up
     }
 
+    Mod+Ctrl+Down {
+        focus-workspace-down
+    }
     Mod+Ctrl+Right {
         focus-workspace-down
     }
-    Mod+Ctrl+Left  {
+    Mod+Ctrl+Up {
+        focus-workspace-up
+    }
+    Mod+Ctrl+Left {
         focus-workspace-up
     }
 
@@ -358,7 +364,7 @@ binds {
         screenshot-window
     }
    
-    // Keyboard Capture
+    // Escape Keyboard Capture
     Mod+Escape allow-inhibiting=false {
         toggle-keyboard-shortcuts-inhibit
     }
