@@ -6,6 +6,20 @@ debug {
 // Force Resolution
 output "DP-10" {
     mode "7680x2160@59.987"
+    position x=0 y=0
+}
+
+output "Dell Inc. DELL U3818DW 97F8P049063L" {
+    position x=0 y=1600
+}
+
+output "Dell Inc. DELL U3818DW 97F8P049060L" {
+    position x=0 y=0
+}
+
+output "Dell Inc. DELL U3219Q 1HKL413" {
+    transform "90"
+    position x=3840 y=925
 }
 
 input {
