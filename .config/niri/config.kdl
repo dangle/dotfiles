@@ -14,7 +14,7 @@ output "Dell Inc. DELL U3818DW 97F8P049063L" {
     position x=0 y=1600
     focus-at-startup
 
-    /-hot-corners {
+    hot-corners {
         off
     }
 }
@@ -27,7 +27,7 @@ output "Dell Inc. DELL U3219Q 1HKL413" {
     transform "90"
     position x=3840 y=925
 
-    /-hot-corners {
+    hot-corners {
         off
     }
 }
@@ -100,6 +100,9 @@ spawn-at-startup "swww-daemon"
 hotkey-overlay {
     skip-at-startup
 }
+
+// Hide Client-side Decorations
+prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
