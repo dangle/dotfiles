@@ -3,15 +3,16 @@
   "IS_MAXIMIZED": false,
   "IS_MINIMIZED": false,
   "WINDOW_BOUNDS": {
-    "x": 1920,
-    "y": 69,
-    "width": 3840,
-    "height": 2091
+    "x": 0,
+    "y": 0,
+    "width": 3816,
+    "height": 2128
   },
   "OPEN_ON_STARTUP": false,
   "MINIMIZE_TO_TRAY": true,
   "DANGEROUS_ENABLE_DEVTOOLS_ONLY_ENABLE_IF_YOU_KNOW_WHAT_YOURE_DOING": true,
   "chromiumSwitches": {},
   "SKIP_HOST_UPDATE": true,
-  "offloadAdmControls": false
+  "offloadAdmControls": true,
+  "enableHardwareAcceleration": true
 }

@@ -57,6 +57,9 @@ Plug 'leafOfTree/vim-svelte-plugin'
 " Markdown preview
 Plug 'skanehira/preview-markdown.vim'
 
+" KDL
+Plug 'imsnif/kdl.vim'
+
 " Theme
 Plug 'dylanaraps/wal.vim'
 
