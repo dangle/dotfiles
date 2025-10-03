@@ -1,0 +1,216 @@
+{
+    "appLauncher": {
+        "backgroundOpacity": 1,
+        "enableClipboardHistory": true,
+        "pinnedExecs": [
+        ],
+        "position": "center",
+        "sortByMostUsed": true,
+        "terminalCommand": "wezterm",
+        "useApp2Unit": true
+    },
+    "audio": {
+        "cavaFrameRate": 60,
+        "mprisBlacklist": [
+        ],
+        "preferredPlayer": "",
+        "visualizerType": "linear",
+        "volumeOverdrive": false,
+        "volumeStep": 5
+    },
+    "bar": {
+        "backgroundOpacity": 0,
+        "density": "default",
+        "floating": true,
+        "marginHorizontal": 0.5,
+        "marginVertical": 0.25,
+        "monitors": [
+        ],
+        "position": "top",
+        "showCapsule": true,
+        "widgets": {
+            "center": [
+                {
+                    "id": "Spacer",
+                    "width": 20
+                },
+                {
+                    "customFont": "",
+                    "formatHorizontal": "HH:mm ddd, MMM dd",
+                    "formatVertical": "HH mm - dd MM",
+                    "id": "Clock",
+                    "useCustomFont": false,
+                    "usePrimaryColor": true
+                },
+                {
+                    "hideWhenZero": true,
+                    "id": "NotificationHistory",
+                    "showUnreadBadge": true
+                }
+            ],
+            "left": [
+            ],
+            "right": [
+                {
+                    "id": "KeepAwake"
+                },
+                {
+                    "id": "Tray"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Volume"
+                },
+                {
+                    "customIconPath": "",
+                    "icon": "",
+                    "id": "ControlCenter",
+                    "useDistroLogo": false
+                },
+                {
+                    "id": "Spacer",
+                    "width": 20
+                }
+            ]
+        }
+    },
+    "brightness": {
+        "brightnessStep": 5
+    },
+    "colorSchemes": {
+        "darkMode": true,
+        "matugenSchemeType": "scheme-fidelity",
+        "predefinedScheme": "Tokyo Night",
+        "useWallpaperColors": true
+    },
+    "dock": {
+        "autoHide": false,
+        "backgroundOpacity": 1,
+        "exclusive": false,
+        "floatingRatio": 1,
+        "monitors": [
+        ],
+        "onlySameOutput": false,
+        "pinnedApps": [
+        ]
+    },
+    "general": {
+        "animationDisabled": false,
+        "animationSpeed": 1,
+        "avatarImage": "/home/dangle/Pictures/wizard.png",
+        "dimDesktop": false,
+        "forceBlackScreenCorners": true,
+        "radiusRatio": 1,
+        "screenRadiusRatio": 1,
+        "showScreenCorners": true
+    },
+    "hooks": {
+        "darkModeChange": "",
+        "enabled": false,
+        "wallpaperChange": ""
+    },
+    "location": {
+        "name": "Longmont, CO",
+        "showWeekNumberInCalendar": false,
+        "use12hourFormat": true,
+        "useFahrenheit": true
+    },
+    "matugen": {
+        "enableUserTemplates": false,
+        "foot": false,
+        "fuzzel": true,
+        "ghostty": false,
+        "gtk3": false,
+        "gtk4": false,
+        "kitty": false,
+        "pywalfox": false,
+        "qt5": false,
+        "qt6": false,
+        "vesktop": false
+    },
+    "network": {
+        "wifiEnabled": false
+    },
+    "nightLight": {
+        "autoSchedule": true,
+        "dayTemp": "6500",
+        "enabled": false,
+        "forced": false,
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
+        "nightTemp": "4000"
+    },
+    "notifications": {
+        "alwaysOnTop": false,
+        "criticalUrgencyDuration": 15,
+        "doNotDisturb": false,
+        "lastSeenTs": 1759471310000,
+        "location": "top_right",
+        "lowUrgencyDuration": 3,
+        "monitors": [
+        ],
+        "normalUrgencyDuration": 8,
+        "respectExpireTimeout": false
+    },
+    "osd": {
+        "autoHideMs": 2000,
+        "enabled": true,
+        "location": "top_right",
+        "monitors": [
+        ]
+    },
+    "screenRecorder": {
+        "audioCodec": "opus",
+        "audioSource": "default_output",
+        "colorRange": "limited",
+        "directory": "/home/dangle/Videos",
+        "frameRate": 60,
+        "quality": "very_high",
+        "showCursor": true,
+        "videoCodec": "h264",
+        "videoSource": "portal"
+    },
+    "settingsVersion": 12,
+    "ui": {
+        "fontDefault": "Arimo Nerd Font",
+        "fontDefaultScale": 1,
+        "fontFixed": "FiraCode Nerd Font Mono",
+        "fontFixedScale": 1,
+        "idleInhibitorEnabled": false,
+        "monitorsScaling": [
+        ]
+    },
+    "wallpaper": {
+        "directory": "/home/dangle/Pictures/Wallpapers",
+        "enableMultiMonitorDirectories": false,
+        "enabled": true,
+        "fillColor": "#000000",
+        "fillMode": "crop",
+        "monitors": [
+            {
+                "directory": "/home/dangle/Pictures/Wallpapers",
+                "name": "DP-3",
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-8k-plus.png"
+            },
+            {
+                "directory": "/home/dangle/Pictures/Wallpapers",
+                "name": "DP-2",
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-8k-plus.png"
+            },
+            {
+                "directory": "/home/dangle/Pictures/Wallpapers",
+                "name": "HDMI-A-1",
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-8k-plus.png"
+            }
+        ],
+        "randomEnabled": false,
+        "randomIntervalSec": 300,
+        "setWallpaperOnAllMonitors": true,
+        "transitionDuration": 1500,
+        "transitionEdgeSmoothness": 0.05,
+        "transitionType": "fade"
+    }
+}
