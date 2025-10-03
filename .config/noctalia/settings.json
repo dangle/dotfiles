@@ -68,7 +68,7 @@
                     "id": "Volume"
                 },
                 {
-                    "displayMode": "alwaysShow",
+                    "displayMode": "onhover",
                     "id": "Battery",
                     "warningThreshold": 30
                 },
@@ -155,7 +155,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": true,
-        "lastSeenTs": 1759526201000,
+        "lastSeenTs": 1759532383000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
