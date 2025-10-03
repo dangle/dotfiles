@@ -99,9 +99,6 @@ layout {
 workspace "reference" {
 }
 
-// Load Bar
-spawn-at-startup "qs" "-c" "noctalia-shell"
-
 // Hide Help By Default
 hotkey-overlay {
     skip-at-startup
@@ -180,7 +177,7 @@ binds {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
     Super+L hotkey-overlay-title="Lock the Screen" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "toggle"
+        spawn-sh "~/.config/niri/scripts/lock.sh"
     }
 
     // Volume Controls
@@ -465,3 +462,6 @@ binds {
         quit
     }
 }
+
+// Spawn Shell
+spawn-at-startup "qs" "-c" "noctalia-shell"
