@@ -87,7 +87,7 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "matugenSchemeType": "scheme-expressive",
+        "matugenSchemeType": "scheme-fidelity",
         "predefinedScheme": "Catppuccin",
         "useWallpaperColors": true
     },
@@ -128,12 +128,12 @@
         "foot": false,
         "fuzzel": true,
         "ghostty": false,
-        "gtk3": false,
-        "gtk4": false,
+        "gtk3": true,
+        "gtk4": true,
         "kitty": false,
         "pywalfox": false,
-        "qt5": false,
-        "qt6": false,
+        "qt5": true,
+        "qt6": true,
         "vesktop": false
     },
     "network": {
