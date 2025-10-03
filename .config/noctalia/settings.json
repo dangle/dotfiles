@@ -58,14 +58,14 @@
                     "id": "KeepAwake"
                 },
                 {
-                    "displayMode": "onhover",
-                    "id": "Volume"
-                },
-                {
                     "id": "Bluetooth"
                 },
                 {
                     "id": "WiFi"
+                },
+                {
+                    "displayMode": "onhover",
+                    "id": "Volume"
                 },
                 {
                     "displayMode": "alwaysShow",
@@ -74,7 +74,7 @@
                 },
                 {
                     "customIconPath": "",
-                    "icon": "menu",
+                    "icon": "power",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
