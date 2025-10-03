@@ -77,7 +77,7 @@ layout {
 
     focus-ring {
         width 1
-        active-gradient from="#999" to="#66666666" angle=180 relative-to="workspace-view"
+        active-gradient from="#CCCCCC66" to="#66666666" angle=180 relative-to="workspace-view"
     }
 
     shadow {
@@ -100,10 +100,7 @@ workspace "reference" {
 }
 
 // Load Bar
-spawn-at-startup "waybar"
-
-// Set Background Image
-spawn-at-startup "swww-daemon"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 
 // Hide Help By Default
 hotkey-overlay {
@@ -114,6 +111,12 @@ hotkey-overlay {
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Rounded Window Borders
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+}
 
 // Wezterm
 window-rule {
@@ -136,7 +139,22 @@ window-rule {
     open-on-output "Dell Inc. DELL U3219Q 1HKL413"
 
     default-window-height {
-        proportion 0.34
+        fixed 925
+    }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+        active-color "#00000000"
+        inactive-color "#00000000"
+    }
+
+    shadow {
+        off
     }
 }
 
@@ -146,12 +164,6 @@ window-rule {
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
     block-out-from "screen-capture"
-}
-
-// Rounded Window Borders
-window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
 }
 
 binds {
@@ -164,11 +176,11 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" {
         spawn "wezterm"
     }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" {
-        spawn "fuzzel"
+    Mod+Space hotkey-overlay-title="Run an Application" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
-    Super+L hotkey-overlay-title="Lock the Screen: swaylock" {
-        spawn "swaylock"
+    Super+L hotkey-overlay-title="Lock the Screen" {
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "toggle"
     }
 
     // Volume Controls
@@ -226,6 +238,19 @@ binds {
         focus-column-last
     }
 
+    Mod+Shift+Left {
+        focus-monitor-left
+    }
+    Mod+Shift+Down {
+        focus-monitor-down
+    }
+    Mod+Shift+Up {
+        focus-monitor-up
+    }
+    Mod+Shift+Right {
+        focus-monitor-right
+    }
+
     // Move Windows
     Mod+Alt+Left {
         move-column-left
@@ -281,22 +306,32 @@ binds {
         move-column-to-workspace 9
     }
 
-    // TODO: Multi-monitor stuff
-    Mod+Shift+Left  { focus-monitor-left; }
-    Mod+Shift+Down  { focus-monitor-down; }
-    Mod+Shift+Up    { focus-monitor-up; }
-    Mod+Shift+Right { focus-monitor-right; }
-
-    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-
-    // And you can also move a whole workspace to another monitor:
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    // ...
+    Mod+Shift+Ctrl+Left {
+        move-column-to-monitor-left
+    }
+    Mod+Shift+Ctrl+Down {
+        move-column-to-monitor-down
+    }
+    Mod+Shift+Ctrl+Up {
+        move-column-to-monitor-up
+    }
+    Mod+Shift+Ctrl+Right { move-column-to-monitor-right
+    }
 
     // Rearrange Workspaces
+    Mod+Ctrl+Alt+Left {
+        move-workspace-to-monitor-left
+    }
+    Mod+Ctrl+Alt+Down {
+        move-workspace-to-monitor-down
+    }
+    Mod+Ctrl+Alt+Up {
+        move-workspace-to-monitor-up
+    }
+    Mod+Ctrl+Alt+Right {
+        move-workspace-to-monitor-right
+    }
+
     Mod+Alt+Page_Down {
         move-workspace-down
     }
