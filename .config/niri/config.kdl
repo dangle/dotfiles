@@ -182,8 +182,7 @@ binds {
         spawn "wezterm"
     }
     Mod+Space hotkey-overlay-title="Run an Application" {
-        //spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
-        spawn "fuzzel"
+        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
     Super+L hotkey-overlay-title="Lock the Screen" {
         spawn-sh "~/.config/niri/scripts/lock.sh"
