@@ -10,6 +10,14 @@ output "DP-10" {
     focus-at-startup
 }
 
+output "Sharp Corporation 0x1517 Unknown" {
+    layout {
+        default-column-width {
+            proportion 1.0
+        }
+    }
+}
+
 output "Dell Inc. DELL U3818DW 97F8P049063L" {
     position x=0 y=1600
     focus-at-startup
