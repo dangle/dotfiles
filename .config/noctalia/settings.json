@@ -90,7 +90,7 @@
     },
     "colorSchemes": {
         "darkMode": true,
-        "matugenSchemeType": "scheme-fidelity",
+        "matugenSchemeType": "scheme-expressive",
         "predefinedScheme": "Catppuccin",
         "useWallpaperColors": true
     },
@@ -140,7 +140,7 @@
         "vesktop": false
     },
     "network": {
-        "wifiEnabled": true
+        "wifiEnabled": false
     },
     "nightLight": {
         "autoSchedule": true,
@@ -216,7 +216,7 @@
             {
                 "directory": "/home/dangle/Pictures/Wallpapers",
                 "name": "eDP-1",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight-1080p.png"
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight.png"
             },
             {
                 "directory": "/home/dangle/Pictures/Wallpapers",

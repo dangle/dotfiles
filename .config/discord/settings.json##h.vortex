@@ -5,8 +5,8 @@
   "WINDOW_BOUNDS": {
     "x": 0,
     "y": 0,
-    "width": 1840,
-    "height": 1113
+    "width": 3012,
+    "height": 1641
   },
   "OPEN_ON_STARTUP": false,
   "MINIMIZE_TO_TRAY": true,
