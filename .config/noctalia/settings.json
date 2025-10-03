@@ -65,13 +65,16 @@
                     "id": "Bluetooth"
                 },
                 {
+                    "id": "WiFi"
+                },
+                {
                     "displayMode": "alwaysShow",
                     "id": "Battery",
                     "warningThreshold": 30
                 },
                 {
                     "customIconPath": "",
-                    "icon": "",
+                    "icon": "menu",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
@@ -137,7 +140,7 @@
         "vesktop": false
     },
     "network": {
-        "wifiEnabled": false
+        "wifiEnabled": true
     },
     "nightLight": {
         "autoSchedule": true,
@@ -214,6 +217,11 @@
                 "directory": "/home/dangle/Pictures/Wallpapers",
                 "name": "eDP-1",
                 "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight-1080p.png"
+            },
+            {
+                "directory": "/home/dangle/Pictures/Wallpapers",
+                "name": "DP-10",
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight.png"
             }
         ],
         "randomEnabled": false,
