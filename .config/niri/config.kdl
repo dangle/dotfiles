@@ -121,7 +121,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // Rounded Window Borders
 window-rule {
-    geometry-corner-radius 15
+    geometry-corner-radius 25
     clip-to-geometry true
 }
 
