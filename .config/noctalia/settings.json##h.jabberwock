@@ -61,20 +61,12 @@
                     "id": "Bluetooth"
                 },
                 {
-                    "id": "WiFi"
-                },
-                {
                     "displayMode": "onhover",
                     "id": "Volume"
                 },
                 {
-                    "displayMode": "onhover",
-                    "id": "Battery",
-                    "warningThreshold": 30
-                },
-                {
                     "customIconPath": "",
-                    "icon": "power",
+                    "icon": "adjustments",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
