@@ -118,7 +118,7 @@
     "hooks": {
         "darkModeChange": "",
         "enabled": true,
-        "wallpaperChange": "~/.config/niri/scripts/generate-colors.sh"
+        "wallpaperChange": "~/.config/niri/scripts/generate-colors.sh $1"
     },
     "location": {
         "name": "Longmont, CO",
