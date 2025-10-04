@@ -187,7 +187,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "idleInhibitorEnabled": false,
+        "idleInhibitorEnabled": true,
         "monitorsScaling": [
         ]
     },
