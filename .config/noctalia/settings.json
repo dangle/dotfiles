@@ -117,8 +117,8 @@
     },
     "hooks": {
         "darkModeChange": "",
-        "enabled": false,
-        "wallpaperChange": ""
+        "enabled": true,
+        "wallpaperChange": "~/.config/niri/scripts/generate-colors.sh"
     },
     "location": {
         "name": "Longmont, CO",
@@ -155,7 +155,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": true,
-        "lastSeenTs": 1759533362000,
+        "lastSeenTs": 1759549257000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [

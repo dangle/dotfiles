@@ -104,6 +104,8 @@ layout {
     }
 }
 
+include "colors.kdl"
+
 workspace "reference" {
 }
 
