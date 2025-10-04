@@ -140,7 +140,7 @@
         "vesktop": false
     },
     "network": {
-        "wifiEnabled": false
+        "wifiEnabled": true
     },
     "nightLight": {
         "autoSchedule": true,
@@ -183,7 +183,7 @@
     },
     "settingsVersion": 12,
     "ui": {
-        "fontDefault": "Arimo Nerd Font",
+        "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
