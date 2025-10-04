@@ -128,9 +128,6 @@ window-rule {
 // Wezterm
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {
-        proportion 0.25
-    }
     draw-border-with-background false
 }
 
