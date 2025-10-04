@@ -74,7 +74,7 @@
                 },
                 {
                     "customIconPath": "",
-                    "icon": "power",
+                    "icon": "adjustments",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
