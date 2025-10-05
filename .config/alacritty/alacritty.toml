@@ -74,5 +74,7 @@ startup_mode = "Windowed"
 x = 14
 y = 14
 
-[shell]
+[terminal]
+
+[terminal.shell]
 program = "tmux"
