@@ -62,8 +62,6 @@ input {
 }
 
 layout {
-    empty-workspace-above-first
-
     gaps 40
 
     center-focused-column "never"
