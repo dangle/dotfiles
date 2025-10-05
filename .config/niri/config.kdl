@@ -10,7 +10,7 @@ output "DP-10" {
     focus-at-startup
 }
 
-output "Sharp Corporation 0x1517 Unknown" {
+output "eDP-1" {
     layout {
         default-column-width {
             proportion 1.0
