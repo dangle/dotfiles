@@ -1,6 +1,6 @@
 {
     "appLauncher": {
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.7000000000000001,
         "enableClipboardHistory": true,
         "pinnedExecs": [
         ],
@@ -166,7 +166,7 @@
     "osd": {
         "autoHideMs": 2000,
         "enabled": true,
-        "location": "top_right",
+        "location": "bottom",
         "monitors": [
         ]
     },
