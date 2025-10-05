@@ -1,6 +1,6 @@
 {
     "appLauncher": {
-        "backgroundOpacity": 1,
+        "backgroundOpacity": 0.7000000000000001,
         "enableClipboardHistory": true,
         "pinnedExecs": [
         ],
@@ -147,7 +147,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": true,
-        "lastSeenTs": 1759609795000,
+        "lastSeenTs": 1759652534000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -158,7 +158,7 @@
     "osd": {
         "autoHideMs": 2000,
         "enabled": true,
-        "location": "top_right",
+        "location": "bottom",
         "monitors": [
         ]
     },
