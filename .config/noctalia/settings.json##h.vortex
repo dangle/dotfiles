@@ -90,14 +90,17 @@
     },
     "colorSchemes": {
         "darkMode": true,
+        "generateTemplatesForPredefined": true,
         "matugenSchemeType": "scheme-expressive",
         "predefinedScheme": "Catppuccin",
         "useWallpaperColors": true
     },
+    "controlCenter": {
+        "position": "close_to_bar_button"
+    },
     "dock": {
-        "autoHide": false,
         "backgroundOpacity": 1,
-        "exclusive": false,
+        "displayMode": "always_visible",
         "floatingRatio": 1,
         "monitors": [
         ],
@@ -126,19 +129,6 @@
         "use12hourFormat": true,
         "useFahrenheit": true
     },
-    "matugen": {
-        "enableUserTemplates": false,
-        "foot": false,
-        "fuzzel": true,
-        "ghostty": false,
-        "gtk3": true,
-        "gtk4": true,
-        "kitty": false,
-        "pywalfox": false,
-        "qt5": true,
-        "qt6": true,
-        "vesktop": false
-    },
     "network": {
         "wifiEnabled": true
     },
@@ -155,7 +145,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": true,
-        "lastSeenTs": 1759635464000,
+        "lastSeenTs": 1759716543000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -182,6 +172,17 @@
         "videoSource": "portal"
     },
     "settingsVersion": 12,
+    "templates": {
+        "enableUserTemplates": false,
+        "foot": false,
+        "fuzzel": false,
+        "ghostty": false,
+        "gtk": false,
+        "kitty": false,
+        "pywalfox": false,
+        "qt": false,
+        "vesktop": false
+    },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
@@ -189,9 +190,11 @@
         "fontFixedScale": 1,
         "idleInhibitorEnabled": true,
         "monitorsScaling": [
-        ]
+        ],
+        "tooltipsEnabled": true
     },
     "wallpaper": {
+        "defaultWallpaper": "/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png",
         "directory": "/home/dangle/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
