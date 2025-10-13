@@ -179,7 +179,7 @@ binds {
         spawn "wezterm"
     }
     Mod+Space hotkey-overlay-title="Run an Application" {
-        spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"
+        spawn "walker"
     }
     Super+L hotkey-overlay-title="Lock the Screen" {
         spawn-sh "~/.config/niri/scripts/lock.sh"
@@ -470,3 +470,5 @@ binds {
 
 // Spawn Shell
 spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "elephant"
+spawn-at-startup "walker --gapplication-service"
