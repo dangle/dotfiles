@@ -70,6 +70,7 @@ update_pkg_db
 # Install common utils
 install_pkg \
     yadm \
+    moreutils \
     neovim \
     tmux \
     bat \

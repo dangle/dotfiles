@@ -11,11 +11,14 @@ if [ ! -f "${wallpaper}" ]; then
     exit 1;
 fi
 
-colors=( $(matugen image "${wallpaper}" -t scheme-expressive --show-colors | grep "on_\(primary\|tertiary\)_container" | awk '{print $9}') )
+declare -A colors="( $(matugen image "${wallpaper}" -t scheme-expressive --show-colors | grep "\W\(background\|on_background\|primary\|secondary\|tertiary\)\W" | awk '{ print "[\"" $2 "\"]=\"" $9 "\"" }') )"
 
 if [ ${#colors[@]} -gt 1 ]; then
-    primary=${colors[0]}
-    tertiary=${colors[1]}
+    background=${colors["background"]}
+    foreground=${colors["on_background"]}
+    primary=${colors["primary"]}
+    secondary=${colors["secondary"]}
+    tertiary=${colors["tertiary"]}
 
     cat <<EOF > ~/.config/niri/colors.kdl
 layout {
@@ -24,6 +27,14 @@ layout {
     }
 }
 EOF
+
+    cat <<EOF > ~/.config/walker/themes/matugen/colors.css
+@define-color window_bg_color ${background}DD;
+@define-color accent_bg_color ${primary};
+@define-color theme_fg_color ${foreground};
+EOF
+
+    jq ".accentColor = \"${primary}\"" ~/Documents/Notes/.obsidian/appearance.json| sponge ~/Documents/Notes/.obsidian/appearance.json
 else
     exit 1
 fi

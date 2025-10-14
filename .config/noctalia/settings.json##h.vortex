@@ -60,6 +60,9 @@
                     "id": "KeepAwake"
                 },
                 {
+                    "id": "PowerProfile"
+                },
+                {
                     "id": "Bluetooth"
                 },
                 {
@@ -169,8 +172,8 @@
     "notifications": {
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
-        "doNotDisturb": true,
-        "lastSeenTs": 1759716543000,
+        "doNotDisturb": false,
+        "lastSeenTs": 1760413567000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
