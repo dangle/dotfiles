@@ -17,9 +17,6 @@ lower_input=$((${raw_lower_input} - 0x0F00))
 raw_upper_input=$(ddccontrol -r ${INPUT_REGISTER} ${UPPER_MONITOR} | awk -F '/' '/+/{ print $2 }')
 upper_input=$((${raw_upper_input} - 0x1100))
 
-echo "Upper Monitor: ${upper_input}"
-echo "Lower Monitor: ${lower_input}"
-
 if (( ${lower_input} == ${HDMI1} && ${upper_input} == ${HDMI1} )); then
     ddccontrol -r ${INPUT_REGISTER} -w ${DP} ${LOWER_MONITOR}
     ddccontrol -r ${INPUT_REGISTER} -w ${DP} ${UPPER_MONITOR}
