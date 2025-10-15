@@ -211,6 +211,11 @@ binds {
         spawn "brightnessctl" "--class=backlight" "set" "10%-"
     }
 
+    // Swap Virtual Machine Monitors
+    Mod+Ctrl+Alt+Return repeat=false {
+        spawn-sh "~/.config/herbstluftwm/scripts/toggle-monitors.sh"
+    }
+
     // Load Overview
     Mod+Tab repeat=false {
         toggle-overview
