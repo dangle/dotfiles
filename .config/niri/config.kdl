@@ -164,6 +164,15 @@ window-rule {
     }
 }
 
+// Obsidian
+window-rule {
+    match app-id="obsidian"
+
+    default-column-width {
+        proportion 1.0
+    }
+}
+
 // Hide Secrets From Screen Capture
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
