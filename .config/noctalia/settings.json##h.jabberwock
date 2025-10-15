@@ -52,6 +52,9 @@
             ],
             "right": [
                 {
+                    "blacklist": [
+                    ],
+                    "colorizeIcons": false,
                     "id": "Tray"
                 },
                 {
@@ -88,10 +91,63 @@
         "useWallpaperColors": true
     },
     "controlCenter": {
-        "position": "close_to_bar_button"
+        "cards": [
+            {
+                "enabled": true,
+                "id": "profile-card"
+            },
+            {
+                "enabled": true,
+                "id": "shortcuts-card"
+            },
+            {
+                "enabled": true,
+                "id": "audio-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            },
+            {
+                "enabled": true,
+                "id": "media-sysmon-card"
+            }
+        ],
+        "position": "close_to_bar_button",
+        "shortcuts": {
+            "left": [
+                {
+                    "id": "WiFi"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "id": "ScreenRecorder"
+                },
+                {
+                    "id": "WallpaperSelector"
+                }
+            ],
+            "right": [
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "KeepAwake"
+                },
+                {
+                    "id": "NightLight"
+                }
+            ]
+        }
     },
     "dock": {
         "backgroundOpacity": 1,
+        "colorizeIcons": false,
         "displayMode": "always_visible",
         "floatingRatio": 1,
         "monitors": [
@@ -104,9 +160,11 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
+        "compactLockScreen": false,
         "dimDesktop": false,
         "forceBlackScreenCorners": true,
         "radiusRatio": 1,
+        "scaleRatio": 1,
         "screenRadiusRatio": 1,
         "showScreenCorners": true
     },
@@ -122,7 +180,7 @@
         "useFahrenheit": true
     },
     "network": {
-        "wifiEnabled": true
+        "wifiEnabled": false
     },
     "nightLight": {
         "autoSchedule": true,
@@ -137,7 +195,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1760500355000,
+        "lastSeenTs": 1760504261000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -146,6 +204,7 @@
         "respectExpireTimeout": false
     },
     "osd": {
+        "alwaysOnTop": false,
         "autoHideMs": 2000,
         "enabled": true,
         "location": "bottom",
@@ -165,15 +224,22 @@
     },
     "settingsVersion": 12,
     "templates": {
+        "discord": false,
+        "discord_armcord": false,
+        "discord_dorion": false,
+        "discord_equibop": false,
+        "discord_lightcord": false,
+        "discord_vesktop": false,
+        "discord_webcord": false,
         "enableUserTemplates": false,
         "foot": false,
         "fuzzel": false,
         "ghostty": false,
         "gtk": false,
+        "kcolorscheme": false,
         "kitty": false,
         "pywalfox": false,
-        "qt": false,
-        "vesktop": false
+        "qt": false
     },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
@@ -181,8 +247,6 @@
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
         "idleInhibitorEnabled": false,
-        "monitorsScaling": [
-        ],
         "tooltipsEnabled": true
     },
     "wallpaper": {
