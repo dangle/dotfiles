@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Valheim
-Comment=Play this game on Steam
-Exec=prime-run steam steam://rungameid/892970
-Icon=steam_icon_892970
-Terminal=false
-Type=Application
-Categories=Game;

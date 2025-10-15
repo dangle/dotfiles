@@ -1,8 +1,0 @@
-[Unit]
-Description=snixembed
-
-[Service]
-ExecStart=/usr/bin/snixembed
-
-[Install]
-WantedBy=default.target
