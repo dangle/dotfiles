@@ -141,11 +141,11 @@ window-rule {
     open-on-output "Dell Inc. DELL U3219Q 1HKL413"
 
     default-window-height {
-        fixed 925
+        fixed 835
     }
 
     default-column-width {
-        fixed 1644
+        fixed 1484
     }
 
     focus-ring {
