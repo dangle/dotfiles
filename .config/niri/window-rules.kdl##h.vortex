@@ -3,7 +3,7 @@ window-rule {
     match app-id=r#"youtube.com"#
 
     default-window-height {
-        fixed 837
+        fixed 836
     }
 
     default-column-width {
