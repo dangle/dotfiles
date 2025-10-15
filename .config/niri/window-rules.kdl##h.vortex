@@ -7,6 +7,17 @@ window-rule {
     }
 
     default-column-width {
-        fixed 1485
+        fixed 1486
+    }
+
+    focus-ring {
+        off
+   }
+
+    border {
+        on
+        width 0.5
+        active-color "#00000000"
+        inactive-color "#00000000"
     }
 }
