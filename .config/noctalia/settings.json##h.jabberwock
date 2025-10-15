@@ -37,7 +37,7 @@
                 {
                     "customFont": "",
                     "formatHorizontal": "MMMM d   h:mm AP",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatVertical": "",
                     "id": "Clock",
                     "useCustomFont": false,
                     "usePrimaryColor": true
@@ -98,10 +98,6 @@
             },
             {
                 "enabled": true,
-                "id": "shortcuts-card"
-            },
-            {
-                "enabled": true,
                 "id": "audio-card"
             },
             {
@@ -111,14 +107,15 @@
             {
                 "enabled": true,
                 "id": "media-sysmon-card"
+            },
+            {
+                "enabled": true,
+                "id": "shortcuts-card"
             }
         ],
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
-                {
-                    "id": "WiFi"
-                },
                 {
                     "id": "Bluetooth"
                 },
@@ -134,13 +131,7 @@
                     "id": "Notifications"
                 },
                 {
-                    "id": "PowerProfile"
-                },
-                {
                     "id": "KeepAwake"
-                },
-                {
-                    "id": "NightLight"
                 }
             ]
         }
