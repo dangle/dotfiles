@@ -136,8 +136,8 @@
     "notifications": {
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
-        "doNotDisturb": true,
-        "lastSeenTs": 1759808445000,
+        "doNotDisturb": false,
+        "lastSeenTs": 1760500355000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [

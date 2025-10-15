@@ -144,6 +144,10 @@ window-rule {
         fixed 925
     }
 
+    default-column-width {
+        fixed 1644
+    }
+
     focus-ring {
         off
     }
