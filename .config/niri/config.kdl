@@ -135,35 +135,6 @@ window-rule {
     open-floating true
 }
 
-// YouTube
-window-rule {
-    match app-id=r#"youtube.com"#
-    open-on-output "Dell Inc. DELL U3219Q 1HKL413"
-
-    default-window-height {
-        fixed 835
-    }
-
-    default-column-width {
-        fixed 1484
-    }
-
-    focus-ring {
-        off
-    }
-
-    border {
-        on
-        width 2
-        active-color "#00000000"
-        inactive-color "#00000000"
-    }
-
-    shadow {
-        off
-    }
-}
-
 // Obsidian
 window-rule {
     match app-id="obsidian"
@@ -180,6 +151,8 @@ window-rule {
 
     block-out-from "screen-capture"
 }
+
+include "window-rules.kdl"
 
 binds {
     // Show Help

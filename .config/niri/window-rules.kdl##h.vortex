@@ -1,0 +1,16 @@
+// YouTube
+window-rule {
+    match app-id=r#"youtube.com"#
+
+    default-window-height {
+        fixed 837
+    }
+
+    default-column-width {
+        fixed 1486
+    }
+
+    focus-ring {
+        off
+    }
+}

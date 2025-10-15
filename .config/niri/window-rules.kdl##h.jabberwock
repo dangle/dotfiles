@@ -1,0 +1,17 @@
+// YouTube
+window-rule {
+    match app-id=r#"youtube.com"#
+    open-on-output "Dell Inc. DELL U3219Q 1HKL413"
+
+    default-window-height {
+        fixed 927
+    }
+
+    default-column-width {
+        fixed 1646
+    }
+
+    focus-ring {
+        off
+    }
+}
