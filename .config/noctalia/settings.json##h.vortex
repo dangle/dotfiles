@@ -54,6 +54,7 @@
                 {
                     "blacklist": [
                     ],
+                    "colorizeIcons": false,
                     "id": "Tray"
                 },
                 {
