@@ -7,6 +7,6 @@ window-rule {
     }
 
     default-column-width {
-        fixed 1486
+        fixed 1485
     }
 }
