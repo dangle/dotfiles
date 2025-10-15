@@ -1,0 +1,10 @@
+[Desktop Entry]
+NoDisplay=true
+Encoding=UTF-8
+Name=Element
+Comment=Element Advanced Sequencer
+Exec=element
+Icon=net.kushview.element
+Terminal=false
+Type=Application
+Categories=Application;AudioVideo;Audio;

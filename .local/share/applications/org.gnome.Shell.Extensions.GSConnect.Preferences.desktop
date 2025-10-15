@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: GSConnect Developers https://github.com/GSConnect
+#
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+[Desktop Entry]
+Type=Application
+Name=GSConnect Preferences
+Exec=gapplication action org.gnome.Shell.Extensions.GSConnect preferences
+Terminal=false
+NoDisplay=true
+Icon=org.gnome.Shell.Extensions.GSConnect
+Categories=Network;
+
