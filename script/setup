@@ -81,6 +81,7 @@ install_pkg \
     chafa \
     exiftool \
     httpie \
+    jq \
     nushell
 
 (git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install --key-bindings --completion --no-update-rc)
