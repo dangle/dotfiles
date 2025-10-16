@@ -23,7 +23,7 @@ if [ ${#colors[@]} -gt 1 ]; then
     cat <<EOF > ~/.config/niri/colors.kdl
 layout {
     focus-ring {
-        active-gradient from="${primary}" to="${tertiary}" angle=45 relative-to="workspace-view"
+        active-gradient from="${primary}99" to="${tertiary}99" angle=45 relative-to="workspace-view"
     }
 }
 EOF
