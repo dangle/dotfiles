@@ -52,6 +52,8 @@
             ],
             "right": [
                 {
+                    "blacklist": [
+                    ],
                     "id": "Tray"
                 },
                 {
@@ -90,14 +92,40 @@
     },
     "colorSchemes": {
         "darkMode": true,
+        "generateTemplatesForPredefined": true,
         "matugenSchemeType": "scheme-expressive",
         "predefinedScheme": "Catppuccin",
         "useWallpaperColors": true
     },
+    "controlCenter": {
+        "position": "close_to_bar_button",
+        "quickSettingsStyle": "compact",
+        "widgets": {
+            "quickSettings": [
+                {
+                    "id": "WiFi"
+                },
+                {
+                    "id": "Bluetooth"
+                },
+                {
+                    "id": "Notifications"
+                },
+                {
+                    "id": "ScreenRecorder"
+                },
+                {
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "WallpaperSelector"
+                }
+            ]
+        }
+    },
     "dock": {
-        "autoHide": false,
         "backgroundOpacity": 1,
-        "exclusive": false,
+        "displayMode": "always_visible",
         "floatingRatio": 1,
         "monitors": [
         ],
@@ -126,19 +154,6 @@
         "use12hourFormat": true,
         "useFahrenheit": true
     },
-    "matugen": {
-        "enableUserTemplates": false,
-        "foot": false,
-        "fuzzel": true,
-        "ghostty": false,
-        "gtk3": true,
-        "gtk4": true,
-        "kitty": false,
-        "pywalfox": false,
-        "qt5": true,
-        "qt6": true,
-        "vesktop": false
-    },
     "network": {
         "wifiEnabled": true
     },
@@ -164,6 +179,7 @@
         "respectExpireTimeout": false
     },
     "osd": {
+        "alwaysOnTop": false,
         "autoHideMs": 2000,
         "enabled": true,
         "location": "bottom",
@@ -182,6 +198,24 @@
         "videoSource": "portal"
     },
     "settingsVersion": 12,
+    "templates": {
+        "discord": false,
+        "discord_armcord": false,
+        "discord_dorion": false,
+        "discord_equibop": false,
+        "discord_lightcord": false,
+        "discord_vesktop": false,
+        "discord_webcord": false,
+        "enableUserTemplates": false,
+        "foot": false,
+        "fuzzel": false,
+        "ghostty": false,
+        "gtk": false,
+        "kcolorscheme": false,
+        "kitty": false,
+        "pywalfox": false,
+        "qt": false
+    },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
@@ -189,9 +223,11 @@
         "fontFixedScale": 1,
         "idleInhibitorEnabled": false,
         "monitorsScaling": [
-        ]
+        ],
+        "tooltipsEnabled": true
     },
     "wallpaper": {
+        "defaultWallpaper": "/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png",
         "directory": "/home/dangle/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
