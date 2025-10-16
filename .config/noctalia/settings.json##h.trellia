@@ -248,11 +248,11 @@
         "foot": false,
         "fuzzel": false,
         "ghostty": false,
-        "gtk": false,
-        "kcolorscheme": false,
+        "gtk": true,
+        "kcolorscheme": true,
         "kitty": false,
         "pywalfox": false,
-        "qt": false
+        "qt": true
     },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
