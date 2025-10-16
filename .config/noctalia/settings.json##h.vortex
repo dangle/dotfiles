@@ -203,7 +203,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1760556417000,
+        "lastSeenTs": 1760588281000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [

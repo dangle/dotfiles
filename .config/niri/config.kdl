@@ -91,7 +91,7 @@ layout {
         softness 15
         spread 10
         offset x=0 y=5
-        color "#000C"
+        color "#000A"
     }
 
     struts {
