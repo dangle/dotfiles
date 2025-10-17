@@ -234,7 +234,7 @@
         "videoCodec": "h264",
         "videoSource": "portal"
     },
-    "settingsVersion": 12,
+    "settingsVersion": 16,
     "setupCompleted": true,
     "templates": {
         "discord": false,
