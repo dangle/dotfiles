@@ -91,6 +91,9 @@
             ]
         }
     },
+    "battery": {
+        "chargingMode": 0
+    },
     "brightness": {
         "brightnessStep": 5
     },
@@ -185,7 +188,8 @@
         "name": "Longmont, CO",
         "showWeekNumberInCalendar": false,
         "use12hourFormat": true,
-        "useFahrenheit": true
+        "useFahrenheit": true,
+        "weatherEnabled": true
     },
     "network": {
         "wifiEnabled": true
@@ -203,7 +207,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1760588281000,
+        "lastSeenTs": 1760679021000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -231,6 +235,7 @@
         "videoSource": "portal"
     },
     "settingsVersion": 12,
+    "setupCompleted": true,
     "templates": {
         "discord": false,
         "discord_armcord": false,
@@ -254,7 +259,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "idleInhibitorEnabled": true,
+        "idleInhibitorEnabled": false,
         "tooltipsEnabled": true
     },
     "wallpaper": {
