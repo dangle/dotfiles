@@ -256,17 +256,17 @@
             {
                 "directory": "/home/dangle/Pictures/Wallpapers",
                 "name": "DP-3",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-8k-plus.png"
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-right.png"
             },
             {
                 "directory": "/home/dangle/Pictures/Wallpapers",
                 "name": "DP-2",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-8k-plus.png"
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-top.png"
             },
             {
                 "directory": "/home/dangle/Pictures/Wallpapers",
                 "name": "HDMI-A-1",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-8k-plus.png"
+                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-bottom.png"
             },
             {
                 "directory": "/home/dangle/Pictures/Wallpapers",
@@ -281,7 +281,7 @@
         ],
         "randomEnabled": false,
         "randomIntervalSec": 300,
-        "setWallpaperOnAllMonitors": true,
+        "setWallpaperOnAllMonitors": false,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade"
