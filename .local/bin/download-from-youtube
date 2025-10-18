@@ -6,7 +6,7 @@ downloadTimestamp="$(date +'%F %T %Z')";
 downloadTimestamp="${downloadTimestamp//:/\\:}";
 
 yt-dlp -f "bestvideo+bestaudio/best" \
-  -o "%(uploader)s - %(playlist_index)03d - %(title)s.%(ext)s" \
+  -o "%(uploader)s - 1x%(playlist_index)03d - %(title)s.%(ext)s" \
   --parse-metadata "${downloadTimestamp}:%(meta_download_date)s" \
   --parse-metadata "%(like_count)s:%(meta_likes)s" \
   --parse-metadata "%(dislike_count)s:%(meta_dislikes)s" \
@@ -21,12 +21,9 @@ yt-dlp -f "bestvideo+bestaudio/best" \
   --sub-lang en --embed-subs --add-metadata --merge-output-format mkv \
   --write-auto-subs --embed-metadata --embed-thumbnail \
   --compat-options playlist-index --playlist-reverse \
+  --no-windows-filenames \
   --cookies-from-browser firefox \
   "${url}"
-
-for f in *; do
-    mv "${f}" "$(echo "${f}" | sed s/？/?/)"
-done
 
 for f in *.info.json; do
     ~/.pyenv/versions/ytdl-nfo/bin/ytdl-nfo "${f}"
