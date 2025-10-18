@@ -190,7 +190,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1760670215000,
+        "lastSeenTs": 1760813703000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -217,7 +217,7 @@
         "videoCodec": "h264",
         "videoSource": "portal"
     },
-    "settingsVersion": 12,
+    "settingsVersion": 16,
     "setupCompleted": true,
     "templates": {
         "discord": false,
@@ -242,7 +242,6 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "idleInhibitorEnabled": false,
         "tooltipsEnabled": true
     },
     "wallpaper": {
