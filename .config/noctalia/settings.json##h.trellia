@@ -207,7 +207,7 @@
         "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": true,
-        "lastSeenTs": 1760648057000,
+        "lastSeenTs": 1761521776000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -259,7 +259,6 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "idleInhibitorEnabled": false,
         "tooltipsEnabled": true
     },
     "wallpaper": {
