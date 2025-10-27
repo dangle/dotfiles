@@ -64,9 +64,11 @@
                     "id": "PowerProfile"
                 },
                 {
+                    "displayMode": "onhover",
                     "id": "Bluetooth"
                 },
                 {
+                    "displayMode": "onhover",
                     "id": "WiFi"
                 },
                 {
@@ -100,8 +102,11 @@
     "colorSchemes": {
         "darkMode": true,
         "generateTemplatesForPredefined": true,
+        "manualSunrise": "06:30",
+        "manualSunset": "18:30",
         "matugenSchemeType": "scheme-expressive",
         "predefinedScheme": "Catppuccin",
+        "schedulingMode": "off",
         "useWallpaperColors": true
     },
     "controlCenter": {
@@ -165,7 +170,8 @@
         ],
         "onlySameOutput": false,
         "pinnedApps": [
-        ]
+        ],
+        "size": 1
     },
     "general": {
         "animationDisabled": false,
@@ -174,6 +180,8 @@
         "compactLockScreen": false,
         "dimDesktop": false,
         "forceBlackScreenCorners": true,
+        "language": "",
+        "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
@@ -186,6 +194,7 @@
     },
     "location": {
         "name": "Longmont, CO",
+        "showCalendarEvents": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": true,
         "useFahrenheit": true,
@@ -204,24 +213,23 @@
         "nightTemp": "4000"
     },
     "notifications": {
-        "alwaysOnTop": false,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
-        "lastSeenTs": 1761272780000,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
         ],
         "normalUrgencyDuration": 8,
+        "overlayLayer": true,
         "respectExpireTimeout": false
     },
     "osd": {
-        "alwaysOnTop": false,
         "autoHideMs": 2000,
         "enabled": true,
         "location": "bottom",
         "monitors": [
-        ]
+        ],
+        "overlayLayer": true
     },
     "screenRecorder": {
         "audioCodec": "opus",
@@ -252,13 +260,15 @@
         "kcolorscheme": false,
         "kitty": false,
         "pywalfox": false,
-        "qt": false
+        "qt": false,
+        "vicinae": false
     },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
+        "panelsOverlayLayer": true,
         "tooltipsEnabled": true
     },
     "wallpaper": {
