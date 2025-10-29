@@ -4,8 +4,9 @@ debug {
 }
 
 // Force Resolution
-output "DP-10" {
+output "Samsung Electric Company Odyssey G95NC HNTWC01684" {
     mode "7680x2160@59.987"
+    scale 1.0
     position x=0 y=0
     focus-at-startup
 }
