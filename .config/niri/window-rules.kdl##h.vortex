@@ -10,10 +10,6 @@ window-rule {
         proportion 0.25
     }
 
-    focus-ring {
-        off
-   }
-
     border {
         on
         width 0.5
