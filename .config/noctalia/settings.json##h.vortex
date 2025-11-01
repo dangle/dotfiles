@@ -168,6 +168,7 @@
         "backgroundOpacity": 0,
         "colorizeIcons": true,
         "displayMode": "always_visible",
+        "enabled": false,
         "floatingRatio": 1,
         "monitors": [
         ],
@@ -181,7 +182,6 @@
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
         "compactLockScreen": false,
-        "dimDesktop": false,
         "forceBlackScreenCorners": true,
         "language": "",
         "lockOnSuspend": true,
@@ -197,8 +197,10 @@
     },
     "location": {
         "analogClockInCalendar": false,
+        "firstDayOfWeek": -1,
         "name": "Longmont, CO",
         "showCalendarEvents": true,
+        "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": true,
         "useFahrenheit": true,
@@ -250,6 +252,7 @@
     "settingsVersion": 16,
     "setupCompleted": true,
     "templates": {
+        "code": false,
         "discord": false,
         "discord_armcord": false,
         "discord_dorion": false,
@@ -274,6 +277,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
+        "panelsAttachedToBar": true,
         "panelsOverlayLayer": true,
         "tooltipsEnabled": true
     },
