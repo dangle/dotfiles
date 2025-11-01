@@ -1,6 +1,8 @@
 {
     "appLauncher": {
         "backgroundOpacity": 0.7000000000000001,
+        "customLaunchPrefix": "",
+        "customLaunchPrefixEnabled": false,
         "enableClipboardHistory": true,
         "pinnedExecs": [
         ],
@@ -85,7 +87,8 @@
         "chargingMode": 0
     },
     "brightness": {
-        "brightnessStep": 5
+        "brightnessStep": 5,
+        "enforceMinimum": true
     },
     "colorSchemes": {
         "darkMode": true,
@@ -147,6 +150,7 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "displayMode": "always_visible",
+        "enabled": false,
         "floatingRatio": 1,
         "monitors": [
         ],
@@ -160,7 +164,6 @@
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
         "compactLockScreen": false,
-        "dimDesktop": false,
         "forceBlackScreenCorners": true,
         "language": "",
         "lockOnSuspend": true,
@@ -175,8 +178,11 @@
         "wallpaperChange": "~/.config/niri/scripts/generate-colors.sh $1"
     },
     "location": {
+        "analogClockInCalendar": false,
+        "firstDayOfWeek": -1,
         "name": "Longmont, CO",
         "showCalendarEvents": true,
+        "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
         "use12hourFormat": true,
         "useFahrenheit": true,
@@ -195,6 +201,7 @@
         "nightTemp": "4000"
     },
     "notifications": {
+        "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
         "location": "top_right",
@@ -227,6 +234,7 @@
     "settingsVersion": 16,
     "setupCompleted": true,
     "templates": {
+        "code": false,
         "discord": false,
         "discord_armcord": false,
         "discord_dorion": false,
@@ -243,13 +251,15 @@
         "kitty": false,
         "pywalfox": false,
         "qt": false,
-        "vicinae": false
+        "vicinae": false,
+        "walker": false
     },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
+        "panelsAttachedToBar": true,
         "panelsOverlayLayer": true,
         "tooltipsEnabled": true
     },
@@ -289,6 +299,7 @@
         ],
         "randomEnabled": false,
         "randomIntervalSec": 300,
+        "recursiveSearch": false,
         "setWallpaperOnAllMonitors": false,
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
