@@ -23,11 +23,13 @@
     "bar": {
         "backgroundOpacity": 0,
         "density": "default",
+        "exclusive": true,
         "floating": true,
         "marginHorizontal": 0.5,
         "marginVertical": 0.25,
         "monitors": [
         ],
+        "outerCorners": true,
         "position": "top",
         "showCapsule": true,
         "widgets": {
@@ -57,6 +59,12 @@
                     "blacklist": [
                     ],
                     "colorizeIcons": false,
+                    "drawerEnabled": true,
+                    "favorites": [
+                        "Wire",
+                        "Discord",
+                        "steam"
+                    ],
                     "id": "Tray"
                 },
                 {
@@ -100,6 +108,7 @@
     },
     "brightness": {
         "brightnessStep": 5,
+        "enableDdcSupport": false,
         "enforceMinimum": true
     },
     "colorSchemes": {
@@ -182,12 +191,17 @@
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
         "compactLockScreen": false,
+        "dimDesktop": true,
+        "enableShadows": true,
         "forceBlackScreenCorners": true,
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
-        "screenRadiusRatio": 1,
+        "screenRadiusRatio": 2,
+        "shadowDirection": "bottom_right",
+        "shadowOffsetX": 2,
+        "shadowOffsetY": 3,
         "showScreenCorners": true
     },
     "hooks": {
@@ -222,6 +236,7 @@
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
         "doNotDisturb": false,
+        "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
@@ -252,6 +267,7 @@
     "settingsVersion": 16,
     "setupCompleted": true,
     "templates": {
+        "alacritty": false,
         "code": false,
         "discord": false,
         "discord_armcord": false,
@@ -270,7 +286,8 @@
         "pywalfox": false,
         "qt": false,
         "vicinae": false,
-        "walker": false
+        "walker": false,
+        "wezterm": false
     },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
@@ -278,7 +295,7 @@
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
         "panelsAttachedToBar": true,
-        "panelsOverlayLayer": true,
+        "settingsPanelAttachToBar": false,
         "tooltipsEnabled": true
     },
     "wallpaper": {
@@ -315,6 +332,8 @@
                 "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight.png"
             }
         ],
+        "overviewEnabled": false,
+        "panelPosition": "follow_bar",
         "randomEnabled": false,
         "randomIntervalSec": 300,
         "recursiveSearch": false,
