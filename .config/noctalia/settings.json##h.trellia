@@ -187,7 +187,7 @@
         "lockOnSuspend": true,
         "radiusRatio": 1,
         "scaleRatio": 1,
-        "screenRadiusRatio": 1,
+        "screenRadiusRatio": 2,
         "showScreenCorners": true
     },
     "hooks": {
