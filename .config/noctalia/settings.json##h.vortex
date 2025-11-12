@@ -16,6 +16,7 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
+        "visualizerQuality": "high",
         "visualizerType": "linear",
         "volumeOverdrive": false,
         "volumeStep": 5
@@ -60,12 +61,11 @@
                     ],
                     "colorizeIcons": false,
                     "drawerEnabled": true,
-                    "favorites": [
-                        "Wire",
+                    "id": "Tray",
+                    "pinned": [
                         "Discord",
-                        "steam"
-                    ],
-                    "id": "Tray"
+                        "Wire"
+                    ]
                 },
                 {
                     "id": "KeepAwake"
@@ -91,6 +91,7 @@
                     "warningThreshold": 30
                 },
                 {
+                    "colorizeDistroLogo": false,
                     "customIconPath": "",
                     "icon": "adjustments",
                     "id": "ControlCenter",
@@ -235,7 +236,7 @@
     "notifications": {
         "backgroundOpacity": 1,
         "criticalUrgencyDuration": 15,
-        "doNotDisturb": false,
+        "enableKeyboardLayoutToast": true,
         "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
@@ -264,7 +265,7 @@
         "videoCodec": "h264",
         "videoSource": "portal"
     },
-    "settingsVersion": 16,
+    "settingsVersion": 21,
     "setupCompleted": true,
     "templates": {
         "alacritty": false,
@@ -285,6 +286,7 @@
         "kitty": false,
         "pywalfox": false,
         "qt": false,
+        "spicetify": false,
         "vicinae": false,
         "walker": false,
         "wezterm": false
