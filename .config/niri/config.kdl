@@ -466,6 +466,5 @@ binds {
 }
 
 // Spawn Shell
-spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "elephant"
 spawn-at-startup "walker" "--gapplication-service"
