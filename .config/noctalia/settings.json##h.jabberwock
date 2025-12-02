@@ -2,16 +2,19 @@
     "appLauncher": {
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
+        "enableClipPreview": true,
         "enableClipboardHistory": true,
         "pinnedExecs": [
         ],
         "position": "center",
         "sortByMostUsed": true,
         "terminalCommand": "wezterm",
-        "useApp2Unit": true
+        "useApp2Unit": true,
+        "viewMode": "list"
     },
     "audio": {
         "cavaFrameRate": 60,
+        "externalMixer": "pwvucontrol || pavucontrol",
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
@@ -22,6 +25,7 @@
     },
     "bar": {
         "backgroundOpacity": 0,
+        "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
         "floating": true,
@@ -79,7 +83,9 @@
                 },
                 {
                     "colorizeDistroLogo": false,
+                    "colorizeSystemIcon": "none",
                     "customIconPath": "",
+                    "enableColorization": false,
                     "icon": "adjustments",
                     "id": "ControlCenter",
                     "useDistroLogo": false
@@ -91,13 +97,41 @@
             ]
         }
     },
-    "battery": {
-        "chargingMode": 0
-    },
     "brightness": {
         "brightnessStep": 5,
         "enableDdcSupport": false,
         "enforceMinimum": true
+    },
+    "calendar": {
+        "cards": [
+            {
+                "enabled": false,
+                "id": "calendar-header-card"
+            },
+            {
+                "enabled": false,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-header-card"
+            },
+            {
+                "enabled": true,
+                "id": "calendar-month-card"
+            },
+            {
+                "enabled": true,
+                "id": "timer-card"
+            },
+            {
+                "enabled": true,
+                "id": "weather-card"
+            }
+        ]
+    },
+    "changelog": {
+        "lastSeenVersion": ""
     },
     "colorSchemes": {
         "darkMode": true,
@@ -169,6 +203,7 @@
         "size": 1
     },
     "general": {
+        "allowPanelsOnScreenWithoutBar": true,
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
@@ -184,6 +219,7 @@
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
+        "showHibernateOnLockScreen": false,
         "showScreenCorners": true
     },
     "hooks": {
@@ -200,7 +236,8 @@
         "showWeekNumberInCalendar": false,
         "use12hourFormat": true,
         "useFahrenheit": true,
-        "weatherEnabled": true
+        "weatherEnabled": true,
+        "weatherShowEffects": true
     },
     "network": {
         "wifiEnabled": false
@@ -231,6 +268,11 @@
         "autoHideMs": 2000,
         "backgroundOpacity": 1,
         "enabled": true,
+        "enabledTypes": [
+            0,
+            1,
+            2
+        ],
         "location": "bottom",
         "monitors": [
         ],
@@ -279,25 +321,31 @@
         ],
         "showHeader": true
     },
-    "settingsVersion": 23,
-    "setupCompleted": true,
+    "settingsVersion": 26,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
+        "cpuPollingInterval": 3000,
         "cpuWarningThreshold": 80,
         "criticalColor": "",
         "diskCriticalThreshold": 90,
+        "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
         "memCriticalThreshold": 90,
+        "memPollingInterval": 3000,
         "memWarningThreshold": 80,
+        "networkPollingInterval": 3000,
         "tempCriticalThreshold": 90,
+        "tempPollingInterval": 3000,
         "tempWarningThreshold": 80,
         "useCustomColors": false,
         "warningColor": ""
     },
     "templates": {
         "alacritty": false,
+        "cava": false,
         "code": false,
         "discord": false,
+        "emacs": false,
         "enableUserTemplates": false,
         "foot": false,
         "fuzzel": false,
@@ -305,9 +353,11 @@
         "gtk": false,
         "kcolorscheme": false,
         "kitty": false,
+        "niri": false,
         "pywalfox": false,
         "qt": false,
         "spicetify": false,
+        "telegram": false,
         "vicinae": false,
         "walker": false,
         "wezterm": false
@@ -323,39 +373,13 @@
         "tooltipsEnabled": true
     },
     "wallpaper": {
-        "defaultWallpaper": "/etc/xdg/quickshell/noctalia-shell/Assets/Wallpaper/noctalia.png",
         "directory": "/home/dangle/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
-        "monitors": [
-            {
-                "directory": "/home/dangle/Pictures/Wallpapers",
-                "name": "DP-3",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-right.png"
-            },
-            {
-                "directory": "/home/dangle/Pictures/Wallpapers",
-                "name": "DP-2",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-top.png"
-            },
-            {
-                "directory": "/home/dangle/Pictures/Wallpapers",
-                "name": "HDMI-A-1",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/chisen-bottom.png"
-            },
-            {
-                "directory": "/home/dangle/Pictures/Wallpapers",
-                "name": "eDP-1",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight.png"
-            },
-            {
-                "directory": "/home/dangle/Pictures/Wallpapers",
-                "name": "DP-10",
-                "wallpaper": "/home/dangle/Pictures/Wallpapers/carinashoresnight.png"
-            }
+        "monitorDirectories": [
         ],
         "overviewEnabled": false,
         "panelPosition": "follow_bar",
