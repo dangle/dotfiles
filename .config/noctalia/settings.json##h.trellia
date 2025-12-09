@@ -7,6 +7,7 @@
         "pinnedExecs": [
         ],
         "position": "center",
+        "showCategories": true,
         "sortByMostUsed": true,
         "terminalCommand": "wezterm",
         "useApp2Unit": true,
@@ -92,6 +93,8 @@
                     "deviceNativePath": "",
                     "displayMode": "onhover",
                     "id": "Battery",
+                    "showNoctaliaPerformance": false,
+                    "showPowerProfiles": false,
                     "warningThreshold": 30
                 },
                 {
@@ -134,9 +137,6 @@
                 "id": "weather-card"
             }
         ]
-    },
-    "changelog": {
-        "lastSeenVersion": ""
     },
     "colorSchemes": {
         "darkMode": true,
@@ -203,14 +203,17 @@
     "dock": {
         "backgroundOpacity": 1,
         "colorizeIcons": false,
+        "deadOpacity": 0.6,
         "displayMode": "always_visible",
         "enabled": false,
         "floatingRatio": 1,
+        "inactiveIndicators": false,
         "monitors": [
         ],
         "onlySameOutput": false,
         "pinnedApps": [
         ],
+        "pinnedStatic": false,
         "size": 1
     },
     "general": {
@@ -218,10 +221,12 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
+        "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0.8,
         "enableShadows": true,
         "forceBlackScreenCorners": true,
+        "iRadiusRatio": 1,
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
@@ -231,7 +236,8 @@
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
         "showHibernateOnLockScreen": false,
-        "showScreenCorners": true
+        "showScreenCorners": true,
+        "showSessionButtonsOnLockScreen": true
     },
     "hooks": {
         "darkModeChange": "",
@@ -273,7 +279,16 @@
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
-        "respectExpireTimeout": false
+        "respectExpireTimeout": false,
+        "sounds": {
+            "criticalSoundFile": "",
+            "enabled": false,
+            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "lowSoundFile": "",
+            "normalSoundFile": "",
+            "separateSounds": false,
+            "volume": 0.5
+        }
     },
     "osd": {
         "autoHideMs": 2000,
