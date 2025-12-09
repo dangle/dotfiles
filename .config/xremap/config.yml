@@ -1,0 +1,9 @@
+modmap:
+  - name: Overview when Super is pressed alone
+    remap:
+      LeftMeta:
+        held: LeftMeta
+        alone:
+          - LeftMeta
+          - Tab
+        free_hold: true
