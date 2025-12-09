@@ -468,4 +468,4 @@ binds {
 // Spawn Shell
 spawn-at-startup "elephant"
 spawn-at-startup "walker" "--gapplication-service"
-spawn-sh-at-startup "xremap" "~/.config/xremap/config.yml"
+spawn-sh-at-startup "xremap ~/.config/xremap/config.yml"
