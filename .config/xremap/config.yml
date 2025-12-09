@@ -5,5 +5,5 @@ modmap:
         held: LeftMeta
         alone:
           - LeftMeta
-          - Tab
+          - Space
         free_hold: true
