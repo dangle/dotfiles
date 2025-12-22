@@ -7,6 +7,7 @@
         "pinnedExecs": [
         ],
         "position": "center",
+        "showCategories": true,
         "sortByMostUsed": true,
         "terminalCommand": "wezterm",
         "useApp2Unit": true,
@@ -24,7 +25,6 @@
         "volumeStep": 5
     },
     "bar": {
-        "backgroundOpacity": 0,
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
@@ -36,6 +36,8 @@
         "outerCorners": true,
         "position": "top",
         "showCapsule": true,
+        "showOutline": false,
+        "transparent": true,
         "widgets": {
             "center": [
                 {
@@ -64,6 +66,7 @@
                     ],
                     "colorizeIcons": false,
                     "drawerEnabled": true,
+                    "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
                         "Discord",
@@ -130,9 +133,6 @@
             }
         ]
     },
-    "changelog": {
-        "lastSeenVersion": ""
-    },
     "colorSchemes": {
         "darkMode": true,
         "generateTemplatesForPredefined": true,
@@ -189,17 +189,28 @@
             ]
         }
     },
+    "desktopWidgets": {
+        "editMode": false,
+        "enabled": false,
+        "gridSnap": false,
+        "monitorWidgets": [
+        ]
+    },
     "dock": {
+        "animationSpeed": 1,
         "backgroundOpacity": 1,
         "colorizeIcons": false,
+        "deadOpacity": 0.6,
         "displayMode": "always_visible",
         "enabled": false,
         "floatingRatio": 1,
+        "inactiveIndicators": false,
         "monitors": [
         ],
         "onlySameOutput": false,
         "pinnedApps": [
         ],
+        "pinnedStatic": false,
         "size": 1
     },
     "general": {
@@ -207,10 +218,12 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "avatarImage": "/home/dangle/Pictures/wizard.png",
+        "boxRadiusRatio": 1,
         "compactLockScreen": false,
         "dimmerOpacity": 0.8,
         "enableShadows": true,
         "forceBlackScreenCorners": true,
+        "iRadiusRatio": 1,
         "language": "",
         "lockOnSuspend": true,
         "radiusRatio": 1,
@@ -220,11 +233,14 @@
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
         "showHibernateOnLockScreen": false,
-        "showScreenCorners": true
+        "showScreenCorners": true,
+        "showSessionButtonsOnLockScreen": true
     },
     "hooks": {
         "darkModeChange": "",
         "enabled": true,
+        "screenLock": "",
+        "screenUnlock": "",
         "wallpaperChange": "~/.config/niri/scripts/generate-colors.sh $1"
     },
     "location": {
@@ -262,7 +278,16 @@
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
-        "respectExpireTimeout": false
+        "respectExpireTimeout": false,
+        "sounds": {
+            "criticalSoundFile": "",
+            "enabled": false,
+            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "lowSoundFile": "",
+            "normalSoundFile": "",
+            "separateSounds": false,
+            "volume": 0.5
+        }
     },
     "osd": {
         "autoHideMs": 2000,
@@ -292,6 +317,7 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
+        "largeButtonsStyle": false,
         "position": "center",
         "powerOptions": [
             {
@@ -321,7 +347,7 @@
         ],
         "showHeader": true
     },
-    "settingsVersion": 26,
+    "settingsVersion": 31,
     "systemMonitor": {
         "cpuCriticalThreshold": 90,
         "cpuPollingInterval": 3000,
@@ -330,6 +356,10 @@
         "diskCriticalThreshold": 90,
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
+        "enableNvidiaGpu": false,
+        "gpuCriticalThreshold": 90,
+        "gpuPollingInterval": 3000,
+        "gpuWarningThreshold": 80,
         "memCriticalThreshold": 90,
         "memPollingInterval": 3000,
         "memWarningThreshold": 80,
@@ -353,6 +383,7 @@
         "gtk": false,
         "kcolorscheme": false,
         "kitty": false,
+        "mango": false,
         "niri": false,
         "pywalfox": false,
         "qt": false,
@@ -360,16 +391,18 @@
         "telegram": false,
         "vicinae": false,
         "walker": false,
-        "wezterm": false
+        "wezterm": false,
+        "yazi": false,
+        "zed": false
     },
     "ui": {
         "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.7000000000000001,
+        "panelBackgroundOpacity": 0.4,
         "panelsAttachedToBar": true,
-        "settingsPanelAttachToBar": false,
+        "settingsPanelMode": "centered",
         "tooltipsEnabled": true
     },
     "wallpaper": {
