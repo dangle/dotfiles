@@ -4,10 +4,14 @@
         "customLaunchPrefixEnabled": false,
         "enableClipPreview": true,
         "enableClipboardHistory": true,
+        "iconMode": "tabler",
+        "ignoreMouseInput": false,
         "pinnedExecs": [
         ],
         "position": "center",
+        "screenshotAnnotationTool": "",
         "showCategories": true,
+        "showIconBackground": true,
         "sortByMostUsed": true,
         "terminalCommand": "wezterm",
         "useApp2Unit": true,
@@ -19,12 +23,12 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
-        "visualizerQuality": "high",
         "visualizerType": "linear",
         "volumeOverdrive": false,
         "volumeStep": 5
     },
     "bar": {
+        "backgroundOpacity": 0,
         "capsuleOpacity": 1,
         "density": "default",
         "exclusive": true,
@@ -37,7 +41,7 @@
         "position": "top",
         "showCapsule": true,
         "showOutline": false,
-        "transparent": true,
+        "useSeparateOpacity": true,
         "widgets": {
             "center": [
                 {
@@ -70,7 +74,8 @@
                     "id": "Tray",
                     "pinned": [
                         "Discord",
-                        "Wire"
+                        "Wire",
+                        "steam"
                     ]
                 },
                 {
@@ -166,6 +171,7 @@
                 "id": "shortcuts-card"
             }
         ],
+        "diskPath": "/",
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
@@ -190,7 +196,6 @@
         }
     },
     "desktopWidgets": {
-        "editMode": false,
         "enabled": false,
         "gridSnap": false,
         "monitorWidgets": [
@@ -239,6 +244,8 @@
     "hooks": {
         "darkModeChange": "",
         "enabled": true,
+        "performanceModeDisabled": "",
+        "performanceModeEnabled": "",
         "screenLock": "",
         "screenUnlock": "",
         "wallpaperChange": "~/.config/niri/scripts/generate-colors.sh $1"
@@ -256,6 +263,11 @@
         "weatherShowEffects": true
     },
     "network": {
+        "bluetoothDetailsViewMode": "grid",
+        "bluetoothHideUnnamedDevices": false,
+        "bluetoothRssiPollIntervalMs": 10000,
+        "bluetoothRssiPollingEnabled": false,
+        "wifiDetailsViewMode": "grid",
         "wifiEnabled": false
     },
     "nightLight": {
@@ -279,6 +291,11 @@
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
         "respectExpireTimeout": false,
+        "saveToHistory": {
+            "critical": true,
+            "low": true,
+            "normal": true
+        },
         "sounds": {
             "criticalSoundFile": "",
             "enabled": false,
@@ -307,6 +324,7 @@
         "audioCodec": "opus",
         "audioSource": "default_output",
         "colorRange": "limited",
+        "copyToClipboard": false,
         "directory": "/home/dangle/Videos",
         "frameRate": 60,
         "quality": "very_high",
@@ -317,6 +335,7 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
+        "largeButtonsLayout": "grid",
         "largeButtonsStyle": false,
         "position": "center",
         "powerOptions": [
@@ -345,7 +364,8 @@
                 "enabled": true
             }
         ],
-        "showHeader": true
+        "showHeader": true,
+        "showNumberLabels": true
     },
     "settingsVersion": 31,
     "systemMonitor": {
@@ -356,10 +376,12 @@
         "diskCriticalThreshold": 90,
         "diskPollingInterval": 3000,
         "diskWarningThreshold": 80,
-        "enableNvidiaGpu": false,
+        "enableDgpuMonitoring": false,
+        "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor",
         "gpuCriticalThreshold": 90,
         "gpuPollingInterval": 3000,
         "gpuWarningThreshold": 80,
+        "loadAvgPollingInterval": 3000,
         "memCriticalThreshold": 90,
         "memPollingInterval": 3000,
         "memWarningThreshold": 80,
@@ -381,6 +403,8 @@
         "fuzzel": false,
         "ghostty": false,
         "gtk": false,
+        "helix": false,
+        "hyprland": false,
         "kcolorscheme": false,
         "kitty": false,
         "mango": false,
@@ -396,6 +420,7 @@
         "zed": false
     },
     "ui": {
+        "boxBorderEnabled": false,
         "fontDefault": "DejaVu Sans Condensed",
         "fontDefaultScale": 1,
         "fontFixed": "FiraCode Nerd Font Mono",
@@ -420,17 +445,22 @@
         "randomIntervalSec": 300,
         "recursiveSearch": false,
         "setWallpaperOnAllMonitors": false,
+        "solidColor": "#1a1a2e",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": "fade",
+        "useSolidColor": false,
         "useWallhaven": false,
+        "wallhavenApiKey": "",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
         "wallhavenQuery": "",
+        "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
         "wallhavenResolutionWidth": "",
-        "wallhavenSorting": "date_added"
+        "wallhavenSorting": "date_added",
+        "wallpaperChangeMode": "random"
     }
 }
