@@ -192,6 +192,8 @@ fi
 export ET_NO_TELEMETRY=1
 #===============================================================================
 
+BAT_PAGING=never
+
 if [ -f ~/.zshrc.local ]; then
     . ~/.zshrc.local
 fi
