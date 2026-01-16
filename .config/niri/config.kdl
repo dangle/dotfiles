@@ -6,7 +6,7 @@ debug {
 // Force Resolution
 output "Samsung Electric Company Odyssey G95NC HNTWC01684" {
     mode "7680x2160@59.987"
-    scale 1.0
+    scale 1.25
     position x=0 y=0
     focus-at-startup
 }

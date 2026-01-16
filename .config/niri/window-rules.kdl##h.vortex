@@ -3,7 +3,7 @@ window-rule {
     match app-id=r#"youtube.com"#
 
     default-window-height {
-        proportion 0.5165
+        proportion 0.519
     }
 
     default-column-width {
@@ -12,7 +12,7 @@ window-rule {
 
     border {
         on
-        width 0.5
+        width 1.45
         active-color "#00000000"
         inactive-color "#00000000"
     }
